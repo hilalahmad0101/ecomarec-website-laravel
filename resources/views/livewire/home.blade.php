@@ -9,8 +9,51 @@
                             data-elementor-settings="[]">
                             <div class="elementor-inner">
                                 <div class="elementor-section-wrap">
-                                   <x-slider />
-                                    <x-category />
+                                    <x-slider />
+
+                                    <section
+                                        class="elementor-section elementor-top-section elementor-element elementor-element-f098688 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                        data-id="f098688" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-default">
+                                            <div class="elementor-row">
+                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-caacce7"
+                                                    data-id="caacce7" data-element_type="column">
+                                                    <div class="elementor-column-wrap elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div class="elementor-element elementor-element-00ef874 elementor-widget elementor-widget-wp-widget-sw_woo_cat_slider_widget"
+                                                                data-id="00ef874" data-element_type="widget"
+                                                                data-widget_type="wp-widget-sw_woo_cat_slider_widget.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div id="slider_wp-widget-sw_woo_cat_slider_widget"
+                                                                        class="responsive-slider sw-category-slider loading"
+                                                                        data-append=".resp-slider-container"
+                                                                        data-lg="5" data-md="4" data-sm="3"
+                                                                        data-xs="3" data-mobile="2" data-speed="1000"
+                                                                        data-scroll="1" data-interval="5000"
+                                                                        data-autoplay="true">
+                                                                        <div class="block-title">
+                                                                            <h3 class="font-custome"><span>featured
+                                                                                    categories</span></h3>
+                                                                        </div>
+                                                                        <div class="resp-slider-container">
+                                                                            <div class="slider responsive">
+                                                                                @foreach ($categories as $category)
+                                                                                    <x-category id="{{ $category->id }}"
+                                                                                        cname="{{ $category->category_name }}"
+                                                                                        image="{{ $category->image }}"
+                                                                                        slug="{{ $category->slug }}" />
+                                                                                @endforeach
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
                                     {{-- <section
                                         class="elementor-section elementor-top-section elementor-element elementor-element-94cb0dc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                         data-id="94cb0dc" data-element_type="section">
@@ -603,7 +646,7 @@
                                         </div>
                                     </section> --}}
                                     <x-banner />
-                                   <x-category-products />
+                                    <x-category-products />
                                     {{-- <section
                                         class="elementor-section elementor-top-section elementor-element elementor-element-d5f182b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                         data-id="d5f182b" data-element_type="section">
