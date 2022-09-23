@@ -23,7 +23,8 @@
                                 @if (Auth::user()->verified == 1)
                                     <ul class="woocommerce-success" role="alert">
                                         <li>
-                                            <strong>Success</strong>: Your account is verified
+                                            <strong>Success</strong>: Your account is verified  <a
+                                            href="{{ route('user.my-account') }}">Back Login</a> 
                                         </li>
                                     </ul>
                                 @else
@@ -71,7 +72,7 @@
                                                 </p>
                                                 <p class="lost_password">
                                                     <span>If you not recived otp in 3 mint please click on : </span>
-                                                    <a href="{{ route('resend-otp', ['id' => 1]) }}">Resend Otp</a>
+                                                    <a href="#" wire:click.prevent='resendOtp'>Resend Otp</a>
                                                 </p>
                                             </form>
                                         </div>

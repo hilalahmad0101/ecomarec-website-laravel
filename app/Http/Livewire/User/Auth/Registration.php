@@ -7,13 +7,11 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
 class Registration extends Component
 {
     public $email, $password;
+    public $login_email, $login_password;
     public function render()
     {
         return view('livewire.user.auth.registration')->layout('layout.user');
@@ -26,12 +24,15 @@ class Registration extends Component
             'password' => 'required|string|min:6|max:10',
         ]);
         $rand = rand(999999, 100000);
-        $users->name = " ";
+        $email  = $this->email;
+        $username = strstr($email, '@', true);
+        $users->first_name = " ";
+        $users->last_name = " ";
+        $users->username=$username;
         $users->email = $this->email;
         $users->password = Hash::make($this->password);
         $users->otp = $rand;
         $result = $users->save();
-        $mail = new PHPMailer(true);
         Auth::login($users);
         if ($result) {
             $details = [
@@ -40,24 +41,6 @@ class Registration extends Component
             ];
             $data = \Mail::to($this->email)->send(new otpmail($details));
             if ($data) {
-                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-                // $mail->isSMTP();                                            //Send using SMTP
-                // $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                // $mail->Username   = 'programmerhero6@gmail.com';                     //SMTP username
-                // $mail->Password   = 'qnedxqmgrymwagbd';                               //SMTP password
-                // $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-                // $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                // //Recipients
-                // $mail->setFrom('programmerhero6@gmail.com', 'Hilal ahmad');
-                // $mail->addAddress("$this->email");     //Add a recipient    
-                // $mail->addReplyTo('programmerhero6@gmail.com', 'Information');
-                // //Content
-                // $mail->isHTML(true);                                  //Set email format to HTML
-                // $mail->Subject = 'Verified Account';
-                // $mail->Body    = "This is Your Otp <b>$rand</b>";
-                // $mail->send();
                 session()->flash('success', 'Check mail and Verify your otp');
                 return redirect(route('user.verify-account'));
             } else {
@@ -65,6 +48,62 @@ class Registration extends Component
             }
         } else {
             session()->flash('error', 'Account Create failed');
+        }
+    }
+
+
+    public function login()
+    {
+        $this->validate(
+            [
+                'login_email' => 'required|email',
+                'login_password' => 'required|string|min:6|max:10',
+            ],
+            [
+                'login_email' => [
+                    'required' => 'The email is required',
+                    'email' => 'The email must be a valid email address',
+                ],
+                'login_password' => [
+                    'required' => 'The password is required',
+                    'max' => [
+                        'string' => 'The password must not be greater than :max characters.'
+                    ],
+                    'min' => [
+                        'string' => 'The password must be at least :min characters.'
+                    ]
+                ]
+            ]
+        );
+
+        // active and deactive is remaining
+
+        $users = User::where('email', $this->login_email)->first();
+        if ($users) {
+            $password = Hash::check($this->login_password, $users->password);
+            if ($password) {
+                if ($users->verified == 1) {
+                    $user = Auth::attempt(['email' => $this->login_email, 'password' => $this->login_password]);
+                    if ($user) {
+                        session()->flash('success', 'Login Success');
+                        return redirect(route('user.dashboard'));
+                    }else{
+                        session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
+                        href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
+                        your password?</a>');
+                    }
+                } else {
+                    session()->flash('verified', "Please Verified Your Account");
+                }
+            } else {
+                session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
+                href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
+                your password?</a>');
+            }
+        } else {
+            session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
+            href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
+            your password?</a>');
         }
     }
 }

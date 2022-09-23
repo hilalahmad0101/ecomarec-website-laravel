@@ -1,0 +1,1 @@
+<span wire:click.prevent='logout'>Logout</span>

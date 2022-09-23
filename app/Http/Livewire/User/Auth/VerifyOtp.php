@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User\Auth;
 
+use App\Mail\user\otpmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -20,46 +21,32 @@ class VerifyOtp extends Component
     public function resendOtp()
     {
 
-       $users=User::findOrFail(Auth::user()->id);
-       $rand=rand(999999,100000);
-       $mail = new PHPMailer(true);
-       $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-       $mail->isSMTP();                                            //Send using SMTP
-       $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-       $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-       $mail->Username   = 'programmerhero6@gmail.com';                     //SMTP username
-       $mail->Password   = 'qnedxqmgrymwagbd';                               //SMTP password
-       $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-       $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-       //Recipients
-       $mail->setFrom('programmerhero6@gmail.com', 'Hilal ahmad');
-       $mail->addAddress("$users->email");     //Add a recipient    
-       $mail->addReplyTo('programmerhero6@gmail.com', 'Information');
-       //Content
-       $mail->isHTML(true);                                  //Set email format to HTML
-       $mail->Subject = 'Verified Account';
-       $mail->Body    = "This is Your Otp <b>$rand</b>";
-       $users->otp=$rand;
-       $users->save();
-       if($mail->send()){
-        session()->flash('success','Check mail');
-        return redirect('/verify-account');
-       }
+        $users = User::findOrFail(Auth::user()->id);
+        $rand = rand(999999, 100000);
+        $details = [
+            'title' => 'otp for verify email and get new products',
+            'body' => $rand
+        ];
+        $data = \Mail::to($users->email)->send(new otpmail($details));
+        $users->otp = $rand;
+        $users->save();
+        if ($data) {
+            session()->flash('success', 'Check mail');
+        }
     }
 
 
     public function verifiedOtp()
     {
         $this->validate([
-            'otp' =>'required'
+            'otp' => 'required'
         ]);
-        $users=User::where('otp',$this->otp)->first();
-        if($users){
-            $users->verified=1;
+        $users = User::where('otp', $this->otp)->first();
+        if ($users) {
+            $users->verified = 1;
             $users->save();
-        }else{
-            session()->flash('error','Invalid Otp');
+        } else {
+            session()->flash('error', 'Invalid Otp');
         }
     }
 }
