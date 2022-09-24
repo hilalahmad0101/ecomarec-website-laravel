@@ -446,7 +446,7 @@
                                                                         <h5>My Account</h5>
                                                                         <ul id="menu-my-account" class="menu">
                                                                             <li class="menu-cart"><a class="item-link"
-                                                                                    href="cart/"><span
+                                                                                    href="{{ route('user.carts') }}"><span
                                                                                         class="menu-title">Cart</span></a>
                                                                             </li>
                                                                             <li class="menu-wishlist"><a
@@ -460,19 +460,23 @@
                                                                                         class="menu-title">Checkout</span></a>
                                                                             </li>
                                                                             <li class="menu-my-account"><a
-                                                                                class="item-link"
-                                                                                href="{{ route('user.dashboard') }}"><span
-                                                                                    class="menu-title">My Account</span></a></li>
+                                                                                    class="item-link"
+                                                                                    href="{{ route('user.dashboard') }}"><span
+                                                                                        class="menu-title">My
+                                                                                        Account</span></a></li>
                                                                         </ul>
                                                                     </div>
                                                                 </div>
                                                                 @if (Auth::user())
-                                                                <div class="elementor-element elementor-element-3f68be7 pull-right elementor-widget elementor-widget-wp-widget-sw_top">
+                                                                    <div
+                                                                        class="elementor-element elementor-element-3f68be7 pull-right elementor-widget elementor-widget-wp-widget-sw_top">
                                                                         <div class="elementor-widget-container">
                                                                             <div class="top-login">
                                                                                 <ul>
                                                                                     <li>
-                                                                                        <span>Welcome {{Auth::user()->username}} - @livewire('user.auth.logout')</span>
+                                                                                        <span>Welcome
+                                                                                            {{ Auth::user()->username }}
+                                                                                            - @livewire('user.auth.logout')</span>
                                                                                     </li>
                                                                                 </ul>
                                                                             </div>
@@ -494,22 +498,20 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                    @endif
-                                                              
-                                                                <div class="elementor-element elementor-element-c1d86f8 pull-left elementor-widget elementor-widget-wp-widget-custom_html"
-                                                                    data-id="c1d86f8" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-custom_html.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div class="textwidget custom-html-widget">
-                                                                            <div class="header-message pull-left">
-                                                                                Default welcome msg!<a
-                                                                                    href="{{ route('user.my-account') }}">
-                                                                                    Join Free</a> or
-                                                                                <a
-                                                                                    href="{{ route('user.my-account') }}">Sign
-                                                                                    in</a>
-                                                                            </div>
+                                                            </div>
+                                                            @endif
+
+                                                            <div class="elementor-element elementor-element-c1d86f8 pull-left elementor-widget elementor-widget-wp-widget-custom_html"
+                                                                data-id="c1d86f8" data-element_type="widget"
+                                                                data-widget_type="wp-widget-custom_html.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="textwidget custom-html-widget">
+                                                                        <div class="header-message pull-left">
+                                                                            Default welcome msg!<a
+                                                                                href="{{ route('user.my-account') }}">
+                                                                                Join Free</a> or
+                                                                            <a href="{{ route('user.my-account') }}">Sign
+                                                                                in</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -518,1668 +520,1502 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                        <section
-                                            class="elementor-section elementor-inner-section elementor-element elementor-element-c80a813 header-mid header-menu fix-center elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                            data-id="c80a813" data-element_type="section">
-                                            <div class="elementor-container elementor-column-gap-default">
-                                                <div class="elementor-row">
-                                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-08f570f top-header"
-                                                        data-id="08f570f" data-element_type="column">
-                                                        <div class="elementor-column-wrap elementor-element-populated">
-                                                            <div class="elementor-widget-wrap">
-                                                                <div class="elementor-element elementor-element-96b558f elementor-widget elementor-widget-image"
-                                                                    data-id="96b558f" data-element_type="widget"
-                                                                    data-widget_type="image.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div class="elementor-image">
-                                                                            <a
-                                                                                href="https://demo.wpthemego.com/themes/sw_revo">
-                                                                                <img width="156" height="56"
-                                                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20156%2056'%3E%3C/svg%3E"
-                                                                                    class="attachment-full size-full"
-                                                                                    alt=""
-                                                                                    data-lazy-src="{{ asset('wp-content/uploads/2018/11/logo-default.png') }}" /><noscript><img
-                                                                                        width="156" height="56"
-                                                                                        src="{{ asset('wp-content/uploads/2018/11/logo-default.png') }}"
-                                                                                        class="attachment-full size-full"
-                                                                                        alt="" /></noscript>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
+                                    </div>
+                </section>
+                <section
+                    class="elementor-section elementor-inner-section elementor-element elementor-element-c80a813 header-mid header-menu fix-center elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="c80a813" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-08f570f top-header"
+                                data-id="08f570f" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-96b558f elementor-widget elementor-widget-image"
+                                            data-id="96b558f" data-element_type="widget"
+                                            data-widget_type="image.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-image">
+                                                    <a href="https://demo.wpthemego.com/themes/sw_revo">
+                                                        <img width="156" height="56"
+                                                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20156%2056'%3E%3C/svg%3E"
+                                                            class="attachment-full size-full" alt=""
+                                                            data-lazy-src="{{ asset('wp-content/uploads/2018/11/logo-default.png') }}" /><noscript><img
+                                                                width="156" height="56"
+                                                                src="{{ asset('wp-content/uploads/2018/11/logo-default.png') }}"
+                                                                class="attachment-full size-full"
+                                                                alt="" /></noscript>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-563fc73 elementor-hidden-phone"
+                                data-id="563fc73" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-ddaf763 elementor-widget elementor-widget-wp-widget-sw_primary_menu"
+                                            data-id="ddaf763" data-element_type="widget"
+                                            data-widget_type="wp-widget-sw_primary_menu.default">
+                                            <div class="elementor-widget-container">
+                                                <div id="main-menu" class="main-menu pull-left clearfix">
+                                                    <nav id="primary-menu" class="primary-menu">
+                                                        <div class="mid-header clearfix">
+                                                            <div class="navbar-inner navbar-inverse">
+                                                                <div class="resmenu-container">
+                                                                    <button class="navbar-toggle bt_menusb"
+                                                                        type="button" data-target="#ResMenuSB">
+                                                                        <span class="sr-only">Toggle
+                                                                            navigation</span>
+                                                                        <span class="icon-bar"></span>
+                                                                        <span class="icon-bar"></span>
+                                                                        <span class="icon-bar"></span>
+                                                                    </button>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-563fc73 elementor-hidden-phone"
-                                                        data-id="563fc73" data-element_type="column">
-                                                        <div class="elementor-column-wrap elementor-element-populated">
-                                                            <div class="elementor-widget-wrap">
-                                                                <div class="elementor-element elementor-element-ddaf763 elementor-widget elementor-widget-wp-widget-sw_primary_menu"
-                                                                    data-id="ddaf763" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-sw_primary_menu.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div id="main-menu"
-                                                                            class="main-menu pull-left clearfix">
-                                                                            <nav id="primary-menu"
-                                                                                class="primary-menu">
-                                                                                <div class="mid-header clearfix">
-                                                                                    <div
-                                                                                        class="navbar-inner navbar-inverse">
-                                                                                        <div class="resmenu-container">
-                                                                                            <button
-                                                                                                class="navbar-toggle bt_menusb"
-                                                                                                type="button"
-                                                                                                data-target="#ResMenuSB">
-                                                                                                <span
-                                                                                                    class="sr-only">Toggle
-                                                                                                    navigation</span>
-                                                                                                <span
-                                                                                                    class="icon-bar"></span>
-                                                                                                <span
-                                                                                                    class="icon-bar"></span>
-                                                                                                <span
-                                                                                                    class="icon-bar"></span>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <ul id="menu-primary-menu-1"
-                                                                                            class="nav nav-pills nav-mega revo-mega revo-menures">
-                                                                                            <li
-                                                                                                class="active dropdown menu-home revo-mega-menu level1">
-                                                                                                <a href=""
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-title">Home</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu nav-level1 column-3">
-                                                                                                    <li
-                                                                                                        class="active dropdown-submenu column-3 menu-homepage-layouts">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">HomePage
-                                                                                                                    Layouts</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="active menu-market-place-1 revo-menu-img">
-                                                                                                                <a
-                                                                                                                    href=""><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-img"><img
-                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                                alt="Menu Image"
-                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}" /><noscript><img
-                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}"
-                                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                                            class="menu-title">Market
-                                                                                                                            Place
-                                                                                                                            1</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-market-place-2">
-                                                                                                                <a
-                                                                                                                    href="home-page-2/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Market
-                                                                                                                            Place
-                                                                                                                            2</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-market-place-3">
-                                                                                                                <a
-                                                                                                                    href="home-page-13/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Market
-                                                                                                                            Place
-                                                                                                                            3</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-market-place-4">
-                                                                                                                <a
-                                                                                                                    href="home-page-14/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Market
-                                                                                                                            Place
-                                                                                                                            4</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-hitech-store-1">
-                                                                                                                <a
-                                                                                                                    href="home-page-5/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Hitech
-                                                                                                                            Store
-                                                                                                                            1</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-hitech-store-2">
-                                                                                                                <a
-                                                                                                                    href="home-page-7/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Hitech
-                                                                                                                            Store
-                                                                                                                            2</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-hitech-store-3">
-                                                                                                                <a
-                                                                                                                    href="demo5/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Hitech
-                                                                                                                            Store
-                                                                                                                            3</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-gift-store">
-                                                                                                                <a
-                                                                                                                    href="demo2/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Gift
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-3 menu-homepage-layouts">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">HomePage
-                                                                                                                    Layouts</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-fashion-store-1">
-                                                                                                                <a
-                                                                                                                    href="home-page-3/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Fashion
-                                                                                                                            Store
-                                                                                                                            1</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-fashion-store-2">
-                                                                                                                <a
-                                                                                                                    href="home-page-6/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Fashion
-                                                                                                                            Store
-                                                                                                                            2</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-kids-fashion-store">
-                                                                                                                <a
-                                                                                                                    href="home-page-4/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Kids
-                                                                                                                            Fashion
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-furniture-store-1">
-                                                                                                                <a
-                                                                                                                    href="home-page-8/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Furniture
-                                                                                                                            Store
-                                                                                                                            1</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-furniture-store-2">
-                                                                                                                <a
-                                                                                                                    href="furniture-store-2/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Furniture
-                                                                                                                            Store
-                                                                                                                            2</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-furniture-store-3">
-                                                                                                                <a
-                                                                                                                    href="demo4/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Furniture
-                                                                                                                            Store
-                                                                                                                            3</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-layout-christmas">
-                                                                                                                <a
-                                                                                                                    href="demo9/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Layout
-                                                                                                                            Christmas</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-gaming-gear revo-menu-img">
-                                                                                                                <a
-                                                                                                                    href="demo12/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-img"><img
-                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                                alt="Menu Image"
-                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
-                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
-                                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                                            class="menu-title">Gaming
-                                                                                                                            Gear</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-christmas-gift">
-                                                                                                                <a
-                                                                                                                    href="demo6/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Christmas
-                                                                                                                            Gift</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-3 menu-homepage-layouts">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">HomePage
-                                                                                                                    Layouts</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-music-store">
-                                                                                                                <a
-                                                                                                                    href="home-page-11/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Music
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-cosmetic-store">
-                                                                                                                <a
-                                                                                                                    href="home-page-9/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Cosmetic
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-organic-store">
-                                                                                                                <a
-                                                                                                                    href="home-page-10/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Organic
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-watch-store revo-menu-img">
-                                                                                                                <a
-                                                                                                                    href="demo8/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-img"><img
-                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                                alt="Menu Image"
-                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
-                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
-                                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                                            class="menu-title">Watch
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-book-store">
-                                                                                                                <a
-                                                                                                                    href="demo7"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Book
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vihicle-part-store">
-                                                                                                                <a
-                                                                                                                    href="demo3/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vihicle
-                                                                                                                            Part
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-medical-store revo-menu-img">
-                                                                                                                <a
-                                                                                                                    href="demo10/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-img"><img
-                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                                alt="Menu Image"
-                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
-                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
-                                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                                            class="menu-title">Medical
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-flower-shop revo-menu-img">
-                                                                                                                <a
-                                                                                                                    href="demo11/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-img"><img
-                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                                alt="Menu Image"
-                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
-                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
-                                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                                            class="menu-title">Flower
-                                                                                                                            Shop</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li
-                                                                                                class="dropdown menu-shop revo-mega-menu level1 revo-menu-img">
-                                                                                                <a href="#"
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-img"><img
-                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                alt="Menu Image"
-                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
-                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
-                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                            class="menu-title">Shop</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu nav-level1 column-4">
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-shop-layouts">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Shop
-                                                                                                                    Layouts</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-left-sidebar-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=left&amp;product_col_large=3"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Left
-                                                                                                                            Sidebar
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-right-sidebar-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=right&amp;product_col_large=3"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Right
-                                                                                                                            Sidebar
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-full-width-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=full&amp;product_col_large=4"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Full
-                                                                                                                            Width
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-2-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=right&amp;product_col_large=2"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">2
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-3-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=left&amp;product_col_large=3"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">3
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-4-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?post_type=product&amp;sidebar_product=full&amp;product_col_large=4"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">4
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-shop-pages">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Shop
-                                                                                                                    Pages</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-shop">
-                                                                                                                <a
-                                                                                                                    href="shop/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Shop</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-cart">
-                                                                                                                <a
-                                                                                                                    href="cart/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Cart</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-wishlist">
-                                                                                                                <a
-                                                                                                                    href="wishlist/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Wishlist</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-checkout">
-                                                                                                                <a
-                                                                                                                    href="checkout/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Checkout</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-product-types">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Product
-                                                                                                                    Types</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-simple-product">
-                                                                                                                <a
-                                                                                                                    href="?product=ut-enim-ad-mini-2"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Simple
-                                                                                                                            Product</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-variable-product">
-                                                                                                                <a
-                                                                                                                    href="product/ut-labore-et-copy/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Variable
-                                                                                                                            Product</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-group-product">
-                                                                                                                <a
-                                                                                                                    href="?product=ipsa-quae-ab"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Group
-                                                                                                                            Product</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-external-affiliate-product">
-                                                                                                                <a
-                                                                                                                    href="?product=iste-natus-error-copy"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">External
-                                                                                                                            &#038;
-                                                                                                                            Affiliate
-                                                                                                                            product</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-swatch-variation-image">
-                                                                                                                <a
-                                                                                                                    href="product/swatch-variation-image/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Swatch
-                                                                                                                            Variation
-                                                                                                                            Image</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-product-pages">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Product
-                                                                                                                    Pages</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-full-width">
-                                                                                                                <a
-                                                                                                                    href="?product=ut-enim-ad-mini-2&amp;sidebar_product=full"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Full
-                                                                                                                            Width</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-left-sidebar">
-                                                                                                                <a
-                                                                                                                    href="?product=ut-enim-ad-mini-2&amp;sidebar_product=left"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Left
-                                                                                                                            Sidebar</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-right-sidebar">
-                                                                                                                <a
-                                                                                                                    href="?product=ut-enim-ad-mini-2&amp;sidebar_product=right"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Right
-                                                                                                                            Sidebar</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-featured-video">
-                                                                                                                <a
-                                                                                                                    href="product/ut-labore-et-3/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Featured
-                                                                                                                            video</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li
-                                                                                                class="dropdown menu-promotions revo-mega-menu level1 revo-menu-img">
-                                                                                                <a href="#"
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-img"><img
-                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                                alt="Menu Image"
-                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}" /><noscript><img
-                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}"
-                                                                                                                    alt="Menu Image" /></noscript></span><span
-                                                                                                            class="menu-title">Promotions</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu nav-level1 column-1">
-                                                                                                    <li
-                                                                                                        class="column-1 menu-accessories">
+                                                                <ul id="menu-primary-menu-1"
+                                                                    class="nav nav-pills nav-mega revo-mega revo-menures">
+                                                                    <li
+                                                                        class="active dropdown menu-home revo-mega-menu level1">
+                                                                        <a href=""
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-title">Home</span></span></a>
+                                                                        <ul class="dropdown-menu nav-level1 column-3">
+                                                                            <li
+                                                                                class="active dropdown-submenu column-3 menu-homepage-layouts">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">HomePage
+                                                                                            Layouts</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li
+                                                                                        class="active menu-market-place-1 revo-menu-img">
+                                                                                        <a href=""><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-img"><img
+                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                                        alt="Menu Image"
+                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}" /><noscript><img
+                                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}"
+                                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                                    class="menu-title">Market
+                                                                                                    Place
+                                                                                                    1</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-market-place-2">
+                                                                                        <a href="home-page-2/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Market
+                                                                                                    Place
+                                                                                                    2</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-market-place-3">
+                                                                                        <a href="home-page-13/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Market
+                                                                                                    Place
+                                                                                                    3</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-market-place-4">
+                                                                                        <a href="home-page-14/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Market
+                                                                                                    Place
+                                                                                                    4</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-hitech-store-1">
+                                                                                        <a href="home-page-5/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Hitech
+                                                                                                    Store
+                                                                                                    1</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-hitech-store-2">
+                                                                                        <a href="home-page-7/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Hitech
+                                                                                                    Store
+                                                                                                    2</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-hitech-store-3">
+                                                                                        <a href="demo5/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Hitech
+                                                                                                    Store
+                                                                                                    3</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-gift-store">
+                                                                                        <a href="demo2/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Gift
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-3 menu-homepage-layouts">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">HomePage
+                                                                                            Layouts</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-fashion-store-1">
+                                                                                        <a href="home-page-3/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Fashion
+                                                                                                    Store
+                                                                                                    1</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-fashion-store-2">
+                                                                                        <a href="home-page-6/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Fashion
+                                                                                                    Store
+                                                                                                    2</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-kids-fashion-store">
+                                                                                        <a href="home-page-4/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Kids
+                                                                                                    Fashion
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-furniture-store-1">
+                                                                                        <a href="home-page-8/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Furniture
+                                                                                                    Store
+                                                                                                    1</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-furniture-store-2">
+                                                                                        <a href="furniture-store-2/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Furniture
+                                                                                                    Store
+                                                                                                    2</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-furniture-store-3">
+                                                                                        <a href="demo4/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Furniture
+                                                                                                    Store
+                                                                                                    3</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-layout-christmas">
+                                                                                        <a href="demo9/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Layout
+                                                                                                    Christmas</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-gaming-gear revo-menu-img">
+                                                                                        <a href="demo12/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-img"><img
+                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                                        alt="Menu Image"
+                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
+                                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
+                                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                                    class="menu-title">Gaming
+                                                                                                    Gear</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-christmas-gift">
+                                                                                        <a href="demo6/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Christmas
+                                                                                                    Gift</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-3 menu-homepage-layouts">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">HomePage
+                                                                                            Layouts</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-music-store">
+                                                                                        <a href="home-page-11/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Music
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-cosmetic-store">
+                                                                                        <a href="home-page-9/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Cosmetic
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-organic-store">
+                                                                                        <a href="home-page-10/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Organic
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-watch-store revo-menu-img">
+                                                                                        <a href="demo8/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-img"><img
+                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                                        alt="Menu Image"
+                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
+                                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
+                                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                                    class="menu-title">Watch
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-book-store">
+                                                                                        <a href="demo7"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Book
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-vihicle-part-store">
+                                                                                        <a href="demo3/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vihicle
+                                                                                                    Part
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-medical-store revo-menu-img">
+                                                                                        <a href="demo10/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-img"><img
+                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                                        alt="Menu Image"
+                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
+                                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
+                                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                                    class="menu-title">Medical
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-flower-shop revo-menu-img">
+                                                                                        <a href="demo11/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-img"><img
+                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                                        alt="Menu Image"
+                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
+                                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
+                                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                                    class="menu-title">Flower
+                                                                                                    Shop</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li
+                                                                        class="dropdown menu-shop revo-mega-menu level1 revo-menu-img">
+                                                                        <a href="#"
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-img"><img
+                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                        alt="Menu Image"
+                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}" /><noscript><img
+                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-new.png') }}"
+                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                    class="menu-title">Shop</span></span></a>
+                                                                        <ul class="dropdown-menu nav-level1 column-4">
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-shop-layouts">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Shop
+                                                                                            Layouts</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-left-sidebar-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=left&amp;product_col_large=3"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Left
+                                                                                                    Sidebar
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-right-sidebar-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=right&amp;product_col_large=3"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Right
+                                                                                                    Sidebar
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-full-width-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=full&amp;product_col_large=4"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Full
+                                                                                                    Width
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-2-columns-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=right&amp;product_col_large=2"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">2
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-3-columns-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=left&amp;product_col_large=3"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">3
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-4-columns-grid">
+                                                                                        <a
+                                                                                            href="?post_type=product&amp;sidebar_product=full&amp;product_col_large=4"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">4
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-shop-pages">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Shop
+                                                                                            Pages</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-shop">
+                                                                                        <a href="shop/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Shop</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-cart">
+                                                                                        <a href="cart/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Cart</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-wishlist">
+                                                                                        <a href="wishlist/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Wishlist</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-checkout">
+                                                                                        <a href="checkout/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Checkout</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-product-types">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Product
+                                                                                            Types</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-simple-product">
+                                                                                        <a
+                                                                                            href="?product=ut-enim-ad-mini-2"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Simple
+                                                                                                    Product</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-variable-product">
+                                                                                        <a
+                                                                                            href="product/ut-labore-et-copy/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Variable
+                                                                                                    Product</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-group-product">
+                                                                                        <a
+                                                                                            href="?product=ipsa-quae-ab"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Group
+                                                                                                    Product</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-external-affiliate-product">
+                                                                                        <a
+                                                                                            href="?product=iste-natus-error-copy"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">External
+                                                                                                    &#038;
+                                                                                                    Affiliate
+                                                                                                    product</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-swatch-variation-image">
+                                                                                        <a
+                                                                                            href="product/swatch-variation-image/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Swatch
+                                                                                                    Variation
+                                                                                                    Image</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-product-pages">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Product
+                                                                                            Pages</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-full-width">
+                                                                                        <a
+                                                                                            href="?product=ut-enim-ad-mini-2&amp;sidebar_product=full"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Full
+                                                                                                    Width</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-left-sidebar">
+                                                                                        <a
+                                                                                            href="?product=ut-enim-ad-mini-2&amp;sidebar_product=left"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Left
+                                                                                                    Sidebar</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-right-sidebar">
+                                                                                        <a
+                                                                                            href="?product=ut-enim-ad-mini-2&amp;sidebar_product=right"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Right
+                                                                                                    Sidebar</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-featured-video">
+                                                                                        <a
+                                                                                            href="product/ut-labore-et-3/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Featured
+                                                                                                    video</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li
+                                                                        class="dropdown menu-promotions revo-mega-menu level1 revo-menu-img">
+                                                                        <a href="#"
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-img"><img
+                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                                                                                        alt="Menu Image"
+                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}" /><noscript><img
+                                                                                            src="{{ asset('wp-content/uploads/2016/09/icon-hot.png') }}"
+                                                                                            alt="Menu Image" /></noscript></span><span
+                                                                                    class="menu-title">Promotions</span></span></a>
+                                                                        <ul class="dropdown-menu nav-level1 column-1">
+                                                                            <li class="column-1 menu-accessories">
+                                                                                <div class="container">
+                                                                                    <div data-elementor-type="wp-page"
+                                                                                        data-elementor-id="769"
+                                                                                        class="elementor elementor-769"
+                                                                                        data-elementor-settings="[]">
+                                                                                        <div class="elementor-inner">
+                                                                                            <div
+                                                                                                class="elementor-section-wrap">
+                                                                                                <section
+                                                                                                    class="elementor-section elementor-top-section elementor-element elementor-element-3f2d3fad mega-menu elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                                                                                    data-id="3f2d3fad"
+                                                                                                    data-element_type="section">
+                                                                                                    <div
+                                                                                                        class="elementor-container elementor-column-gap-default">
                                                                                                         <div
-                                                                                                            class="container">
-                                                                                                            <div data-elementor-type="wp-page"
-                                                                                                                data-elementor-id="769"
-                                                                                                                class="elementor elementor-769"
-                                                                                                                data-elementor-settings="[]">
+                                                                                                            class="elementor-row">
+                                                                                                            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6e5f2894 wrap-content"
+                                                                                                                data-id="6e5f2894"
+                                                                                                                data-element_type="column">
                                                                                                                 <div
-                                                                                                                    class="elementor-inner">
+                                                                                                                    class="elementor-column-wrap elementor-element-populated">
                                                                                                                     <div
-                                                                                                                        class="elementor-section-wrap">
-                                                                                                                        <section
-                                                                                                                            class="elementor-section elementor-top-section elementor-element elementor-element-3f2d3fad mega-menu elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                                                                                                            data-id="3f2d3fad"
-                                                                                                                            data-element_type="section">
+                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                        <div class="elementor-element elementor-element-48019c elementor-widget elementor-widget-image"
+                                                                                                                            data-id="48019c"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="image.default">
                                                                                                                             <div
-                                                                                                                                class="elementor-container elementor-column-gap-default">
+                                                                                                                                class="elementor-widget-container">
                                                                                                                                 <div
-                                                                                                                                    class="elementor-row">
-                                                                                                                                    <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6e5f2894 wrap-content"
-                                                                                                                                        data-id="6e5f2894"
-                                                                                                                                        data-element_type="column">
-                                                                                                                                        <div
-                                                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                                                            <div
-                                                                                                                                                class="elementor-widget-wrap">
-                                                                                                                                                <div class="elementor-element elementor-element-48019c elementor-widget elementor-widget-image"
-                                                                                                                                                    data-id="48019c"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="image.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <div
-                                                                                                                                                            class="elementor-image">
-                                                                                                                                                            <img width="255"
-                                                                                                                                                                height="170"
-                                                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
-                                                                                                                                                                class="attachment-full size-full"
-                                                                                                                                                                alt=""
-                                                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img3.jpg') }}" /><noscript><img
-                                                                                                                                                                    width="255"
-                                                                                                                                                                    height="170"
-                                                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/menu-img3.jpg') }}"
-                                                                                                                                                                    class="attachment-full size-full"
-                                                                                                                                                                    alt="" /></noscript>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-36edc830 elementor-widget elementor-widget-heading"
-                                                                                                                                                    data-id="36edc830"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="heading.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <h2
-                                                                                                                                                            class="elementor-heading-title elementor-size-default">
-                                                                                                                                                            Accessories
-                                                                                                                                                        </h2>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-25fc683c elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                                                                                                    data-id="25fc683c"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="icon-list.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <ul
-                                                                                                                                                            class="elementor-icon-list-items">
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Maybellin
-                                                                                                                                                                        face
-                                                                                                                                                                        power</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Chanel
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Mascara
-                                                                                                                                                                        for
-                                                                                                                                                                        full
-                                                                                                                                                                        lashes
-                                                                                                                                                                        Mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Offical
-                                                                                                                                                                        Cosme-decom
-                                                                                                                                                                        Maybellin</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Lady
-                                                                                                                                                                        Dior
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                        </ul>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-35ae492c"
-                                                                                                                                        data-id="35ae492c"
-                                                                                                                                        data-element_type="column">
-                                                                                                                                        <div
-                                                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                                                            <div
-                                                                                                                                                class="elementor-widget-wrap">
-                                                                                                                                                <div class="elementor-element elementor-element-46db5d2f elementor-widget elementor-widget-image"
-                                                                                                                                                    data-id="46db5d2f"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="image.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <div
-                                                                                                                                                            class="elementor-image">
-                                                                                                                                                            <img width="255"
-                                                                                                                                                                height="170"
-                                                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
-                                                                                                                                                                class="attachment-full size-full"
-                                                                                                                                                                alt=""
-                                                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img4.jpg') }}" /><noscript><img
-                                                                                                                                                                    width="255"
-                                                                                                                                                                    height="170"
-                                                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/menu-img4.jpg') }}"
-                                                                                                                                                                    class="attachment-full size-full"
-                                                                                                                                                                    alt="" /></noscript>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-382f29d elementor-widget elementor-widget-heading"
-                                                                                                                                                    data-id="382f29d"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="heading.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <h2
-                                                                                                                                                            class="elementor-heading-title elementor-size-default">
-                                                                                                                                                            women
-                                                                                                                                                            collections
-                                                                                                                                                        </h2>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-c5db0b2 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                                                                                                    data-id="c5db0b2"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="icon-list.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <ul
-                                                                                                                                                            class="elementor-icon-list-items">
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Maybellin
-                                                                                                                                                                        face
-                                                                                                                                                                        power</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Chanel
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Mascara
-                                                                                                                                                                        for
-                                                                                                                                                                        full
-                                                                                                                                                                        lashes
-                                                                                                                                                                        Mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Offical
-                                                                                                                                                                        Cosme-decom
-                                                                                                                                                                        Maybellin</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Lady
-                                                                                                                                                                        Dior
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                        </ul>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6b02b31b"
-                                                                                                                                        data-id="6b02b31b"
-                                                                                                                                        data-element_type="column">
-                                                                                                                                        <div
-                                                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                                                            <div
-                                                                                                                                                class="elementor-widget-wrap">
-                                                                                                                                                <div class="elementor-element elementor-element-36ac4ab1 elementor-widget elementor-widget-image"
-                                                                                                                                                    data-id="36ac4ab1"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="image.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <div
-                                                                                                                                                            class="elementor-image">
-                                                                                                                                                            <img width="255"
-                                                                                                                                                                height="170"
-                                                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
-                                                                                                                                                                class="attachment-full size-full"
-                                                                                                                                                                alt=""
-                                                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img1.jpg') }}" /><noscript><img
-                                                                                                                                                                    width="255"
-                                                                                                                                                                    height="170"
-                                                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/menu-img1.jpg') }}"
-                                                                                                                                                                    class="attachment-full size-full"
-                                                                                                                                                                    alt="" /></noscript>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-177dbf0a elementor-widget elementor-widget-heading"
-                                                                                                                                                    data-id="177dbf0a"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="heading.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <h2
-                                                                                                                                                            class="elementor-heading-title elementor-size-default">
-                                                                                                                                                            furnitures
-                                                                                                                                                        </h2>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-34daff7d elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                                                                                                    data-id="34daff7d"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="icon-list.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <ul
-                                                                                                                                                            class="elementor-icon-list-items">
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Maybellin
-                                                                                                                                                                        face
-                                                                                                                                                                        power</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Chanel
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Mascara
-                                                                                                                                                                        for
-                                                                                                                                                                        full
-                                                                                                                                                                        lashes
-                                                                                                                                                                        Mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Offical
-                                                                                                                                                                        Cosme-decom
-                                                                                                                                                                        Maybellin</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Lady
-                                                                                                                                                                        Dior
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                        </ul>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                    <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-5a079e1d"
-                                                                                                                                        data-id="5a079e1d"
-                                                                                                                                        data-element_type="column">
-                                                                                                                                        <div
-                                                                                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                                                                                            <div
-                                                                                                                                                class="elementor-widget-wrap">
-                                                                                                                                                <div class="elementor-element elementor-element-16e81d83 elementor-widget elementor-widget-image"
-                                                                                                                                                    data-id="16e81d83"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="image.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <div
-                                                                                                                                                            class="elementor-image">
-                                                                                                                                                            <img width="255"
-                                                                                                                                                                height="170"
-                                                                                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
-                                                                                                                                                                class="attachment-full size-full"
-                                                                                                                                                                alt=""
-                                                                                                                                                                data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img2.jpg') }}" /><noscript><img
-                                                                                                                                                                    width="255"
-                                                                                                                                                                    height="170"
-                                                                                                                                                                    src="{{ asset('wp-content/uploads/2016/09/menu-img2.jpg') }}"
-                                                                                                                                                                    class="attachment-full size-full"
-                                                                                                                                                                    alt="" /></noscript>
-                                                                                                                                                        </div>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-66594752 elementor-widget elementor-widget-heading"
-                                                                                                                                                    data-id="66594752"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="heading.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <h2
-                                                                                                                                                            class="elementor-heading-title elementor-size-default">
-                                                                                                                                                            men
-                                                                                                                                                            collections
-                                                                                                                                                        </h2>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                                <div class="elementor-element elementor-element-448c2ad4 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                                                                                                    data-id="448c2ad4"
-                                                                                                                                                    data-element_type="widget"
-                                                                                                                                                    data-widget_type="icon-list.default">
-                                                                                                                                                    <div
-                                                                                                                                                        class="elementor-widget-container">
-                                                                                                                                                        <ul
-                                                                                                                                                            class="elementor-icon-list-items">
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Maybellin
-                                                                                                                                                                        face
-                                                                                                                                                                        power</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Chanel
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Mascara
-                                                                                                                                                                        for
-                                                                                                                                                                        full
-                                                                                                                                                                        lashes
-                                                                                                                                                                        Mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Offical
-                                                                                                                                                                        Cosme-decom
-                                                                                                                                                                        Maybellin</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                            <li
-                                                                                                                                                                class="elementor-icon-list-item">
-                                                                                                                                                                <a
-                                                                                                                                                                    href="#">
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-icon">
-                                                                                                                                                                        <i aria-hidden="true"
-                                                                                                                                                                            class="fas fa-dot-circle"></i>
-                                                                                                                                                                    </span>
-                                                                                                                                                                    <span
-                                                                                                                                                                        class="elementor-icon-list-text">Lady
-                                                                                                                                                                        Dior
-                                                                                                                                                                        mascara</span>
-                                                                                                                                                                </a>
-                                                                                                                                                            </li>
-                                                                                                                                                        </ul>
-                                                                                                                                                    </div>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
+                                                                                                                                    class="elementor-image">
+                                                                                                                                    <img width="255"
+                                                                                                                                        height="170"
+                                                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
+                                                                                                                                        class="attachment-full size-full"
+                                                                                                                                        alt=""
+                                                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img3.jpg') }}" /><noscript><img
+                                                                                                                                            width="255"
+                                                                                                                                            height="170"
+                                                                                                                                            src="{{ asset('wp-content/uploads/2016/09/menu-img3.jpg') }}"
+                                                                                                                                            class="attachment-full size-full"
+                                                                                                                                            alt="" /></noscript>
                                                                                                                                 </div>
                                                                                                                             </div>
-                                                                                                                        </section>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-36edc830 elementor-widget elementor-widget-heading"
+                                                                                                                            data-id="36edc830"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="heading.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <h2
+                                                                                                                                    class="elementor-heading-title elementor-size-default">
+                                                                                                                                    Accessories
+                                                                                                                                </h2>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-25fc683c elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                                                                            data-id="25fc683c"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="icon-list.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <ul
+                                                                                                                                    class="elementor-icon-list-items">
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Maybellin
+                                                                                                                                                face
+                                                                                                                                                power</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Chanel
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Mascara
+                                                                                                                                                for
+                                                                                                                                                full
+                                                                                                                                                lashes
+                                                                                                                                                Mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Offical
+                                                                                                                                                Cosme-decom
+                                                                                                                                                Maybellin</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Lady
+                                                                                                                                                Dior
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                </ul>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-35ae492c"
+                                                                                                                data-id="35ae492c"
+                                                                                                                data-element_type="column">
+                                                                                                                <div
+                                                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                                                    <div
+                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                        <div class="elementor-element elementor-element-46db5d2f elementor-widget elementor-widget-image"
+                                                                                                                            data-id="46db5d2f"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="image.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <div
+                                                                                                                                    class="elementor-image">
+                                                                                                                                    <img width="255"
+                                                                                                                                        height="170"
+                                                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
+                                                                                                                                        class="attachment-full size-full"
+                                                                                                                                        alt=""
+                                                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img4.jpg') }}" /><noscript><img
+                                                                                                                                            width="255"
+                                                                                                                                            height="170"
+                                                                                                                                            src="{{ asset('wp-content/uploads/2016/09/menu-img4.jpg') }}"
+                                                                                                                                            class="attachment-full size-full"
+                                                                                                                                            alt="" /></noscript>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-382f29d elementor-widget elementor-widget-heading"
+                                                                                                                            data-id="382f29d"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="heading.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <h2
+                                                                                                                                    class="elementor-heading-title elementor-size-default">
+                                                                                                                                    women
+                                                                                                                                    collections
+                                                                                                                                </h2>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-c5db0b2 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                                                                            data-id="c5db0b2"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="icon-list.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <ul
+                                                                                                                                    class="elementor-icon-list-items">
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Maybellin
+                                                                                                                                                face
+                                                                                                                                                power</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Chanel
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Mascara
+                                                                                                                                                for
+                                                                                                                                                full
+                                                                                                                                                lashes
+                                                                                                                                                Mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Offical
+                                                                                                                                                Cosme-decom
+                                                                                                                                                Maybellin</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Lady
+                                                                                                                                                Dior
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                </ul>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6b02b31b"
+                                                                                                                data-id="6b02b31b"
+                                                                                                                data-element_type="column">
+                                                                                                                <div
+                                                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                                                    <div
+                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                        <div class="elementor-element elementor-element-36ac4ab1 elementor-widget elementor-widget-image"
+                                                                                                                            data-id="36ac4ab1"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="image.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <div
+                                                                                                                                    class="elementor-image">
+                                                                                                                                    <img width="255"
+                                                                                                                                        height="170"
+                                                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
+                                                                                                                                        class="attachment-full size-full"
+                                                                                                                                        alt=""
+                                                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img1.jpg') }}" /><noscript><img
+                                                                                                                                            width="255"
+                                                                                                                                            height="170"
+                                                                                                                                            src="{{ asset('wp-content/uploads/2016/09/menu-img1.jpg') }}"
+                                                                                                                                            class="attachment-full size-full"
+                                                                                                                                            alt="" /></noscript>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-177dbf0a elementor-widget elementor-widget-heading"
+                                                                                                                            data-id="177dbf0a"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="heading.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <h2
+                                                                                                                                    class="elementor-heading-title elementor-size-default">
+                                                                                                                                    furnitures
+                                                                                                                                </h2>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-34daff7d elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                                                                            data-id="34daff7d"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="icon-list.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <ul
+                                                                                                                                    class="elementor-icon-list-items">
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Maybellin
+                                                                                                                                                face
+                                                                                                                                                power</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Chanel
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Mascara
+                                                                                                                                                for
+                                                                                                                                                full
+                                                                                                                                                lashes
+                                                                                                                                                Mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Offical
+                                                                                                                                                Cosme-decom
+                                                                                                                                                Maybellin</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Lady
+                                                                                                                                                Dior
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                </ul>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-5a079e1d"
+                                                                                                                data-id="5a079e1d"
+                                                                                                                data-element_type="column">
+                                                                                                                <div
+                                                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                                                    <div
+                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                        <div class="elementor-element elementor-element-16e81d83 elementor-widget elementor-widget-image"
+                                                                                                                            data-id="16e81d83"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="image.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <div
+                                                                                                                                    class="elementor-image">
+                                                                                                                                    <img width="255"
+                                                                                                                                        height="170"
+                                                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20255%20170'%3E%3C/svg%3E"
+                                                                                                                                        class="attachment-full size-full"
+                                                                                                                                        alt=""
+                                                                                                                                        data-lazy-src="{{ asset('wp-content/uploads/2016/09/menu-img2.jpg') }}" /><noscript><img
+                                                                                                                                            width="255"
+                                                                                                                                            height="170"
+                                                                                                                                            src="{{ asset('wp-content/uploads/2016/09/menu-img2.jpg') }}"
+                                                                                                                                            class="attachment-full size-full"
+                                                                                                                                            alt="" /></noscript>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-66594752 elementor-widget elementor-widget-heading"
+                                                                                                                            data-id="66594752"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="heading.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <h2
+                                                                                                                                    class="elementor-heading-title elementor-size-default">
+                                                                                                                                    men
+                                                                                                                                    collections
+                                                                                                                                </h2>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="elementor-element elementor-element-448c2ad4 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                                                                            data-id="448c2ad4"
+                                                                                                                            data-element_type="widget"
+                                                                                                                            data-widget_type="icon-list.default">
+                                                                                                                            <div
+                                                                                                                                class="elementor-widget-container">
+                                                                                                                                <ul
+                                                                                                                                    class="elementor-icon-list-items">
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Maybellin
+                                                                                                                                                face
+                                                                                                                                                power</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Chanel
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Mascara
+                                                                                                                                                for
+                                                                                                                                                full
+                                                                                                                                                lashes
+                                                                                                                                                Mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Offical
+                                                                                                                                                Cosme-decom
+                                                                                                                                                Maybellin</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                    <li
+                                                                                                                                        class="elementor-icon-list-item">
+                                                                                                                                        <a
+                                                                                                                                            href="#">
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-icon">
+                                                                                                                                                <i aria-hidden="true"
+                                                                                                                                                    class="fas fa-dot-circle"></i>
+                                                                                                                                            </span>
+                                                                                                                                            <span
+                                                                                                                                                class="elementor-icon-list-text">Lady
+                                                                                                                                                Dior
+                                                                                                                                                mascara</span>
+                                                                                                                                        </a>
+                                                                                                                                    </li>
+                                                                                                                                </ul>
+                                                                                                                            </div>
+                                                                                                                        </div>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li
-                                                                                                class="dropdown menu-blog revo-mega-menu level1">
-                                                                                                <a href="#"
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-title">Blog</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu nav-level1 column-4">
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-blog-layouts-1">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Blog
-                                                                                                                    Layouts
-                                                                                                                    1</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-left-sidebar-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Left
-                                                                                                                            Sidebar
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-right-sidebar-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=right"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Right
-                                                                                                                            Sidebar
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-full-width-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=full"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Full
-                                                                                                                            width
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-left-sidebar-list">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=list&amp;sidebar_blog=left"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Left
-                                                                                                                            Sidebar
-                                                                                                                            List</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-right-sidebar-list">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=list&amp;blog_column=2&amp;sidebar_blog=right"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Right
-                                                                                                                            Sidebar
-                                                                                                                            List</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-blog-layouts-2">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Blog
-                                                                                                                    Layouts
-                                                                                                                    2</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-2-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">2
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-3-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=3&amp;sidebar_blog=full"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">3
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-4-columns-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=30&amp;blog_layout=grid&amp;blog_column=4&amp;sidebar_blog=full"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">4
-                                                                                                                            Columns
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-masonry-grid">
-                                                                                                                <a
-                                                                                                                    href="?cat=106&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left_sidebar"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Masonry
-                                                                                                                            Grid</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-post-formats">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Post
-                                                                                                                    Formats</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-post-format-image">
-                                                                                                                <a
-                                                                                                                    href="?p=1629"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Post
-                                                                                                                            format
-                                                                                                                            image</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-post-format-video">
-                                                                                                                <a
-                                                                                                                    href="?p=1621"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Post
-                                                                                                                            format
-                                                                                                                            video</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-post-format-audio">
-                                                                                                                <a
-                                                                                                                    href="?p=1630"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Post
-                                                                                                                            format
-                                                                                                                            audio</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-post-format-gallery">
-                                                                                                                <a
-                                                                                                                    href="?p=1631"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Post
-                                                                                                                            format
-                                                                                                                            gallery</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-post-format-quote">
-                                                                                                                <a
-                                                                                                                    href="?p=1611"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Post
-                                                                                                                            format
-                                                                                                                            quote</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-post-layouts">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Post
-                                                                                                                    Layouts</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-full-width">
-                                                                                                                <a
-                                                                                                                    href="?p=1524&amp;sidebar_blog=full"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Full
-                                                                                                                            Width</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-left-sidebar">
-                                                                                                                <a
-                                                                                                                    href="?p=1524&amp;sidebar_blog=left"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Left
-                                                                                                                            Sidebar</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-right-sidebar">
-                                                                                                                <a
-                                                                                                                    href="?p=1524&amp;sidebar_blog=right"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Right
-                                                                                                                            Sidebar</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li
-                                                                                                class="dropdown menu-pages revo-menu-custom level1">
-                                                                                                <a href="#"
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-title">Pages</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu">
-                                                                                                    <li
-                                                                                                        class="column-1 menu-404-page">
-                                                                                                        <a
-                                                                                                            href="?page_id=1024"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">404
-                                                                                                                    Page</span></span></a>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="column-1 menu-portfolio-masonry">
-                                                                                                        <a
-                                                                                                            href="portfolio-masonry/"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Portfolio
-                                                                                                                    Masonry</span></span></a>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="column-1 menu-contact-us">
-                                                                                                        <a
-                                                                                                            href="contact-us/"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Contact
-                                                                                                                    Us</span></span></a>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="column-1 menu-about-us">
-                                                                                                        <a
-                                                                                                            href="about-us/"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">About
-                                                                                                                    Us</span></span></a>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                            <li
-                                                                                                class="gf dropdown menu-vendor revo-mega-menu level1">
-                                                                                                <a href="#"
-                                                                                                    class="item-link dropdown-toggle"
-                                                                                                    data-toogle="dropdown"><span
-                                                                                                        class="have-title"><span
-                                                                                                            class="menu-title">Vendor</span></span></a>
-                                                                                                <ul
-                                                                                                    class="dropdown-menu nav-level1 column-4">
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-dokan">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Dokan</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-login-register">
-                                                                                                                <a
-                                                                                                                    href="my-account/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Login/Register</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-dashboard">
-                                                                                                                <a
-                                                                                                                    href="dashboard"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Dashboard</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-my-orders">
-                                                                                                                <a
-                                                                                                                    href="my-order"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">My
-                                                                                                                            Orders</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-store-list">
-                                                                                                                <a
-                                                                                                                    href="store-listing/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Store
-                                                                                                                            List</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-store">
-                                                                                                                <a
-                                                                                                                    href="store/revo-store/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-product-vendor">
-                                                                                                                <a
-                                                                                                                    href="product/magni-dolores-eo/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Product
-                                                                                                                            Vendor</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-wc-vendor">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">Wc
-                                                                                                                    Vendor</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-login-register">
-                                                                                                                <a
-                                                                                                                    href="wc_vendor/my-account/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Login
-                                                                                                                            /
-                                                                                                                            Register</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-dashboard">
-                                                                                                                <a
-                                                                                                                    href="wc_vendor/vendor_dashboard/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Dashboard</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-orders">
-                                                                                                                <a
-                                                                                                                    href="wc_vendor/my-orders/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Orders</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-store">
-                                                                                                                <a
-                                                                                                                    href="wc_vendor/vendors/wpthemego_revo/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-product-vendor">
-                                                                                                                <a
-                                                                                                                    href="wc_vendor/product/labore-et-dolo/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Product
-                                                                                                                            Vendor</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-wc-marketplace">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">WC
-                                                                                                                    Marketplace</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-vendor-registration">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/vendor-registration/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Registration</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-dashboard">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/vendor-dashboard/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Dashboard</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-login">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/my-account/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Login</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-list">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/store-listing/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            List</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-store">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/vendor/wpthemego_revo/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-product-vendor">
-                                                                                                                <a
-                                                                                                                    href="wc_marketplace/product/atus-error-sit-2-2/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Product
-                                                                                                                            Vendor</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="dropdown-submenu column-4 menu-wcfm-marketplace">
-                                                                                                        <a
-                                                                                                            href="#"><span
-                                                                                                                class="have-title"><span
-                                                                                                                    class="menu-title">WCFM
-                                                                                                                    Marketplace</span></span></a>
-                                                                                                        <ul
-                                                                                                            class="dropdown-sub nav-level2">
-                                                                                                            <li
-                                                                                                                class="menu-vendor-registration">
-                                                                                                                <a
-                                                                                                                    href="wcfm_marketplace/vendor-register/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Registration</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-my-account">
-                                                                                                                <a
-                                                                                                                    href="wcfm_marketplace/my-account/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">My
-                                                                                                                            Account</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-store-manager">
-                                                                                                                <a
-                                                                                                                    href="wcfm_marketplace/store-manager/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Store
-                                                                                                                            Manager</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-store">
-                                                                                                                <a
-                                                                                                                    href="wcfm_marketplace/store/wpthemego-revo/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            Store</span></span></a>
-                                                                                                            </li>
-                                                                                                            <li
-                                                                                                                class="menu-vendor-product">
-                                                                                                                <a
-                                                                                                                    href="wcfm_marketplace/product/ded-quia-consequuntur/"><span
-                                                                                                                        class="have-title"><span
-                                                                                                                            class="menu-title">Vendor
-                                                                                                                            product</span></span></a>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </li>
-                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </section>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </nav>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li
+                                                                        class="dropdown menu-blog revo-mega-menu level1">
+                                                                        <a href="#"
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-title">Blog</span></span></a>
+                                                                        <ul class="dropdown-menu nav-level1 column-4">
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-blog-layouts-1">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Blog
+                                                                                            Layouts
+                                                                                            1</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-left-sidebar-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Left
+                                                                                                    Sidebar
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-right-sidebar-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=right"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Right
+                                                                                                    Sidebar
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-full-width-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=full"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Full
+                                                                                                    width
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-left-sidebar-list">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=list&amp;sidebar_blog=left"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Left
+                                                                                                    Sidebar
+                                                                                                    List</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-right-sidebar-list">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=list&amp;blog_column=2&amp;sidebar_blog=right"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Right
+                                                                                                    Sidebar
+                                                                                                    List</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-blog-layouts-2">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Blog
+                                                                                            Layouts
+                                                                                            2</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-2-columns-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">2
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-3-columns-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=3&amp;sidebar_blog=full"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">3
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-4-columns-grid">
+                                                                                        <a
+                                                                                            href="?cat=30&amp;blog_layout=grid&amp;blog_column=4&amp;sidebar_blog=full"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">4
+                                                                                                    Columns
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-masonry-grid">
+                                                                                        <a
+                                                                                            href="?cat=106&amp;blog_layout=grid&amp;blog_column=2&amp;sidebar_blog=left_sidebar"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Masonry
+                                                                                                    Grid</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-post-formats">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Post
+                                                                                            Formats</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-post-format-image">
+                                                                                        <a href="?p=1629"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Post
+                                                                                                    format
+                                                                                                    image</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-post-format-video">
+                                                                                        <a href="?p=1621"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Post
+                                                                                                    format
+                                                                                                    video</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-post-format-audio">
+                                                                                        <a href="?p=1630"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Post
+                                                                                                    format
+                                                                                                    audio</span></span></a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-post-format-gallery">
+                                                                                        <a href="?p=1631"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Post
+                                                                                                    format
+                                                                                                    gallery</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-post-format-quote">
+                                                                                        <a href="?p=1611"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Post
+                                                                                                    format
+                                                                                                    quote</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-post-layouts">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Post
+                                                                                            Layouts</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-full-width">
+                                                                                        <a
+                                                                                            href="?p=1524&amp;sidebar_blog=full"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Full
+                                                                                                    Width</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-left-sidebar">
+                                                                                        <a
+                                                                                            href="?p=1524&amp;sidebar_blog=left"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Left
+                                                                                                    Sidebar</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-right-sidebar">
+                                                                                        <a
+                                                                                            href="?p=1524&amp;sidebar_blog=right"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Right
+                                                                                                    Sidebar</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li
+                                                                        class="dropdown menu-pages revo-menu-custom level1">
+                                                                        <a href="#"
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-title">Pages</span></span></a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li class="column-1 menu-404-page">
+                                                                                <a href="?page_id=1024"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">404
+                                                                                            Page</span></span></a>
+                                                                            </li>
+                                                                            <li
+                                                                                class="column-1 menu-portfolio-masonry">
+                                                                                <a href="portfolio-masonry/"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Portfolio
+                                                                                            Masonry</span></span></a>
+                                                                            </li>
+                                                                            <li class="column-1 menu-contact-us">
+                                                                                <a href="contact-us/"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Contact
+                                                                                            Us</span></span></a>
+                                                                            </li>
+                                                                            <li class="column-1 menu-about-us">
+                                                                                <a href="about-us/"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">About
+                                                                                            Us</span></span></a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li
+                                                                        class="gf dropdown menu-vendor revo-mega-menu level1">
+                                                                        <a href="#"
+                                                                            class="item-link dropdown-toggle"
+                                                                            data-toogle="dropdown"><span
+                                                                                class="have-title"><span
+                                                                                    class="menu-title">Vendor</span></span></a>
+                                                                        <ul class="dropdown-menu nav-level1 column-4">
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-dokan">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Dokan</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-login-register">
+                                                                                        <a href="my-account/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Login/Register</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-dashboard">
+                                                                                        <a href="dashboard"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Dashboard</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-my-orders">
+                                                                                        <a href="my-order"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">My
+                                                                                                    Orders</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-store-list">
+                                                                                        <a href="store-listing/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Store
+                                                                                                    List</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-store">
+                                                                                        <a href="store/revo-store/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-product-vendor">
+                                                                                        <a
+                                                                                            href="product/magni-dolores-eo/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Product
+                                                                                                    Vendor</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-wc-vendor">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">Wc
+                                                                                            Vendor</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li class="menu-login-register">
+                                                                                        <a
+                                                                                            href="wc_vendor/my-account/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Login
+                                                                                                    /
+                                                                                                    Register</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-dashboard">
+                                                                                        <a
+                                                                                            href="wc_vendor/vendor_dashboard/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Dashboard</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-orders">
+                                                                                        <a
+                                                                                            href="wc_vendor/my-orders/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Orders</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-store">
+                                                                                        <a
+                                                                                            href="wc_vendor/vendors/wpthemego_revo/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-product-vendor">
+                                                                                        <a
+                                                                                            href="wc_vendor/product/labore-et-dolo/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Product
+                                                                                                    Vendor</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-wc-marketplace">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">WC
+                                                                                            Marketplace</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li
+                                                                                        class="menu-vendor-registration">
+                                                                                        <a
+                                                                                            href="wc_marketplace/vendor-registration/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Registration</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-dashboard">
+                                                                                        <a
+                                                                                            href="wc_marketplace/vendor-dashboard/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Dashboard</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-login">
+                                                                                        <a
+                                                                                            href="wc_marketplace/my-account/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Login</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-list">
+                                                                                        <a
+                                                                                            href="wc_marketplace/store-listing/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    List</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-store">
+                                                                                        <a
+                                                                                            href="wc_marketplace/vendor/wpthemego_revo/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-product-vendor">
+                                                                                        <a
+                                                                                            href="wc_marketplace/product/atus-error-sit-2-2/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Product
+                                                                                                    Vendor</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="dropdown-submenu column-4 menu-wcfm-marketplace">
+                                                                                <a href="#"><span
+                                                                                        class="have-title"><span
+                                                                                            class="menu-title">WCFM
+                                                                                            Marketplace</span></span></a>
+                                                                                <ul class="dropdown-sub nav-level2">
+                                                                                    <li
+                                                                                        class="menu-vendor-registration">
+                                                                                        <a
+                                                                                            href="wcfm_marketplace/vendor-register/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Registration</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-my-account">
+                                                                                        <a
+                                                                                            href="wcfm_marketplace/my-account/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">My
+                                                                                                    Account</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-store-manager">
+                                                                                        <a
+                                                                                            href="wcfm_marketplace/store-manager/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Store
+                                                                                                    Manager</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-store">
+                                                                                        <a
+                                                                                            href="wcfm_marketplace/store/wpthemego-revo/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    Store</span></span></a>
+                                                                                    </li>
+                                                                                    <li class="menu-vendor-product">
+                                                                                        <a
+                                                                                            href="wcfm_marketplace/product/ded-quia-consequuntur/"><span
+                                                                                                class="have-title"><span
+                                                                                                    class="menu-title">Vendor
+                                                                                                    product</span></span></a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e24f1bb contact-us-header"
-                                                        data-id="e24f1bb" data-element_type="column">
-                                                        <div
-                                                            class="elementor-column-wrap elementor-element-populated">
-                                                            <div class="elementor-widget-wrap">
-                                                                <div class="elementor-element elementor-element-e9b23a2 elementor-widget elementor-widget-wp-widget-custom_html"
-                                                                    data-id="e9b23a2" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-custom_html.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div class="textwidget custom-html-widget">
-                                                                            <div class="contact-us"> <span
-                                                                                    class="text">call us now:</span>
-                                                                                <span
-                                                                                    class="phone">0123-444-666</span><br>
-                                                                                Email:<a
-                                                                                    href="mailto:contact@revo.com">
-                                                                                    contact@revo.com</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e24f1bb contact-us-header"
+                                data-id="e24f1bb" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-e9b23a2 elementor-widget elementor-widget-wp-widget-custom_html"
+                                            data-id="e9b23a2" data-element_type="widget"
+                                            data-widget_type="wp-widget-custom_html.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="textwidget custom-html-widget">
+                                                    <div class="contact-us"> <span class="text">call us
+                                                            now:</span>
+                                                        <span class="phone">0123-444-666</span><br>
+                                                        Email:<a href="mailto:contact@revo.com">
+                                                            contact@revo.com</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
-                                        <section
-                                            class="elementor-section elementor-inner-section elementor-element elementor-element-710c0dd header-bottom elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                            data-id="710c0dd" data-element_type="section">
-                                            <div class="elementor-container elementor-column-gap-default">
-                                                <div class="elementor-row">
-                                                    {{-- <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c720ff9 vertical_megamenu vertical_megamenu-header"
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section
+                    class="elementor-section elementor-inner-section elementor-element elementor-element-710c0dd header-bottom elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="710c0dd" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            {{-- <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c720ff9 vertical_megamenu vertical_megamenu-header"
                                                         data-id="c720ff9" data-element_type="column">
                                                         <div class="elementor-column-wrap elementor-element-populated">
                                                             <div class="elementor-widget-wrap">
@@ -2207,198 +2043,158 @@
                                                             </div>
                                                         </div>
                                                     </div> --}}
-                                                    <div
-                                                        class="col-lg-3 col-md-3 col-sm-2 col-xs-2 vertical_megamenu vertical_megamenu-header pull-left">
-                                                        <div class="mega-left-title"><strong>All Departments</strong>
-                                                        </div>
-                                                        <div class="vc_wp_custommenu wpb_content_element">
-                                                            <div class="wrapper_vertical_menu vertical_megamenu"
-                                                                data-number="9" data-moretext="See More"
-                                                                data-lesstext="See Less">
-                                                                <div class="resmenu-container"><button
-                                                                        class="navbar-toggle bt_menusb"
-                                                                        type="button" data-target="#ResMenuSB">
-                                                                        <span class="sr-only">Toggle navigation</span>
-                                                                        <span class="icon-bar"></span>
-                                                                        <span class="icon-bar"></span>
-                                                                        <span class="icon-bar"></span>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-80b2503 search-cate"
-                                                        data-id="80b2503" data-element_type="column">
-                                                        <div
-                                                            class="elementor-column-wrap elementor-element-populated">
-                                                            <div class="elementor-widget-wrap">
-                                                                <div class="elementor-element elementor-element-02ae6fe elementor-widget elementor-widget-wp-widget-sw_ajax_woocommerce_search"
-                                                                    data-id="02ae6fe" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-sw_ajax_woocommerce_search.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div
-                                                                            class="revo_top swsearch-wrapper revo_search_default clearfix">
-                                                                            <div class="top-form top-search ">
-                                                                                <div class="topsearch-entry">
+                            <div
+                                class="col-lg-3 col-md-3 col-sm-2 col-xs-2 vertical_megamenu vertical_megamenu-header pull-left">
+                                <div class="mega-left-title"><strong>All Departments</strong>
+                                </div>
+                                <div class="vc_wp_custommenu wpb_content_element">
+                                    <div class="wrapper_vertical_menu vertical_megamenu" data-number="9"
+                                        data-moretext="See More" data-lesstext="See Less">
+                                        <div class="resmenu-container"><button class="navbar-toggle bt_menusb"
+                                                type="button" data-target="#ResMenuSB">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-80b2503 search-cate"
+                                data-id="80b2503" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-02ae6fe elementor-widget elementor-widget-wp-widget-sw_ajax_woocommerce_search"
+                                            data-id="02ae6fe" data-element_type="widget"
+                                            data-widget_type="wp-widget-sw_ajax_woocommerce_search.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="revo_top swsearch-wrapper revo_search_default clearfix">
+                                                    <div class="top-form top-search ">
+                                                        <div class="topsearch-entry">
 
-                                                                                    <form method="GET"
-                                                                                        action="">
-                                                                                        <div id="sw_woo_search_1"
-                                                                                            class="search input-group"
-                                                                                            data-height_image="50"
-                                                                                            data-width_image="50"
-                                                                                            data-show_image="1"
-                                                                                            data-show_price="1"
-                                                                                            data-character="3"
-                                                                                            data-limit="5"
-                                                                                            data-search_type="0">
-                                                                                            <div class="cat-wrapper">
-                                                                                                <label
-                                                                                                    class="label-search">
-                                                                                                    <select
-                                                                                                        name="category_product"
-                                                                                                        class="s1_option category-selection">
-                                                                                                        <option
-                                                                                                            value="">
-                                                                                                            All
-                                                                                                            Category
-                                                                                                        </option>
-                                                                                                        @php
-                                                                                                            $categories = App\Models\Category::where('status', 1)->get();
-                                                                                                        @endphp
-                                                                                                        @forelse ($categories as $category)
-                                                                                                            <option
-                                                                                                                value="{{ $category->slug }}">
-                                                                                                                {{ $category->category_name }}
-                                                                                                            </option>
-                                                                                                            @php
-                                                                                                                $sub_categories = App\Models\SubCategory::where(['status' => 1, 'cat_id' => $category->id])->get();
-                                                                                                            @endphp
-                                                                                                            @foreach ($sub_categories as $sub_category)
-                                                                                                                <option
-                                                                                                                    value="{{ $sub_category->slug }}">
-                                                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                                    ->{{ $sub_category->sub_category_name }}
-                                                                                                                </option>
-                                                                                                            @endforeach
+                                                            <form method="GET" action="">
+                                                                <div id="sw_woo_search_1" class="search input-group"
+                                                                    data-height_image="50" data-width_image="50"
+                                                                    data-show_image="1" data-show_price="1"
+                                                                    data-character="3" data-limit="5"
+                                                                    data-search_type="0">
+                                                                    <div class="cat-wrapper">
+                                                                        <label class="label-search">
+                                                                            <select name="category_product"
+                                                                                class="s1_option category-selection">
+                                                                                <option value="">
+                                                                                    All
+                                                                                    Category
+                                                                                </option>
+                                                                                @php
+                                                                                    $categories = App\Models\Category::where('status', 1)->get();
+                                                                                @endphp
+                                                                                @forelse ($categories as $category)
+                                                                                    <option
+                                                                                        value="{{ $category->slug }}">
+                                                                                        {{ $category->category_name }}
+                                                                                    </option>
+                                                                                    @php
+                                                                                        $sub_categories = App\Models\SubCategory::where(['status' => 1, 'cat_id' => $category->id])->get();
+                                                                                    @endphp
+                                                                                    @foreach ($sub_categories as $sub_category)
+                                                                                        <option
+                                                                                            value="{{ $sub_category->slug }}">
+                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                            ->{{ $sub_category->sub_category_name }}
+                                                                                        </option>
+                                                                                    @endforeach
 
-                                                                                                        @empty
-                                                                                                            <option
-                                                                                                                value="">
-                                                                                                                Category
-                                                                                                                not
-                                                                                                                found
-                                                                                                            </option>
-                                                                                                        @endforelse
+                                                                                @empty
+                                                                                    <option value="">
+                                                                                        Category
+                                                                                        not
+                                                                                        found
+                                                                                    </option>
+                                                                                @endforelse
 
-                                                                                                    </select>
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="content-search">
-                                                                                                <input
-                                                                                                    class="autosearch-input"
-                                                                                                    type="text"
-                                                                                                    value=""
-                                                                                                    size="50"
-                                                                                                    autocomplete="off"
-                                                                                                    placeholder="Search Item..."
-                                                                                                    name="s">
-                                                                                                <div
-                                                                                                    class="search-append">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <span
-                                                                                                class="input-group-btn">
-                                                                                                <button type="submit"
-                                                                                                    class="fa fa-search button-search-pro form-button"></button>
-                                                                                            </span>
-                                                                                            <input
-                                                                                                name="search_posttype"
-                                                                                                value="product"
-                                                                                                type="hidden">
-                                                                                        </div>
-                                                                                    </form>
-                                                                                </div>
-                                                                            </div>
+                                                                            </select>
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="content-search">
+                                                                        <input class="autosearch-input"
+                                                                            type="text" value=""
+                                                                            size="50" autocomplete="off"
+                                                                            placeholder="Search Item..."
+                                                                            name="s">
+                                                                        <div class="search-append">
                                                                         </div>
                                                                     </div>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="submit"
+                                                                            class="fa fa-search button-search-pro form-button"></button>
+                                                                    </span>
+                                                                    <input name="search_posttype" value="product"
+                                                                        type="hidden">
                                                                 </div>
-                                                            </div>
+                                                            </form>
                                                         </div>
                                                     </div>
-                                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-fc68eb3 header-right fix-width-auto fix-right"
-                                                        data-id="fc68eb3" data-element_type="column">
-                                                        <div
-                                                            class="elementor-column-wrap elementor-element-populated">
-                                                            <div class="elementor-widget-wrap">
-                                                                <div class="elementor-element elementor-element-86702c6 elementor-widget elementor-widget-wp-widget-nav_menu"
-                                                                    data-id="86702c6" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-nav_menu.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <ul id="menu-menu-wishlist-compare"
-                                                                            class="menu">
-                                                                            <li class="menu-wishlist"><a
-                                                                                    class="item-link"
-                                                                                    href="wishlist/"><span
-                                                                                        class="menu-title">Wishlist</span></a>
-                                                                            </li>
-                                                                            <li
-                                                                                class="yith-woocompare-open menu-compare">
-                                                                                <a class="item-link"
-                                                                                    href="#"><span
-                                                                                        class="menu-title">Compare</span></a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-fc68eb3 header-right fix-width-auto fix-right"
+                                data-id="fc68eb3" data-element_type="column">
+                                <div class="elementor-column-wrap elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-86702c6 elementor-widget elementor-widget-wp-widget-nav_menu"
+                                            data-id="86702c6" data-element_type="widget"
+                                            data-widget_type="wp-widget-nav_menu.default">
+                                            <div class="elementor-widget-container">
+                                                <ul id="menu-menu-wishlist-compare" class="menu">
+                                                    <li class="menu-wishlist"><a class="item-link"
+                                                            href="wishlist/"><span
+                                                                class="menu-title">Wishlist</span></a>
+                                                    </li>
+                                                    <li class="yith-woocompare-open menu-compare">
+                                                        <a class="item-link" href="#"><span
+                                                                class="menu-title">Compare</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-159a2d3 elementor-widget elementor-widget-wp-widget-sw_top"
+                                            data-id="159a2d3" data-element_type="widget"
+                                            data-widget_type="wp-widget-sw_top.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="top-form top-form-minicart revo-minicart pull-right">
+                                                    <div class="top-minicart-icon pull-right">
+                                                        <a class="cart-contents" href="cart/"
+                                                            title="View your shopping cart"><span
+                                                                class="minicart-number" id="cart_total_count">0</span></a>
+                                                    </div>
+                                                    <div class="wrapp-minicart">
+                                                        <div class="minicart-padding">
+                                                            <div class="number-item">There are
+                                                                <span class="item"><span id="cart_total_count"></span>
+                                                                    item(s)</span> in your cart
+                                                            </div>
+                                                            <ul class="minicart-content">
+                                                            </ul>
+                                                            <div class="cart-checkout">
+                                                                <div class="price-total">
+                                                                    <span class="label-price-total">Subtotal:</span>
+                                                                    <span class="price-total-w"><span
+                                                                            class="price"><span
+                                                                                class="woocommerce-Price-amount amount"><bdi><span
+                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span></span></span>
                                                                 </div>
-                                                                <div class="elementor-element elementor-element-159a2d3 elementor-widget elementor-widget-wp-widget-sw_top"
-                                                                    data-id="159a2d3" data-element_type="widget"
-                                                                    data-widget_type="wp-widget-sw_top.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div
-                                                                            class="top-form top-form-minicart revo-minicart pull-right">
-                                                                            <div class="top-minicart-icon pull-right">
-                                                                                <a class="cart-contents"
-                                                                                    href="cart/"
-                                                                                    title="View your shopping cart"><span
-                                                                                        class="minicart-number">0</span></a>
-                                                                            </div>
-                                                                            <div class="wrapp-minicart">
-                                                                                <div class="minicart-padding">
-                                                                                    <div class="number-item">There are
-                                                                                        <span class="item">0
-                                                                                            item(s)</span> in your cart
-                                                                                    </div>
-                                                                                    <ul class="minicart-content">
-                                                                                    </ul>
-                                                                                    <div class="cart-checkout">
-                                                                                        <div class="price-total">
-                                                                                            <span
-                                                                                                class="label-price-total">Subtotal:</span>
-                                                                                            <span
-                                                                                                class="price-total-w"><span
-                                                                                                    class="price"><span
-                                                                                                        class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                                class="woocommerce-Price-currencySymbol">&#36;</span>0.00</bdi></span></span></span>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="cart-links clearfix">
-                                                                                            <div class="cart-link"><a
-                                                                                                    href="cart/"
-                                                                                                    title="Cart">View
-                                                                                                    Cart</a></div>
-                                                                                            <div
-                                                                                                class="checkout-link">
-                                                                                                <a href="checkout/"
-                                                                                                    title="Check Out">Check
-                                                                                                    Out</a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                <div class="cart-links clearfix">
+                                                                    <div class="cart-link"><a href="cart/"
+                                                                            title="Cart">View
+                                                                            Cart</a></div>
+                                                                    <div class="checkout-link">
+                                                                        <a href="checkout/" title="Check Out">Check
+                                                                            Out</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2406,7 +2202,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -2415,6 +2211,12 @@
                 </section>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
     </div>
     <div class="container">
         {{ $slot }}
@@ -3085,7 +2887,7 @@
     <!-- Instagram Feed JS -->
 
     <a id="revo-totop" href="#"></a>
-   @livewire('user.auth.login')
+    @livewire('user.auth.login')
     <div class="sw-quickview-bottom">
         <div class="quickview-content" id="quickview_content">
             <a href="javascript:void(0)" class="quickview-close">x</a>
@@ -4562,6 +4364,27 @@
     <script src="{{ asset('wp-content/cache/min/1/86c2a2cddcd9d6ea7c0d17fdd36e6d73.js') }}" data-minify="1" defer>
     </script>
     @livewireScripts
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+
+        function getTotalCartCount(){
+            $.ajax({
+                type: 'GET',
+                url:"/user/cart/count",
+                success:(data)=>{
+                    console.log(data);
+                   $("#cart_total_count").text(data);
+                }
+            })
+        }
+        getTotalCartCount();
+        window.addEventListener('showCartCount', (e) => {
+            getTotalCartCount();
+        })
+
+        
+    </script>
 </body>
 
 </html>

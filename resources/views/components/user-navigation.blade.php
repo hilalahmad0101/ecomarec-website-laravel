@@ -18,9 +18,10 @@
         <li
             class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
             <a
-                href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/edit-address/">Addresses</a>
+                href="{{ route('user.addresses') }}">Addresses</a>
         </li>
         <li
+        
             class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
             <a
                 href="{{ route('user.account-details') }}">Account

@@ -646,357 +646,174 @@
                                         </div>
                                     </section> --}}
                                     <x-banner />
-                                    <x-category-products />
-                                    {{-- <section
-                                        class="elementor-section elementor-top-section elementor-element elementor-element-d5f182b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                        data-id="d5f182b" data-element_type="section">
+                                    <section
+                                        class="elementor-section elementor-top-section elementor-element elementor-element-dc06634 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                        data-id="dc06634" data-element_type="section">
                                         <div class="elementor-container elementor-column-gap-default">
                                             <div class="elementor-row">
-                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-822fbbc"
-                                                    data-id="822fbbc" data-element_type="column">
+                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcf345b"
+                                                    data-id="bcf345b" data-element_type="column">
                                                     <div class="elementor-column-wrap elementor-element-populated">
                                                         <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-4fda8e3 elementor-widget elementor-widget-wp-widget-sw_resp_slider"
-                                                                data-id="4fda8e3" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_resp_slider.default">
+                                                            <div class="elementor-element elementor-element-41c6b82 elementor-widget elementor-widget-wp-widget-sw_woo_tab_slider"
+                                                                data-id="41c6b82" data-element_type="widget"
+                                                                data-widget_type="wp-widget-sw_woo_tab_slider.default">
                                                                 <div class="elementor-widget-container">
-                                                                    <div class="clear"></div>
-                                                                    <div id="sw_reponsive_post_slider_7323682281663678713"
-                                                                        class="responsive-post-slider responsive-slider clearfix loading"
-                                                                        data-lg="3" data-md="3" data-sm="2"
-                                                                        data-xs="2" data-mobile="1"
-                                                                        data-speed="1000" data-scroll="1"
-                                                                        data-interval="5000" data-autoplay="false">
-                                                                        <div class="resp-slider-container">
-                                                                            <div class="block-title">
-                                                                                <h3 class="font-custome"><span>From
-                                                                                        our Blog</span></h3>
-                                                                            </div>
-                                                                            <div class="description"></div>
-                                                                            <div class="slider responsive">
-                                                                                <div
-                                                                                    class="item widget-pformat-detail">
-                                                                                    <div class="item-inner">
-                                                                                        <div class="item-detail">
-                                                                                            <div class="img_over">
-                                                                                                <a
-                                                                                                    href="donec-massa-pellentesque-placerat-nisl-laoreet-placerat/">
-                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                        alt="Donec massa pellentes"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/b2-370x240.jpg')}}"><noscript><img
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/b2-370x240.jpg')}}"
-                                                                                                            alt="Donec massa pellentes"></noscript>
-                                                                                                </a>
-                                                                                                <div
-                                                                                                    class="entry-date">
-                                                                                                    <div
-                                                                                                        class="day-time">
-                                                                                                        03</div>
-                                                                                                    <div
-                                                                                                        class="month-time">
-                                                                                                        Oct</div>
-                                                                                                </div>
-                                                                                            </div>
+                                                                    <div class="sw-wootab-slider sw-ajax sw-woo-tab-default"
+                                                                        id="woo_tab_wp-widget-sw_woo_tab_slider5039975331663678713">
+                                                                        <div class="resp-tab"
+                                                                            style="position:relative;">
+                                                                            <div
+                                                                                class="category-slider-content  clearfix">
+                                                                                <!-- Get child category -->
+                                                                                <div class="box-title">
+                                                                                    <h3>Fashion</h3>
+                                                                                </div>
+
+
+                                                                                <button
+                                                                                    class="button-collapse collapsed pull-right"
+                                                                                    type="button"
+                                                                                    data-toggle="collapse"
+                                                                                    data-target="#nav_wp-widget-sw_woo_tab_slider2821402051663678713"
+                                                                                    aria-expanded="false">
+                                                                                </button>
+                                                                                {{-- <div class="nav-tabs-select">
+                                                <ul class="nav nav-tabs"
+                                                    id="nav_wp-widget-sw_woo_tab_slider2821402051663678713">
+                                                    <li class="active loaded">
+                                                        <a href="#latest_wp-widget-sw_woo_tab_slider6768785541663678713"
+                                                            data-type="so_ajax" data-layout="default" data-row="2"
+                                                            data-length="0"
+                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
+                                                            data-category="fashion" data-toggle="tab"
+                                                            data-sorder="latest" data-catload="ajax" data-number="12"
+                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
+                                                            data-mobile="2" data-speed="1000" data-scroll="1"
+                                                            data-interval="5000" data-autoplay="false">
+                                                            Latest Products </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#bestsales_wp-widget-sw_woo_tab_slider6768785541663678713"
+                                                            data-type="so_ajax" data-layout="default" data-row="2"
+                                                            data-length="0"
+                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
+                                                            data-category="fashion" data-toggle="tab"
+                                                            data-sorder="bestsales" data-catload="ajax" data-number="12"
+                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
+                                                            data-mobile="2" data-speed="1000" data-scroll="1"
+                                                            data-interval="5000" data-autoplay="false">
+                                                            Best Selling
+                                                            Products </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#rating_wp-widget-sw_woo_tab_slider6768785541663678713"
+                                                            data-type="so_ajax" data-layout="default" data-row="2"
+                                                            data-length="0"
+                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
+                                                            data-category="fashion" data-toggle="tab"
+                                                            data-sorder="rating" data-catload="ajax" data-number="12"
+                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
+                                                            data-mobile="2" data-speed="1000" data-scroll="1"
+                                                            data-interval="5000" data-autoplay="false">
+                                                            Top Rating Products
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#featured_wp-widget-sw_woo_tab_slider6768785541663678713"
+                                                            data-type="so_ajax" data-layout="default" data-row="2"
+                                                            data-length="0"
+                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
+                                                            data-category="fashion" data-toggle="tab"
+                                                            data-sorder="featured" data-catload="ajax" data-number="12"
+                                                            data-lg="5" data-md="4" data-sm="3"
+                                                            data-xs="2" data-mobile="2" data-speed="1000"
+                                                            data-scroll="1" data-interval="5000"
+                                                            data-autoplay="false">
+                                                            Featured Products
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div> --}}
+                                                                                <!-- End get child category -->
+                                                                                <div class="tab-content clearfix">
+                                                                                    <div
+                                                                                        class="categories-image clearfix">
+                                                                                        <div class="item-image">
+                                                                                            <!-- Banner -->
                                                                                             <div
-                                                                                                class="entry-content">
-                                                                                                <div
-                                                                                                    class="item-title">
-                                                                                                    <h4><a
-                                                                                                            href="donec-massa-pellentesque-placerat-nisl-laoreet-placerat/">Donec
-                                                                                                            massa
-                                                                                                            pellentes</a>
-                                                                                                    </h4>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="entry-meta">
+                                                                                                class="banner-category clearfix">
+                                                                                                <div id="banner_sw_woo_tab_slider_1"
+                                                                                                    class="banner-slider"
+                                                                                                    data-lg="1"
+                                                                                                    data-md="1"
+                                                                                                    data-sm="1"
+                                                                                                    data-xs="1"
+                                                                                                    data-mobile="1"
+                                                                                                    data-dots="true"
+                                                                                                    data-arrow="false"
+                                                                                                    data-fade="false">
                                                                                                     <div
-                                                                                                        class="entry-comment">
-                                                                                                        <i
-                                                                                                            class="fa fa-comments"></i>0
-                                                                                                        Comments
+                                                                                                        class="banner-responsive">
+                                                                                                        <div
+                                                                                                            class="pull-left">
+                                                                                                            <a
+                                                                                                                href="#"><img
+                                                                                                                    width="196"
+                                                                                                                    height="544"
+                                                                                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20196%20544'%3E%3C/svg%3E"
+                                                                                                                    class="attachment-full size-full"
+                                                                                                                    alt=""
+                                                                                                                    data-lazy-srcset="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }} 196w, {{ asset('wp-content/uploads/2016/10/fashion2-108x300.jpg') }} 108w"
+                                                                                                                    data-lazy-sizes="(max-width: 196px) 100vw, 196px"
+                                                                                                                    data-lazy-src="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }}" /><noscript><img
+                                                                                                                        width="196"
+                                                                                                                        height="544"
+                                                                                                                        src="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }}"
+                                                                                                                        class="attachment-full size-full"
+                                                                                                                        alt=""
+                                                                                                                        srcset="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }} 196w, {{ asset('wp-content/uploads/2016/10/fashion2-108x300.jpg') }} 108w"
+                                                                                                                        sizes="(max-width: 196px) 100vw, 196px" /></noscript></a>
+                                                                                                        </div>
                                                                                                     </div>
-                                                                                                    <div
-                                                                                                        class="entry-tag">
-                                                                                                        <i
-                                                                                                            class="fa fa-tags"></i><a
-                                                                                                            href="tag/blog/"
-                                                                                                            rel="tag">Blog</a>,
-                                                                                                        <a href="tag/doec/"
-                                                                                                            rel="tag">dỏec</a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="readmore">
-                                                                                                    <i
-                                                                                                        class="fa fa-caret-right"></i><a
-                                                                                                        href="donec-massa-pellentesque-placerat-nisl-laoreet-placerat/"
-                                                                                                        title="View more">Read
-                                                                                                        more</a>
                                                                                                 </div>
                                                                                             </div>
+
                                                                                         </div>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="item widget-pformat-detail">
-                                                                                    <div class="item-inner">
-                                                                                        <div class="item-detail">
-                                                                                            <div class="img_over">
-                                                                                                <a
-                                                                                                    href="duis-aute-irure-dolor/">
-                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                        alt="Duis aute irure dolor in"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/b10-370x240.jpg')}}"><noscript><img
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/b10-370x240.jpg')}}"
-                                                                                                            alt="Duis aute irure dolor in"></noscript>
-                                                                                                </a>
-                                                                                                <div
-                                                                                                    class="entry-date">
-                                                                                                    <div
-                                                                                                        class="day-time">
-                                                                                                        03</div>
-                                                                                                    <div
-                                                                                                        class="month-time">
-                                                                                                        Oct</div>
-                                                                                                </div>
-                                                                                            </div>
+
+
+                                                                                    <!-- Product tab slider -->
+                                                                                    <div class="tab-pane active"
+                                                                                        id="latest_wp-widget-sw_woo_tab_slider6768785541663678713">
+                                                                                        <div id="tab_latest_wp-widget-sw_woo_tab_slider6768785541663678713"
+                                                                                            class="woo-tab-container-slider responsive-slider loading clearfix"
+                                                                                            data-lg="5"
+                                                                                            data-md="4"
+                                                                                            data-sm="3"
+                                                                                            data-xs="2"
+                                                                                            data-mobile="2"
+                                                                                            data-speed="1000"
+                                                                                            data-scroll="1"
+                                                                                            data-interval="5000"
+                                                                                            data-autoplay="false"
+                                                                                            data-img_w="300"
+                                                                                            data-img_h="300"
+                                                                                            data-crop="false">
                                                                                             <div
-                                                                                                class="entry-content">
+                                                                                                class="resp-slider-container">
                                                                                                 <div
-                                                                                                    class="item-title">
-                                                                                                    <h4><a
-                                                                                                            href="duis-aute-irure-dolor/">Duis
-                                                                                                            aute
-                                                                                                            irure
-                                                                                                            dolor
-                                                                                                            in</a>
-                                                                                                    </h4>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="entry-meta">
-                                                                                                    <div
-                                                                                                        class="entry-comment">
-                                                                                                        <i
-                                                                                                            class="fa fa-comments"></i>0
-                                                                                                        Comments
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="entry-tag">
-                                                                                                        <i
-                                                                                                            class="fa fa-tags"></i><a
-                                                                                                            href="tag/blog/"
-                                                                                                            rel="tag">Blog</a>,
-                                                                                                        <a href="tag/fashion/"
-                                                                                                            rel="tag">Fashion</a>,
-                                                                                                        <a href="tag/women/"
-                                                                                                            rel="tag">Women</a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="readmore">
-                                                                                                    <i
-                                                                                                        class="fa fa-caret-right"></i><a
-                                                                                                        href="duis-aute-irure-dolor/"
-                                                                                                        title="View more">Read
-                                                                                                        more</a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="item widget-pformat-detail">
-                                                                                    <div class="item-inner">
-                                                                                        <div class="item-detail">
-                                                                                            <div class="img_over">
-                                                                                                <a
-                                                                                                    href="quis-nostrud-exer-citation/">
-                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                        alt="Sunt in culpa qui officia"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/b8-370x240.jpg')}}"><noscript><img
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/b8-370x240.jpg')}}"
-                                                                                                            alt="Sunt in culpa qui officia"></noscript>
-                                                                                                </a>
-                                                                                                <div
-                                                                                                    class="entry-date">
-                                                                                                    <div
-                                                                                                        class="day-time">
-                                                                                                        03</div>
-                                                                                                    <div
-                                                                                                        class="month-time">
-                                                                                                        Oct</div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="entry-content">
-                                                                                                <div
-                                                                                                    class="item-title">
-                                                                                                    <h4><a
-                                                                                                            href="quis-nostrud-exer-citation/">Sunt
-                                                                                                            in culpa
-                                                                                                            qui
-                                                                                                            officia</a>
-                                                                                                    </h4>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="entry-meta">
-                                                                                                    <div
-                                                                                                        class="entry-comment">
-                                                                                                        <i
-                                                                                                            class="fa fa-comments"></i>0
-                                                                                                        Comments
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="entry-tag">
-                                                                                                        <i
-                                                                                                            class="fa fa-tags"></i><a
-                                                                                                            href="tag/electronic/"
-                                                                                                            rel="tag">electronic</a>,
-                                                                                                        <a href="tag/lg/"
-                                                                                                            rel="tag">LG</a>,
-                                                                                                        <a href="tag/smartphone/"
-                                                                                                            rel="tag">smartphone</a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="readmore">
-                                                                                                    <i
-                                                                                                        class="fa fa-caret-right"></i><a
-                                                                                                        href="quis-nostrud-exer-citation/"
-                                                                                                        title="View more">Read
-                                                                                                        more</a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="item widget-pformat-detail">
-                                                                                    <div class="item-inner">
-                                                                                        <div class="item-detail">
-                                                                                            <div class="img_over">
-                                                                                                <a
-                                                                                                    href="excepteur-sint-occaecat-cup/">
-                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                        alt="Excepteur sint occaecat cup"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/b9-370x240.jpg')}}"><noscript><img
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/b9-370x240.jpg')}}"
-                                                                                                            alt="Excepteur sint occaecat cup"></noscript>
-                                                                                                </a>
-                                                                                                <div
-                                                                                                    class="entry-date">
-                                                                                                    <div
-                                                                                                        class="day-time">
-                                                                                                        03</div>
-                                                                                                    <div
-                                                                                                        class="month-time">
-                                                                                                        Oct</div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="entry-content">
-                                                                                                <div
-                                                                                                    class="item-title">
-                                                                                                    <h4><a
-                                                                                                            href="excepteur-sint-occaecat-cup/">Excepteur
-                                                                                                            sint
-                                                                                                            occaecat
-                                                                                                            cup</a>
-                                                                                                    </h4>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="entry-meta">
-                                                                                                    <div
-                                                                                                        class="entry-comment">
-                                                                                                        <i
-                                                                                                            class="fa fa-comments"></i>0
-                                                                                                        Comments
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="entry-tag">
-                                                                                                        <i
-                                                                                                            class="fa fa-tags"></i><a
-                                                                                                            href="tag/blog/"
-                                                                                                            rel="tag">Blog</a>,
-                                                                                                        <a href="tag/fashion/"
-                                                                                                            rel="tag">Fashion</a>,
-                                                                                                        <a href="tag/women/"
-                                                                                                            rel="tag">Women</a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="readmore">
-                                                                                                    <i
-                                                                                                        class="fa fa-caret-right"></i><a
-                                                                                                        href="excepteur-sint-occaecat-cup/"
-                                                                                                        title="View more">Read
-                                                                                                        more</a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="item widget-pformat-detail">
-                                                                                    <div class="item-inner">
-                                                                                        <div class="item-detail">
-                                                                                            <div class="img_over">
-                                                                                                <a
-                                                                                                    href="ut-enim-ad-minim-veniam/">
-                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
-                                                                                                        alt="Ut enim ad minim veniam"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/b7-370x240.jpg')}}"><noscript><img
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/b7-370x240.jpg')}}"
-                                                                                                            alt="Ut enim ad minim veniam"></noscript>
-                                                                                                </a>
-                                                                                                <div
-                                                                                                    class="entry-date">
-                                                                                                    <div
-                                                                                                        class="day-time">
-                                                                                                        14</div>
-                                                                                                    <div
-                                                                                                        class="month-time">
-                                                                                                        Oct</div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="entry-content">
-                                                                                                <div
-                                                                                                    class="item-title">
-                                                                                                    <h4><a
-                                                                                                            href="ut-enim-ad-minim-veniam/">Ut
-                                                                                                            enim ad
-                                                                                                            minim
-                                                                                                            veniam</a>
-                                                                                                    </h4>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="entry-meta">
-                                                                                                    <div
-                                                                                                        class="entry-comment">
-                                                                                                        <i
-                                                                                                            class="fa fa-comments"></i>0
-                                                                                                        Comments
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="entry-tag">
-                                                                                                        <i
-                                                                                                            class="fa fa-tags"></i><a
-                                                                                                            href="tag/electronic/"
-                                                                                                            rel="tag">electronic</a>,
-                                                                                                        <a href="tag/samsung/"
-                                                                                                            rel="tag">samsung</a>,
-                                                                                                        <a href="tag/smartphone/"
-                                                                                                            rel="tag">smartphone</a>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="readmore">
-                                                                                                    <i
-                                                                                                        class="fa fa-caret-right"></i><a
-                                                                                                        href="ut-enim-ad-minim-veniam/"
-                                                                                                        title="View more">Read
-                                                                                                        more</a>
+                                                                                                    class="slider responsive">
+                                                                                                    @foreach ($products as $product)
+                                                                                                    <x-category-products
+                                                                                                    id="{{ $product->id }}"
+                                                                                                    title="{{ $product->product_title }}"
+                                                                                                    image="{{ $product->image }}"
+                                                                                                    sale_price="{{ $product->sale_price }}"
+                                                                                                    price="{{ $product->price }}"
+                                                                                                     />
+                                                                                                    @endforeach
+                                                                                                  
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -1012,209 +829,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </section> --}}
-                                    {{-- <section
-                                        class="elementor-section elementor-top-section elementor-element elementor-element-c6dae58 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                        data-id="c6dae58" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-row">
-                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e9be5cb"
-                                                    data-id="e9be5cb" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-7193e22 elementor-widget elementor-widget-wp-widget-sw_brand"
-                                                                data-id="7193e22" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_brand.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div id="wp-widget-sw_brand"
-                                                                        class="responsive-slider sw-brand-container-slider  loading clearfix"
-                                                                        data-lg="6" data-md="5" data-sm="4"
-                                                                        data-xs="3" data-mobile="3"
-                                                                        data-speed="1000" data-scroll="1"
-                                                                        data-interval="5000" data-autoplay="false">
-                                                                        <div class="resp-slider-container">
-                                                                            <div class="slider responsive">
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-1/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-6.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-6.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-10/"><img
-                                                                                                width="170"
-                                                                                                height="65"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2065'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2017/02/brand-3.jpg')}}" /><noscript><img
-                                                                                                    width="170"
-                                                                                                    height="65"
-                                                                                                    src="{{asset('wp-content/uploads/2017/02/brand-3.jpg')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-11/"><img
-                                                                                                width="170"
-                                                                                                height="64"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2064'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2017/02/brand-4.jpg')}}" /><noscript><img
-                                                                                                    width="170"
-                                                                                                    height="64"
-                                                                                                    src="{{asset('wp-content/uploads/2017/02/brand-4.jpg')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-12/"><img
-                                                                                                width="170"
-                                                                                                height="65"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2065'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2017/02/brand-5.jpg')}}" /><noscript><img
-                                                                                                    width="170"
-                                                                                                    height="65"
-                                                                                                    src="{{asset('wp-content/uploads/2017/02/brand-5.jpg')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-13/"><img
-                                                                                                width="170"
-                                                                                                height="65"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20170%2065'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2017/02/brand-3.jpg')}}" /><noscript><img
-                                                                                                    width="170"
-                                                                                                    height="65"
-                                                                                                    src="{{asset('wp-content/uploads/2017/02/brand-3.jpg')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-2/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-5.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-5.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-3/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-4.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-4.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-4/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-3.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-3.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-5/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-2.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-2.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item item-brand-cat">
-                                                                                    <div class="item-image">
-                                                                                        <a
-                                                                                            href="product_brand/brand-6/"><img
-                                                                                                width="160"
-                                                                                                height="72"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20160%2072'%3E%3C/svg%3E"
-                                                                                                class="attachment-170x87 size-170x87"
-                                                                                                alt=""
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/09/brand-1.png')}}" /><noscript><img
-                                                                                                    width="160"
-                                                                                                    height="72"
-                                                                                                    src="{{asset('wp-content/uploads/2016/09/brand-1.png')}}"
-                                                                                                    class="attachment-170x87 size-170x87"
-                                                                                                    alt="" /></noscript></a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section> --}}
+                                    </section>
                                 </div>
                             </div>
                         </div>
