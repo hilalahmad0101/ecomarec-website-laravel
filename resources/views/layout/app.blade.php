@@ -446,7 +446,7 @@
                                                                         <h5>My Account</h5>
                                                                         <ul id="menu-my-account" class="menu">
                                                                             <li class="menu-cart"><a class="item-link"
-                                                                                    href="cart/"><span
+                                                                                    href="{{ route('user.carts') }}"><span
                                                                                         class="menu-title">Cart</span></a>
                                                                             </li>
                                                                             <li class="menu-wishlist"><a

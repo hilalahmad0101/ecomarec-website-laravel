@@ -43,8 +43,8 @@
                         <!-- ADD TO WISHLIST -->
 
                         <div class="yith-wcwl-add-button">
-                            <a href="?add_to_wishlist=1089" rel="nofollow" data-product-id="1089"
-                                data-product-type="variable" data-original-product-id="1089"
+                            <a href="#" wire:click.preven='addToWishlist({{$id}})' rel="nofollow" data-product-id="{{$id}}"
+                                data-product-type="variable" data-original-product-id="{{$id}}"
                                 class="add_to_wishlist single_add_to_wishlist" data-title="Add to Wishlist">
                                 <span>Add
                                     to

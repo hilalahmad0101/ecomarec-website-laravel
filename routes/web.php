@@ -9,6 +9,8 @@ use App\Http\Livewire\User\Auth\Addresses;
 use App\Http\Livewire\User\Auth\BillingAddress;
 use App\Http\Livewire\User\Auth\Cart;
 use App\Http\Livewire\User\Auth\Dashboard;
+use App\Http\Livewire\User\Auth\ForgetPassword;
+use App\Http\Livewire\User\Auth\Order;
 use App\Http\Livewire\User\Auth\Registration;
 use App\Http\Livewire\User\Auth\ShippingAddress;
 use App\Http\Livewire\User\Auth\VerifyOtp;
@@ -20,6 +22,7 @@ Route::get('/product',Product::class)->name('product');
 Route::get('/category/product/{slug}',CategoryProduct::class)->name('category-product');
 Route::get('/product/details/{id}',ProductDetails::class)->name('product-detail');
 Route::get('/user/cart/count',[ProductDetails::class,'showTotalCount']);
+Route::get('/forget/password',ForgetPassword::class)->name('user.forget-password');
 Route::middleware(['not_verify'])->group(function () {
     Route::get('/verify-account', VerifyOtp::class)->name('user.verify-account');
     // Route::get('/resend-otp', [VerifyOtp::class, 'resendOtp'])->name('resend-otp');
@@ -36,5 +39,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/billing-address', BillingAddress::class)->name('user.billing-address');
         Route::get('/shipping-address', ShippingAddress::class)->name('user.shipping-address');
         Route::get('/carts', Cart::class)->name('user.carts');
+        Route::get('/order', Order::class)->name('user.order');
     });
 });
+
+
+require('vendor.php');

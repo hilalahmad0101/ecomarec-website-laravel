@@ -27,7 +27,9 @@
                                     </li>
                                 </ul>
                                 @endif
-
+                                @if (session()->has('success'))
+                                <div class="alert alert-danger">{!! session('success') !!}</div>
+                            @endif
                                 @if (session()->has('verified'))
                                 <ul class="woocommerce-error" role="alert">
                                <li>
@@ -79,11 +81,8 @@
 
                                                 <p class="lost_password">
                                                     <a
-                                                        href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
-                                                        your password?</a>
+                                                        href="{{ route('user.forget-password') }}">Lost your password?</a>
                                                 </p>
-
-
                                             </form>
 
 

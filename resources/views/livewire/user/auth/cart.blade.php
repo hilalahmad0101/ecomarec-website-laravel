@@ -41,9 +41,8 @@
                                         <tr class="woocommerce-cart-form__cart-item cart_item">
 
                                             <td class="product-remove">
-                                                <a href="https://demo.wpthemego.com/themes/sw_revo/cart/?remove_item=1ce927f875864094e3906a4a0b5ece68&amp;_wpnonce=de04ae8748"
-                                                    class="remove" aria-label="Remove this item"
-                                                    data-product_id="963" data-product_sku="">×</a>
+                                                <a href="#"
+                                                    class="remove" wire:click.prevent="deleteCart({{$cart->id}})">×</a>
                                             </td>
                                             <td >
                                                 <button  class="button" style="font-size: 13px;
@@ -177,7 +176,7 @@
 
                                             <div class="wc-proceed-to-checkout">
 
-                                                <a href="https://demo.wpthemego.com/themes/sw_revo/checkout/"
+                                                <a href="{{ route('user.order') }}"
                                                     class="checkout-button button alt wc-forward">
                                                     Proceed to checkout</a>
                                             </div>

@@ -88,22 +88,22 @@ class Registration extends Component
                         session()->flash('success', 'Login Success');
                         return redirect(route('user.dashboard'));
                     }else{
-                        session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
-                        href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
-                        your password?</a>');
+                        session()->flash('error', "  <strong>{ $this->login_email}</strong> is incorrect. <a
+                        href='https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/'>Lost
+                        your password?</a>");
                     }
                 } else {
                     session()->flash('verified', "Please Verified Your Account");
                 }
             } else {
-                session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
-                href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
-                your password?</a>');
+                session()->flash('error', "  <strong>{ $this->login_email}</strong> is incorrect. <a
+                href='https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/'>Lost
+                your password?</a>");
             }
         } else {
-            session()->flash('error', '  <strong>programmerhero6@gmail.com</strong> is incorrect. <a
-            href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/">Lost
-            your password?</a>');
+            session()->flash('error', "  <strong>{ $this->login_email}</strong> is incorrect. <a
+            href='https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/'>Lost
+            your password?</a>");
         }
     }
 }

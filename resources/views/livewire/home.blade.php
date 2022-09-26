@@ -1,6 +1,35 @@
 <div>
     <x-slot name="title">Home</x-slot>
     <div class="row">
+
+        <style>
+            #alert {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background-color: green;
+                padding: 10px 20px;
+                border-radius: 3px;
+                color: white;
+                font-size: 19px;
+            }
+            #alert-error{
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background-color: red;
+                padding: 10px 20px;
+                border-radius: 3px;
+                color: white;
+                font-size: 19px;
+            }
+        </style>
+        @if (session()->has('success'))
+            <div id="alert">{{session('success')}}</div>
+        @endif
+        @if (session()->has('error'))
+        <div id="alert-error">{{session('error')}}</div>
+    @endif
         <div id="contents" role="main" class="main-page  col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="post-9 page type-page status-publish hentry">
                 <div class="entry-content">
@@ -805,15 +834,14 @@
                                                                                                 <div
                                                                                                     class="slider responsive">
                                                                                                     @foreach ($products as $product)
-                                                                                                    <x-category-products
-                                                                                                    id="{{ $product->id }}"
-                                                                                                    title="{{ $product->product_title }}"
-                                                                                                    image="{{ $product->image }}"
-                                                                                                    sale_price="{{ $product->sale_price }}"
-                                                                                                    price="{{ $product->price }}"
-                                                                                                     />
+                                                                                                        <x-category-products
+                                                                                                            id="{{ $product->id }}"
+                                                                                                            title="{{ $product->product_title }}"
+                                                                                                            image="{{ $product->image }}"
+                                                                                                            sale_price="{{ $product->sale_price }}"
+                                                                                                            price="{{ $product->price }}" />
                                                                                                     @endforeach
-                                                                                                  
+
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>

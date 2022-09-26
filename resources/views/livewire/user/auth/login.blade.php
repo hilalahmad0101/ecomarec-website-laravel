@@ -27,7 +27,7 @@
                             @enderror
                         </div>
                         <div class="ft-link-p">
-                            <a href="my-account/lost-password/" title="Forgot your password">Forgot your
+                            <a href="{{ route('user.forget-password') }}" title="Forgot your password">Forgot your
                                 password?</a>
                         </div>
                         <div class="actions">

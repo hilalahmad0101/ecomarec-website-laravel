@@ -40,4 +40,12 @@ class Cart extends Component
        session()->flash('success','Cart Update Successfully');
        $this->qty=0;
     }
+
+    public function deleteCart($id) 
+    {
+        $carts=ModelsCart::findOrFail($id)->delete();
+        if($carts){
+            session()->flash('success','Cart Delete Successfully');
+        }
+    }
 }
