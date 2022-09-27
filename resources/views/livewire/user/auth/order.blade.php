@@ -28,7 +28,7 @@
                                 </div>
 
                                 <form class="checkout_coupon woocommerce-form-coupon" method="post"
-                                    style="display:none">
+                                    style="display:none" > 
 
                                     <p>If you have a coupon code, please apply it below.</p>
 
@@ -45,65 +45,65 @@
                                     <div class="clear"></div>
                                 </form>
                                 <div class="woocommerce-notices-wrapper"></div>
-                                <form name="checkout" method="post" class="checkout woocommerce-checkout"
-                                    action="https://demo.wpthemego.com/themes/sw_revo/checkout/"
-                                    enctype="multipart/form-data" novalidate="novalidate">
-
-
-
+                                <form name="checkout" method="post" class="checkout woocommerce-checkout" wire:submit.prevent='placeOrder'>
                                     <div class="col2-set" id="customer_details">
                                         <div class="col-1">
-                                            <div class="woocommerce-billing-fields">
-
-                                                <h3>Billing details</h3>
-
-
-
-                                                <div class="woocommerce-billing-fields__field-wrapper">
+                                            <h3>Billing address</h3>
+                                            <div class="woocommerce-address-fields">
+                                                <div class="woocommerce-address-fields__field-wrapper">
                                                     <p class="form-row form-row-first validate-required"
                                                         id="billing_first_name_field" data-priority="10"><label
-                                                            for="billing_first_name" class="">First
+                                                            for="first_name" class="">First name&nbsp;<abbr
+                                                                class="required" title="required">*</abbr></label><span
+                                                            class="woocommerce-input-wrapper"><input type="text"
+                                                                class="input-text " wire:model.lazy="first_name"
+                                                                id="first_name" placeholder=""
+                                                                autocomplete="given-name"></span></p>
+                                                    @error('first_name')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-last validate-required"
+                                                        id="last_name_field" data-priority="20"><label for="last_name"
+                                                            class="">Last
                                                             name&nbsp;<abbr class="required"
                                                                 title="required">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_first_name"
-                                                                id="billing_first_name" placeholder="" value="adsfasd"
-                                                                autocomplete="given-name"></span></p>
-                                                    <p class="form-row form-row-last validate-required"
-                                                        id="billing_last_name_field" data-priority="20"><label
-                                                            for="billing_last_name" class="">Last name&nbsp;<abbr
-                                                                class="required" title="required">*</abbr></label><span
-                                                            class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_last_name"
-                                                                id="billing_last_name" placeholder="" value="asdfas"
+                                                                class="input-text " wire:model.lazy="last_name"
+                                                                id="last_name" placeholder=""
                                                                 autocomplete="family-name"></span></p>
-                                                    <p class="form-row form-row-wide" id="billing_company_field"
-                                                        data-priority="30"><label for="billing_company"
-                                                            class="">Company name&nbsp;<span
+                                                    @error('last_name')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide" id="company_name_field"
+                                                        data-priority="30"><label for="company_name"
+                                                            class="">Company
+                                                            name&nbsp;<span
                                                                 class="optional">(optional)</span></label><span
                                                             class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_company"
-                                                                id="billing_company" placeholder="" value="asdfasd"
+                                                                class="input-text " wire:model.lazy="company_name"
+                                                                id="company_name" placeholder=""
                                                                 autocomplete="organization"></span></p>
+                                                    @error('company_name')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                     <p class="form-row form-row-wide address-field update_totals_on_change validate-required"
                                                         id="billing_country_field" data-priority="40"><label
-                                                            for="billing_country" class="">Country /
-                                                            Region&nbsp;<abbr class="required"
-                                                                title="required">*</abbr></label><span
+                                                            for="country" class="">Country / Region&nbsp;<abbr
+                                                                class="required" title="required">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><select
-                                                                name="billing_country" id="billing_country"
+                                                                wire:model.lazy="country" id="country"
                                                                 class="country_to_state country_select  select2-hidden-accessible"
-                                                                autocomplete="country"
-                                                                data-placeholder="Select a country / region…"
-                                                                tabindex="-1" aria-hidden="true">
+                                                                autocomplete="country" tabindex="-1"
+                                                                aria-hidden="true">
                                                                 <option value="">Select a country / region…
                                                                 </option>
-                                                                <option value="AF">Afghanistan</option>
                                                                 <option value="AX">Åland Islands</option>
+                                                                <option value="AF">Afghanistan</option>
                                                                 <option value="AL">Albania</option>
                                                                 <option value="DZ">Algeria</option>
                                                                 <option value="AS">American Samoa</option>
-                                                                <option value="AD">Andorra</option>
+                                                                <option value="AD" selected="selected">Andorra
+                                                                </option>
                                                                 <option value="AO">Angola</option>
                                                                 <option value="AI">Anguilla</option>
                                                                 <option value="AQ">Antarctica</option>
@@ -127,7 +127,8 @@
                                                                 <option value="BT">Bhutan</option>
                                                                 <option value="BO">Bolivia</option>
                                                                 <option value="BQ">Bonaire, Saint Eustatius and
-                                                                    Saba</option>
+                                                                    Saba
+                                                                </option>
                                                                 <option value="BA">Bosnia and Herzegovina</option>
                                                                 <option value="BW">Botswana</option>
                                                                 <option value="BV">Bouvet Island</option>
@@ -199,7 +200,8 @@
                                                                 <option value="GY">Guyana</option>
                                                                 <option value="HT">Haiti</option>
                                                                 <option value="HM">Heard Island and McDonald
-                                                                    Islands</option>
+                                                                    Islands
+                                                                </option>
                                                                 <option value="HN">Honduras</option>
                                                                 <option value="HK">Hong Kong</option>
                                                                 <option value="HU">Hungary</option>
@@ -342,12 +344,12 @@
                                                                 <option value="TV">Tuvalu</option>
                                                                 <option value="UG">Uganda</option>
                                                                 <option value="UA">Ukraine</option>
-                                                                <option value="AE" selected="selected">United Arab
-                                                                    Emirates</option>
+                                                                <option value="AE">United Arab Emirates</option>
                                                                 <option value="GB">United Kingdom (UK)</option>
                                                                 <option value="US">United States (US)</option>
                                                                 <option value="UM">United States (US) Minor
-                                                                    Outlying Islands</option>
+                                                                    Outlying
+                                                                    Islands</option>
                                                                 <option value="UY">Uruguay</option>
                                                                 <option value="UZ">Uzbekistan</option>
                                                                 <option value="VU">Vanuatu</option>
@@ -374,165 +376,181 @@
                                                                             class="select2-selection__rendered"
                                                                             id="select2-billing_country-container"
                                                                             role="textbox" aria-readonly="true"
-                                                                            title="United Arab Emirates">United Arab
-                                                                            Emirates</span><span
+                                                                            title="Andorra">Andorra</span><span
                                                                             class="select2-selection__arrow"
                                                                             role="presentation"><b
                                                                                 role="presentation"></b></span></span></span><span
                                                                     class="dropdown-wrapper"
                                                                     aria-hidden="true"></span></span><noscript><button
                                                                     type="submit"
-                                                                    name="woocommerce_checkout_update_totals"
+                                                                    wire:model.lazy="woocommerce_checkout_update_totals"
                                                                     value="Update country / region">Update country /
                                                                     region</button></noscript></span></p>
-                                                    <p class="form-row address-field validate-required form-row-wide"
-                                                        id="billing_address_1_field" data-priority="50"><label
-                                                            for="billing_address_1" class="">Street
+                                                    @error('country')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide address-field validate-required"
+                                                        id="address_1_field" data-priority="50"><label
+                                                            for="address_1" class="">Street
                                                             address&nbsp;<abbr class="required"
                                                                 title="required">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_address_1"
-                                                                id="billing_address_1"
+                                                                class="input-text " wire:model.lazy="address_1"
+                                                                id="address_1"
                                                                 placeholder="House number and street name"
-                                                                value="Muqam kaly P/O Ghani Dheri Tehsil Dargai District Malakand"
                                                                 autocomplete="address-line1"
                                                                 data-placeholder="House number and street name"></span>
                                                     </p>
-                                                    <p class="form-row address-field form-row-wide"
-                                                        id="billing_address_2_field" data-priority="60"><label
-                                                            for="billing_address_2"
-                                                            class="screen-reader-text">Apartment, suite, unit, etc.
-                                                            (optional)&nbsp;<span
-                                                                class="optional">(optional)</span></label><span
+                                                    @error('address_1')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide address-field"
+                                                        id="address_2_field" data-priority="60"><span
                                                             class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_address_2"
-                                                                id="billing_address_2"
-                                                                placeholder="Apartment, suite, unit, etc. (optional)"
+                                                                class="input-text " wire:model.lazy="address_2"
+                                                                id="address_2"
+                                                                placeholder="Apartment, suite, unit etc. (optional)"
                                                                 value="" autocomplete="address-line2"
-                                                                data-placeholder="Apartment, suite, unit, etc. (optional)"></span>
+                                                                data-placeholder="Apartment, suite, unit etc. (optional)"></span>
                                                     </p>
-                                                    <p class="form-row address-field validate-required form-row-wide"
-                                                        id="billing_city_field" data-priority="70"
+                                                    <p class="form-row form-row-wide address-field validate-required"
+                                                        id="city_field" data-priority="70"
                                                         data-o_class="form-row form-row-wide address-field validate-required">
-                                                        <label for="billing_city" class="">Town /
-                                                            City&nbsp;<abbr class="required"
-                                                                title="required">*</abbr></label><span
-                                                            class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_city"
-                                                                id="billing_city" placeholder="" value="Dargai"
-                                                                autocomplete="address-level2"></span></p>
-                                                    <p class="form-row address-field validate-state form-row-wide"
-                                                        id="billing_state_field" data-priority="80"
-                                                        data-o_class="form-row form-row-wide address-field validate-state">
-                                                        <label for="billing_state" class="">State /
-                                                            County&nbsp;<span
-                                                                class="optional">(optional)</span></label><span
-                                                            class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " value="Pakistan" placeholder=""
-                                                                name="billing_state" id="billing_state"
-                                                                autocomplete="address-level1"
-                                                                data-input-classes=""></span></p>
-                                                    <p class="form-row address-field validate-postcode form-row-wide"
-                                                        id="billing_postcode_field" data-priority="90"
-                                                        data-o_class="form-row form-row-wide address-field validate-postcode"
-                                                        style="display: none;"><label for="billing_postcode"
-                                                            class="">Postcode / ZIP&nbsp;<span
-                                                                class="optional">(optional)</span></label><span
-                                                            class="woocommerce-input-wrapper"><input type="text"
-                                                                class="input-text " name="billing_postcode"
-                                                                id="billing_postcode" placeholder="" value=""
-                                                                autocomplete="postal-code"></span></p>
-                                                    <p class="form-row form-row-wide validate-required validate-phone"
-                                                        id="billing_phone_field" data-priority="100"><label
-                                                            for="billing_phone" class="">Phone&nbsp;<abbr
+                                                        <label for="city" class="">Town / City&nbsp;<abbr
                                                                 class="required"
                                                                 title="required">*</abbr></label><span
+                                                            class="woocommerce-input-wrapper"><input type="text"
+                                                                class="input-text " wire:model.lazy="city"
+                                                                id="city" placeholder=""
+                                                                autocomplete="address-level2"></span>
+                                                    </p>
+                                                    @error('city')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide address-field validate-required validate-state"
+                                                        id="state_field" data-priority="80"
+                                                        data-o_class="form-row form-row-wide address-field validate-required validate-state">
+                                                        <label for="state" class="">State /
+                                                            County&nbsp;<abbr class="required"
+                                                                title="required">*</abbr></label><span
+                                                            class="woocommerce-input-wrapper"><input type="text"
+                                                                class="input-text " placeholder=""
+                                                                wire:model.lazy="state" id="state"
+                                                                autocomplete="address-level1"
+                                                                data-input-classes=""></span>
+                                                    </p>
+                                                    @error('state')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide address-field validate-required validate-postcode"
+                                                        id="postcode_field" data-priority="90"
+                                                        data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
+                                                        <label for="postcode" class="">Postcode /
+                                                            ZIP&nbsp;<abbr class="required"
+                                                                title="required">*</abbr></label><span
+                                                            class="woocommerce-input-wrapper"><input type="text"
+                                                                class="input-text " wire:model.lazy="postcode"
+                                                                id="postcode" placeholder=""
+                                                                autocomplete="postal-code"></span>
+                                                    </p>
+                                                    @error('postcode')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                    <p class="form-row form-row-wide validate-required validate-phone"
+                                                        id="phone_field" data-priority="100"><label for="phone"
+                                                            class="">Phone&nbsp;<abbr class="required"
+                                                                title="required">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><input type="tel"
-                                                                class="input-text " name="billing_phone"
-                                                                id="billing_phone" placeholder="" value="34523452345"
-                                                                autocomplete="tel"></span></p>
+                                                                class="input-text " wire:model.lazy="phone"
+                                                                id="phone" placeholder=""
+                                                                autocomplete="tel"></span>
+                                                    </p>
+                                                    @error('phone')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                     <p class="form-row form-row-wide validate-required validate-email"
-                                                        id="billing_email_field" data-priority="110"><label
-                                                            for="billing_email" class="">Email
-                                                            address&nbsp;<abbr class="required"
+                                                        id="email_field" data-priority="110"><label for="email"
+                                                            class="">Email address&nbsp;<abbr class="required"
                                                                 title="required">*</abbr></label><span
                                                             class="woocommerce-input-wrapper"><input type="email"
-                                                                class="input-text " name="billing_email"
-                                                                id="billing_email" placeholder=""
-                                                                value="quguvijoz@mailinator.com"
+                                                                class="input-text " wire:model.lazy="email"
+                                                                id="email" placeholder=""
                                                                 autocomplete="email username"></span></p>
                                                 </div>
-
+                                                @error('email')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
+                                                <p>
+                                                    <button type="submit" class="button"
+                                                        wire:model.lazy="save_address">Save address</button>
+                                                </p>
                                             </div>
+
 
                                         </div>
                                         <div class="col-2">
                                             <div class="woocommerce-shipping-fields">
-                                                
+
                                                 <h3 id="ship-to-different-address">
                                                     <label
-                                                    class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-                                                    <input id="ship-to-different-address-checkbox"
-                                                    class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox"
-                                                    type="checkbox" name="ship_to_different_address"
-                                                    wire:model.lazy='check' wire:click='showBillingAddress'> <span>Ship to a different address?</span>
-                                                </label>
-                                            </h3>
-                                            
-                                            @if ($shipping_address)
-                                                <div class="shipping_address">
+                                                        class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+                                                        <input id="ship-to-different-address-checkbox"
+                                                            class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox"
+                                                            type="checkbox" name="ship_to_different_address"
+                                                            wire:model.lazy='check' wire:click='showBillingAddress'>
+                                                        <span>Ship to a different address?</span>
+                                                    </label>
+                                                </h3>
 
-
-                                                    <div class="woocommerce-shipping-fields__field-wrapper">
+                                                {{-- @if ($shipping_address)
+                                                <div class="woocommerce-address-fields">
+                                                    <div class="woocommerce-address-fields__field-wrapper">
                                                         <p class="form-row form-row-first validate-required"
-                                                            id="shipping_first_name_field" data-priority="10"><label
-                                                                for="shipping_first_name" class="">First
+                                                            id="first_name_field" data-priority="10"><label for="first_name"
+                                                                class="">First name&nbsp;<abbr class="required"
+                                                                    title="required">*</abbr></label><span
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="first_name" id="first_name"
+                                                                    placeholder="" autocomplete="given-name"></span></p>
+                                                        @error('first_name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-last validate-required" id="last_name_field"
+                                                            data-priority="20"><label for="last_name" class="">Last
                                                                 name&nbsp;<abbr class="required"
                                                                     title="required">*</abbr></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_first_name"
-                                                                    id="shipping_first_name" placeholder=""
-                                                                    value="adsfasd" autocomplete="given-name"></span>
-                                                        </p>
-                                                        <p class="form-row form-row-last validate-required"
-                                                            id="shipping_last_name_field" data-priority="20"><label
-                                                                for="shipping_last_name" class="">Last
-                                                                name&nbsp;<abbr class="required"
-                                                                    title="required">*</abbr></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_last_name" id="shipping_last_name"
-                                                                    placeholder="" value="asdfas"
-                                                                    autocomplete="family-name"></span></p>
-                                                        <p class="form-row form-row-wide" id="shipping_company_field"
-                                                            data-priority="30"><label for="shipping_company"
-                                                                class="">Company name&nbsp;<span
-                                                                    class="optional">(optional)</span></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_company" id="shipping_company"
-                                                                    placeholder="" value="asdfasd"
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="last_name" id="last_name"
+                                                                    placeholder="" autocomplete="family-name"></span></p>
+                                                        @error('last_name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-wide" id="company_name_field"
+                                                            data-priority="30"><label for="company_name" class="">Company
+                                                                name&nbsp;<span class="optional">(optional)</span></label><span
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="company_name"
+                                                                    id="company_name" placeholder=""
                                                                     autocomplete="organization"></span></p>
+                                                        @error('company_name')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
                                                         <p class="form-row form-row-wide address-field update_totals_on_change validate-required"
-                                                            id="shipping_country_field" data-priority="40"><label
-                                                                for="shipping_country" class="">Country /
+                                                            id="shipping_country_field" data-priority="40"><label for="country"
+                                                                class="">Country /
                                                                 Region&nbsp;<abbr class="required"
                                                                     title="required">*</abbr></label><span
-                                                                class="woocommerce-input-wrapper"><select
-                                                                    name="shipping_country" id="shipping_country"
+                                                                class="woocommerce-input-wrapper"><select wire:model="country"
+                                                                    id="country"
                                                                     class="country_to_state country_select  select2-hidden-accessible"
-                                                                    autocomplete="country"
-                                                                    data-placeholder="Select a country / region…"
-                                                                    tabindex="-1" aria-hidden="true">
-                                                                    <option value="">Select a country / region…
-                                                                    </option>
-                                                                    <option value="AF">Afghanistan</option>
+                                                                    autocomplete="country" tabindex="-1" aria-hidden="true">
+                                                                    <option value="">Select a country / region…</option>
                                                                     <option value="AX">Åland Islands</option>
+                                                                    <option value="AF">Afghanistan</option>
                                                                     <option value="AL">Albania</option>
                                                                     <option value="DZ">Algeria</option>
                                                                     <option value="AS">American Samoa</option>
-                                                                    <option value="AD">Andorra</option>
+                                                                    <option value="AD" selected="selected">Andorra</option>
                                                                     <option value="AO">Angola</option>
                                                                     <option value="AI">Anguilla</option>
                                                                     <option value="AQ">Antarctica</option>
@@ -555,15 +573,14 @@
                                                                     <option value="BM">Bermuda</option>
                                                                     <option value="BT">Bhutan</option>
                                                                     <option value="BO">Bolivia</option>
-                                                                    <option value="BQ">Bonaire, Saint Eustatius and
-                                                                        Saba</option>
-                                                                    <option value="BA">Bosnia and Herzegovina
+                                                                    <option value="BQ">Bonaire, Saint Eustatius and Saba
                                                                     </option>
+                                                                    <option value="BA">Bosnia and Herzegovina</option>
                                                                     <option value="BW">Botswana</option>
                                                                     <option value="BV">Bouvet Island</option>
                                                                     <option value="BR">Brazil</option>
-                                                                    <option value="IO">British Indian Ocean
-                                                                        Territory</option>
+                                                                    <option value="IO">British Indian Ocean Territory
+                                                                    </option>
                                                                     <option value="BN">Brunei</option>
                                                                     <option value="BG">Bulgaria</option>
                                                                     <option value="BF">Burkina Faso</option>
@@ -573,14 +590,12 @@
                                                                     <option value="CA">Canada</option>
                                                                     <option value="CV">Cape Verde</option>
                                                                     <option value="KY">Cayman Islands</option>
-                                                                    <option value="CF">Central African Republic
-                                                                    </option>
+                                                                    <option value="CF">Central African Republic</option>
                                                                     <option value="TD">Chad</option>
                                                                     <option value="CL">Chile</option>
                                                                     <option value="CN">China</option>
                                                                     <option value="CX">Christmas Island</option>
-                                                                    <option value="CC">Cocos (Keeling) Islands
-                                                                    </option>
+                                                                    <option value="CC">Cocos (Keeling) Islands</option>
                                                                     <option value="CO">Colombia</option>
                                                                     <option value="KM">Comoros</option>
                                                                     <option value="CG">Congo (Brazzaville)</option>
@@ -610,8 +625,7 @@
                                                                     <option value="FR">France</option>
                                                                     <option value="GF">French Guiana</option>
                                                                     <option value="PF">French Polynesia</option>
-                                                                    <option value="TF">French Southern Territories
-                                                                    </option>
+                                                                    <option value="TF">French Southern Territories</option>
                                                                     <option value="GA">Gabon</option>
                                                                     <option value="GM">Gambia</option>
                                                                     <option value="GE">Georgia</option>
@@ -629,8 +643,8 @@
                                                                     <option value="GW">Guinea-Bissau</option>
                                                                     <option value="GY">Guyana</option>
                                                                     <option value="HT">Haiti</option>
-                                                                    <option value="HM">Heard Island and McDonald
-                                                                        Islands</option>
+                                                                    <option value="HM">Heard Island and McDonald Islands
+                                                                    </option>
                                                                     <option value="HN">Honduras</option>
                                                                     <option value="HK">Hong Kong</option>
                                                                     <option value="HU">Hungary</option>
@@ -697,13 +711,11 @@
                                                                     <option value="NF">Norfolk Island</option>
                                                                     <option value="KP">North Korea</option>
                                                                     <option value="MK">North Macedonia</option>
-                                                                    <option value="MP">Northern Mariana Islands
-                                                                    </option>
+                                                                    <option value="MP">Northern Mariana Islands</option>
                                                                     <option value="NO">Norway</option>
                                                                     <option value="OM">Oman</option>
                                                                     <option value="PK">Pakistan</option>
-                                                                    <option value="PS">Palestinian Territory
-                                                                    </option>
+                                                                    <option value="PS">Palestinian Territory</option>
                                                                     <option value="PA">Panama</option>
                                                                     <option value="PG">Papua New Guinea</option>
                                                                     <option value="PY">Paraguay</option>
@@ -718,21 +730,16 @@
                                                                     <option value="RO">Romania</option>
                                                                     <option value="RU">Russia</option>
                                                                     <option value="RW">Rwanda</option>
-                                                                    <option value="ST">São Tomé and Príncipe
-                                                                    </option>
+                                                                    <option value="ST">São Tomé and Príncipe</option>
                                                                     <option value="BL">Saint Barthélemy</option>
                                                                     <option value="SH">Saint Helena</option>
-                                                                    <option value="KN">Saint Kitts and Nevis
-                                                                    </option>
+                                                                    <option value="KN">Saint Kitts and Nevis</option>
                                                                     <option value="LC">Saint Lucia</option>
-                                                                    <option value="SX">Saint Martin (Dutch part)
+                                                                    <option value="SX">Saint Martin (Dutch part)</option>
+                                                                    <option value="MF">Saint Martin (French part)</option>
+                                                                    <option value="PM">Saint Pierre and Miquelon</option>
+                                                                    <option value="VC">Saint Vincent and the Grenadines
                                                                     </option>
-                                                                    <option value="MF">Saint Martin (French part)
-                                                                    </option>
-                                                                    <option value="PM">Saint Pierre and Miquelon
-                                                                    </option>
-                                                                    <option value="VC">Saint Vincent and the
-                                                                        Grenadines</option>
                                                                     <option value="WS">Samoa</option>
                                                                     <option value="SM">San Marino</option>
                                                                     <option value="SA">Saudi Arabia</option>
@@ -746,16 +753,15 @@
                                                                     <option value="SB">Solomon Islands</option>
                                                                     <option value="SO">Somalia</option>
                                                                     <option value="ZA">South Africa</option>
-                                                                    <option value="GS">South Georgia/Sandwich
-                                                                        Islands</option>
+                                                                    <option value="GS">South Georgia/Sandwich Islands
+                                                                    </option>
                                                                     <option value="KR">South Korea</option>
                                                                     <option value="SS">South Sudan</option>
                                                                     <option value="ES">Spain</option>
                                                                     <option value="LK">Sri Lanka</option>
                                                                     <option value="SD">Sudan</option>
                                                                     <option value="SR">Suriname</option>
-                                                                    <option value="SJ">Svalbard and Jan Mayen
-                                                                    </option>
+                                                                    <option value="SJ">Svalbard and Jan Mayen</option>
                                                                     <option value="SZ">Swaziland</option>
                                                                     <option value="SE">Sweden</option>
                                                                     <option value="CH">Switzerland</option>
@@ -772,25 +778,22 @@
                                                                     <option value="TN">Tunisia</option>
                                                                     <option value="TR">Turkey</option>
                                                                     <option value="TM">Turkmenistan</option>
-                                                                    <option value="TC">Turks and Caicos Islands
-                                                                    </option>
+                                                                    <option value="TC">Turks and Caicos Islands</option>
                                                                     <option value="TV">Tuvalu</option>
                                                                     <option value="UG">Uganda</option>
                                                                     <option value="UA">Ukraine</option>
-                                                                    <option value="AE" selected="selected">United
-                                                                        Arab Emirates</option>
+                                                                    <option value="AE">United Arab Emirates</option>
                                                                     <option value="GB">United Kingdom (UK)</option>
                                                                     <option value="US">United States (US)</option>
-                                                                    <option value="UM">United States (US) Minor
-                                                                        Outlying Islands</option>
+                                                                    <option value="UM">United States (US) Minor Outlying
+                                                                        Islands</option>
                                                                     <option value="UY">Uruguay</option>
                                                                     <option value="UZ">Uzbekistan</option>
                                                                     <option value="VU">Vanuatu</option>
                                                                     <option value="VA">Vatican</option>
                                                                     <option value="VE">Venezuela</option>
                                                                     <option value="VN">Vietnam</option>
-                                                                    <option value="VG">Virgin Islands (British)
-                                                                    </option>
+                                                                    <option value="VG">Virgin Islands (British)</option>
                                                                     <option value="VI">Virgin Islands (US)</option>
                                                                     <option value="WF">Wallis and Futuna</option>
                                                                     <option value="EH">Western Sahara</option>
@@ -809,84 +812,96 @@
                                                                                 class="select2-selection__rendered"
                                                                                 id="select2-shipping_country-container"
                                                                                 role="textbox" aria-readonly="true"
-                                                                                title="United Arab Emirates">United
-                                                                                Arab Emirates</span><span
+                                                                                title="Andorra">Andorra</span><span
                                                                                 class="select2-selection__arrow"
                                                                                 role="presentation"><b
                                                                                     role="presentation"></b></span></span></span><span
                                                                         class="dropdown-wrapper"
                                                                         aria-hidden="true"></span></span><noscript><button
                                                                         type="submit"
-                                                                        name="woocommerce_checkout_update_totals"
-                                                                        value="Update country / region">Update country
-                                                                        / region</button></noscript></span></p>
-                                                        <p class="form-row address-field validate-required form-row-wide"
-                                                            id="shipping_address_1_field" data-priority="50"><label
-                                                                for="shipping_address_1" class="">Street
+                                                                        wire:model="woocommerce_checkout_update_totals">Update
+                                                                        country /
+                                                                        region</button></noscript></span></p>
+                                                        @error('country')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-wide address-field validate-required"
+                                                            id="address_1_field" data-priority="50"><label for="address_1"
+                                                                class="">Street
                                                                 address&nbsp;<abbr class="required"
                                                                     title="required">*</abbr></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_address_1" id="shipping_address_1"
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="address_1" id="address_1"
                                                                     placeholder="House number and street name"
-                                                                    value="Muqam kaly P/O Ghani Dheri Tehsil Dargai District Malakand"
                                                                     autocomplete="address-line1"
-                                                                    data-placeholder="House number and street name"></span>
-                                                        </p>
-                                                        <p class="form-row address-field form-row-wide"
-                                                            id="shipping_address_2_field" data-priority="60"><label
-                                                                for="shipping_address_2"
-                                                                class="screen-reader-text">Apartment, suite, unit, etc.
-                                                                (optional)&nbsp;<span
-                                                                    class="optional">(optional)</span></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_address_2" id="shipping_address_2"
-                                                                    placeholder="Apartment, suite, unit, etc. (optional)"
+                                                                    data-placeholder="House number and street name"></span></p>
+                                                        @error('address_1')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-wide address-field" id="address_2_field"
+                                                            data-priority="60"><span class="woocommerce-input-wrapper"><input
+                                                                    type="text" class="input-text " wire:model="address_2"
+                                                                    id="address_2"
+                                                                    placeholder="Apartment, suite, unit etc. (optional)"
                                                                     value="" autocomplete="address-line2"
-                                                                    data-placeholder="Apartment, suite, unit, etc. (optional)"></span>
+                                                                    data-placeholder="Apartment, suite, unit etc. (optional)"></span>
                                                         </p>
-                                                        <p class="form-row address-field validate-required form-row-wide"
-                                                            id="shipping_city_field" data-priority="70"
+                                                        <p class="form-row form-row-wide address-field validate-required"
+                                                            id="city_field" data-priority="70"
                                                             data-o_class="form-row form-row-wide address-field validate-required">
-                                                            <label for="shipping_city" class="">Town /
-                                                                City&nbsp;<abbr class="required"
+                                                            <label for="city" class="">Town / City&nbsp;<abbr
+                                                                    class="required" title="required">*</abbr></label><span
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="city" id="city"
+                                                                    placeholder="" autocomplete="address-level2"></span>
+                                                        </p>
+                                                        @error('city')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-wide address-field validate-required validate-state"
+                                                            id="state_field" data-priority="80"
+                                                            data-o_class="form-row form-row-wide address-field validate-required validate-state">
+                                                            <label for="state" class="">State /
+                                                                County&nbsp;<abbr class="required"
                                                                     title="required">*</abbr></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_city" id="shipping_city"
-                                                                    placeholder="" value="Dargai"
-                                                                    autocomplete="address-level2"></span></p>
-                                                        <p class="form-row address-field validate-state form-row-wide"
-                                                            id="shipping_state_field" data-priority="80"
-                                                            data-o_class="form-row form-row-wide address-field validate-state">
-                                                            <label for="shipping_state" class="">State /
-                                                                County&nbsp;<span
-                                                                    class="optional">(optional)</span></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    value="Pakistan" placeholder=""
-                                                                    name="shipping_state" id="shipping_state"
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " value="Pakistan" placeholder=""
+                                                                    wire:model="state" id="state"
                                                                     autocomplete="address-level1"
-                                                                    data-input-classes=""></span></p>
-                                                        <p class="form-row address-field validate-postcode form-row-wide"
-                                                            id="shipping_postcode_field" data-priority="90"
-                                                            data-o_class="form-row form-row-wide address-field validate-postcode"
-                                                            style="display: none;"><label for="shipping_postcode"
-                                                                class="">Postcode / ZIP&nbsp;<span
-                                                                    class="optional">(optional)</span></label><span
-                                                                class="woocommerce-input-wrapper"><input
-                                                                    type="text" class="input-text "
-                                                                    name="shipping_postcode" id="shipping_postcode"
-                                                                    placeholder="" value=""
-                                                                    autocomplete="postal-code"></span></p>
+                                                                    data-input-classes=""></span>
+                                                        </p>
+                                                        @error('state')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                        <p class="form-row form-row-wide address-field validate-required validate-postcode"
+                                                            id="postcode_field" data-priority="90"
+                                                            data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
+                                                            <label for="postcode" class="">Postcode /
+                                                                ZIP&nbsp;<abbr class="required"
+                                                                    title="required">*</abbr></label><span
+                                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                    class="input-text " wire:model="postcode" id="postcode"
+                                                                    placeholder="" autocomplete="postal-code"></span>
+                                                        </p>
                                                     </div>
-
-
+                                                    @error('postcode')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+        
+                                                    <p>
+                                                        <button type="submit" class="button" wire:model="save_address"
+                                                            value="Save address">Save address</button>
+                                                        <input type="hidden" id="woocommerce-edit-address-nonce"
+                                                            wire:model="woocommerce-edit-address-nonce"
+                                                            value="209c4fae6b"><input type="hidden"
+                                                            wire:model="_wp_http_referer"
+                                                            value="/themes/sw_revo/wc_vendor/my-account/edit-address/shipping/">
+                                                        <input type="hidden" wire:model="action" value="edit_address">
+                                                    </p>
                                                 </div>
 
                                             </div>
-                                            @endif
+                                            @endif --}}
                                             <div class="woocommerce-additional-fields">
 
 
@@ -905,7 +920,7 @@
 
                                             </div>
                                         </div>
-                                       
+
                                     </div>
 
 
@@ -924,53 +939,31 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @forelse ($carts as $cart)
                                                 <tr class="cart_item">
                                                     <td class="product-name">
-                                                        Ut enim ad mini&nbsp; <strong
-                                                            class="product-quantity">×&nbsp;1</strong>
-                                                        <dl class="variation">
-                                                            <dt class="variation-Vendor">Vendor:</dt>
-                                                            <dd class="variation-Vendor">
-                                                                <p>admin</p>
-                                                            </dd>
-                                                        </dl>
+                                                        {{$cart->products->product_title}}&nbsp; <strong
+                                                            class="product-quantity">×&nbsp;{{$cart->qty}}</strong>
                                                     </td>
                                                     <td class="product-total">
                                                         <span class="woocommerce-Price-amount amount"
-                                                            data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>70.00</bdi>"
-                                                            data-price="70" title="Original price:70">$70.00</span>
+                                                            data-price="{{$cart->products->price * $cart->qty}}" title="Original price:{{$cart->products->price*$cart->qty}}">${{$cart->products->price*$cart->qty}}.00</span>
                                                     </td>
                                                 </tr>
-                                                <tr class="cart_item">
-                                                    <td class="product-name">
-                                                        quia dolor sit 2&nbsp; <strong
-                                                            class="product-quantity">×&nbsp;1</strong>
-                                                        <dl class="variation">
-                                                            <dt class="variation-Vendor">Vendor:</dt>
-                                                            <dd class="variation-Vendor">
-                                                                <p>admin</p>
-                                                            </dd>
-                                                        </dl>
-                                                    </td>
-                                                    <td class="product-total">
-                                                        <span class="woocommerce-Price-amount amount"
-                                                            data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>70.00</bdi>"
-                                                            data-price="70" title="Original price:70">$70.00</span>
-                                                    </td>
-                                                </tr>
+                                                @empty
+                                                    <h2>Record not found</h2>
+                                                @endforelse
+                                           
+                                                
                                             </tbody>
                                             <tfoot>
 
                                                 <tr class="cart-subtotal">
                                                     <th>Subtotal</th>
                                                     <td><span class="woocommerce-Price-amount amount"
-                                                            data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>140.00</bdi>"
-                                                            data-price="140" title="Original price:140">$140.00</span>
+                                                            data-price="{{$subtotal}}" title="Original price:{{$subtotal}}">${{$subtotal}}.00</span>
                                                     </td>
                                                 </tr>
-
-
-
 
                                                 <tr class="woocommerce-shipping-totals shipping">
                                                     <th>Shipping</th>
@@ -988,18 +981,11 @@
 
                                                     </td>
                                                 </tr>
-
-
-
-
-
-
                                                 <tr class="order-total">
                                                     <th>Total</th>
                                                     <td><strong><span class="woocommerce-Price-amount amount"
-                                                                data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>140.00</bdi>"
-                                                                data-price="140"
-                                                                title="Original price:140">$140.00</span></strong>
+                                                                data-price="{{$total}}"
+                                                                title="Original price:{{$total}}">${{$total}}.00</span></strong>
                                                     </td>
                                                 </tr>
 
@@ -1012,75 +998,26 @@
                                             <ul class="wc_payment_methods payment_methods methods">
                                                 <li class="wc_payment_method payment_method_bacs">
                                                     <input id="payment_method_bacs" type="radio"
-                                                        class="input-radio" name="payment_method" value="bacs"
+                                                        class="input-radio" wire:model="payment_method" value="bacs"
                                                         checked="checked" data-order_button_text="">
 
                                                     <label for="payment_method_bacs">
-                                                        Direct bank transfer </label>
+                                                        Razorpay Payment</label>
                                                     <div class="payment_box payment_method_bacs">
                                                         <p>Make your payment directly into our bank account. Please use
                                                             your Order ID as the payment reference. Your order will not
                                                             be shipped until the funds have cleared in our account.</p>
                                                     </div>
                                                 </li>
-                                                <li class="wc_payment_method payment_method_cheque">
-                                                    <input id="payment_method_cheque" type="radio"
-                                                        class="input-radio" name="payment_method" value="cheque"
-                                                        data-order_button_text="">
-
-                                                    <label for="payment_method_cheque">
-                                                        Check payments </label>
-                                                    <div class="payment_box payment_method_cheque"
-                                                        style="display:none;">
-                                                        <p>Please send a check to Store Name, Store Street, Store Town,
-                                                            Store State / County, Store Postcode.</p>
-                                                    </div>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_paypal">
-                                                    <input id="payment_method_paypal" type="radio"
-                                                        class="input-radio" name="payment_method" value="paypal"
-                                                        data-order_button_text="Proceed to PayPal">
-
-                                                    <label for="payment_method_paypal">
-                                                        PayPal <img
-                                                            src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg"
-                                                            alt="PayPal acceptance mark"><a
-                                                            href="https://www.paypal.com/us/webapps/mpp/paypal-popup"
-                                                            class="about_paypal"
-                                                            onclick="javascript:window.open('https://www.paypal.com/us/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">What
-                                                            is PayPal?</a> </label>
-                                                    <div class="payment_box payment_method_paypal"
-                                                        style="display:none;">
-                                                        <p>Pay via PayPal; you can pay with your credit card if you
-                                                            don’t have a PayPal account.</p>
-                                                    </div>
-                                                </li>
+                                            
                                             </ul>
                                             <div class="form-row place-order">
-                                                <noscript>
-                                                    Since your browser does not support JavaScript, or it is disabled,
-                                                    please ensure you click the <em>Update Totals</em> button before
-                                                    placing your order. You may be charged more than the amount stated
-                                                    above if you fail to do so. <br /><button type="submit"
-                                                        class="button alt" name="woocommerce_checkout_update_totals"
-                                                        value="Update totals">Update totals</button>
-                                                </noscript>
-
-                                                <div class="woocommerce-terms-and-conditions-wrapper">
-                                                    <div class="woocommerce-privacy-policy-text"></div>
-                                                </div>
-
-
                                                 <button type="submit" class="button alt"
                                                     name="woocommerce_checkout_place_order" id="place_order"
                                                     value="Place order" data-value="Place order">Place
                                                     order</button>
 
-                                                <input type="hidden" id="woocommerce-process-checkout-nonce"
-                                                    name="woocommerce-process-checkout-nonce"
-                                                    value="438107ac6f"><input type="hidden"
-                                                    name="_wp_http_referer"
-                                                    value="/themes/sw_revo/?wc-ajax=update_order_review">
+                                            
                                             </div>
                                         </div>
 

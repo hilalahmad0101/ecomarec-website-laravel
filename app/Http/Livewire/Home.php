@@ -37,17 +37,21 @@ class Home extends Component
     public function addToWishlist($id)
     {
         $wishlist = new Wishlist();
-
-        $is_wishlist = Wishlist::where(['pro_id' => $id, 'user_id' => Auth::user()->id])->first();
-        if ($is_wishlist) {
-            session()->flash('error', 'already in wishlist');
-        } else {
-            $wishlist->pro_id = $id;
-            $wishlist->user_id = Auth::user()->id;
-            $result = $wishlist->save();
-            if ($result) {
+        if(Auth::guard('web')->user()){
+            $is_wishlist = Wishlist::where(['pro_id' => $id, 'user_id' => Auth::user()->id])->first();
+            if ($is_wishlist) {
                 session()->flash('error', 'already in wishlist');
+            } else {
+                $wishlist->pro_id = $id;
+                $wishlist->user_id = Auth::user()->id;
+                $result = $wishlist->save();
+                if ($result) {
+                    session()->flash('error', 'already in wishlist');
+                }
             }
+        }else{
+            return redirect(route('user.my-account'));
         }
+     
     }
 }
