@@ -10,45 +10,72 @@ use Livewire\Component;
 
 class Registration extends Component
 {
-    public $email, $password;
+    public $email, $password, $otp;
     public $login_email, $login_password;
+    public $showOtp = false;
     public function render()
     {
         return view('livewire.user.auth.registration')->layout('layout.user');
     }
-    public function create()
+
+    public function nextStep()
     {
         $users = new User();
         $this->validate([
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|min:6|max:10',
         ]);
         $rand = rand(999999, 100000);
+        $details = [
+            'title' => 'otp for verify email and get new products',
+            'body' => $rand
+        ];
+        $data = \Mail::to($this->email)->send(new otpmail($details));
+        if ($data) {
+            session()->flash('success', 'Check mail and Verify your otp');
+        } else {
+            session()->flash('error', 'Mail sending failed');
+        }
         $email  = $this->email;
         $username = strstr($email, '@', true);
         $users->first_name = " ";
         $users->last_name = " ";
-        $users->username=$username;
+        $users->username = $username;
         $users->email = $this->email;
-        $users->password = Hash::make($this->password);
+        $users->password = " ";
         $users->otp = $rand;
         $result = $users->save();
-        Auth::login($users);
-        if ($result) {
-            $details = [
-                'title' => 'otp for verify email and get new products',
-                'body' => $rand
-            ];
-            $data = \Mail::to($this->email)->send(new otpmail($details));
-            if ($data) {
-                session()->flash('success', 'Check mail and Verify your otp');
-                return redirect(route('user.verify-account'));
-            } else {
-                session()->flash('error', 'Mail sending failed');
+        $this->showOtp = true;
+    }
+    public function create()
+    {
+       
+        $this->validate([
+            'password' => 'required|string|min:6|max:10',
+        ]);
+            $user = User::where('email', $this->email)->first();
+            if ($this->otp == $user->otp) {
+                $user->password = Hash::make($this->password);
+                $user->save();
+                Auth::login($user);
+                return redirect(route('user.dashboard'));
+            }else{
+                session()->flash('error', 'Invalid opt');
             }
-        } else {
-            session()->flash('error', 'Account Create failed');
-        }
+        // $email  = $this->email;
+        // $username = strstr($email, '@', true);
+        // $users->first_name = " ";
+        // $users->last_name = " ";
+        // $users->username=$username;
+        // $users->email = $this->email;
+        // $users->password = Hash::make($this->password);
+        // $users->otp = $rand;
+        // $result = $users->save();
+        // Auth::login($users);
+        // if ($result) {
+
+        // } else {
+        //     session()->flash('error', 'Account Create failed');
+        // }
     }
 
 
@@ -87,7 +114,7 @@ class Registration extends Component
                     if ($user) {
                         session()->flash('success', 'Login Success');
                         return redirect(route('user.dashboard'));
-                    }else{
+                    } else {
                         session()->flash('error', "  <strong>{ $this->login_email}</strong> is incorrect. <a
                         href='https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/'>Lost
                         your password?</a>");

@@ -45,3 +45,4 @@ Route::middleware(['auth'])->group(function () {
 
 
 require('vendor.php');
+require('admin.php');

@@ -24,22 +24,25 @@ class ProductDetails extends Component
         return view('livewire.product-details')->layout('layout.user');
     }
 
-    public function addToCart($id)
+    public function addToCart($owner_id)
     {
-
         $addToCart = new Cart();
-        $is_cart = Cart::where(['user_id'=> Auth::user()->id,'pro_id'=>$id])->first();
+        $product = Product::findOrFail($this->product_slug);
+        $is_cart = Cart::where(['user_id'=> Auth::user()->id,'pro_id'=> $this->product_slug])->first();
         if ($is_cart) {
             $is_cart->qty = $this->qty;
+            $addToCart->total_price=$this->qty * $product->price;
             $results = $is_cart->save();
             if ($results) {
                 session()->flash('success', 'Quantity Update Successfully');
                 $this->dispatchBrowserEvent('showCartCount');
             }
         } else {
-            $addToCart->pro_id = $id;
+            $addToCart->pro_id = $this->product_slug;
             $addToCart->user_id = Auth::user()->id;
+            $addToCart->owner_id = $owner_id;
             $addToCart->qty = $this->qty;
+            $addToCart->total_price=$this->qty * $product->price;
             $result = $addToCart->save();
             if ($result) {
                 session()->flash('success', 'Product  Successfully Add to Card');

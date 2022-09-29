@@ -21,24 +21,24 @@
                         <div class="entry-summary">
                             <div class="woocommerce">
                                 @if (session()->has('error'))
-                                     <ul class="woocommerce-error" role="alert">
-                                    <li>
-                                        <strong>Error</strong>: {!! session('error') !!}
-                                    </li>
-                                </ul>
+                                    <ul class="woocommerce-error" role="alert">
+                                        <li>
+                                            <strong>Error</strong>: {!! session('error') !!}
+                                        </li>
+                                    </ul>
                                 @endif
                                 @if (session()->has('success'))
-                                <div class="alert alert-danger">{!! session('success') !!}</div>
-                            @endif
+                                    <div class="alert alert-danger">{!! session('success') !!}</div>
+                                @endif
                                 @if (session()->has('verified'))
-                                <ul class="woocommerce-error" role="alert">
-                               <li>
-                                   <strong>Error</strong>: {!! session('verified') !!}  <a
-                                   href='{{route('user.verify-account')}}'>Verified Account</a>
-                               </li>
-                           </ul>
-                           @endif
-                               
+                                    <ul class="woocommerce-error" role="alert">
+                                        <li>
+                                            <strong>Error</strong>: {!! session('verified') !!} <a
+                                                href='{{ route('user.verify-account') }}'>Verified Account</a>
+                                        </li>
+                                    </ul>
+                                @endif
+
 
                                 <div class="woocommerce-notices-wrapper"></div>
                                 <div class="col2-set" id="customer_login">
@@ -48,7 +48,8 @@
 
                                             <h2>Login</h2>
 
-                                            <form method="post" wire:submit.prevent='login' class="woocommerce-form woocommerce-form-login login">
+                                            <form method="post" wire:submit.prevent='login'
+                                                class="woocommerce-form woocommerce-form-login login">
 
                                                 @csrf
                                                 <p class="form-row form-row-wide">
@@ -65,8 +66,8 @@
                                                 <p class="form-row form-row-wide">
                                                     <label for="reg_password">Password &nbsp;<span
                                                             class="required">*</span></label>
-                                                    <input type="password" class="input-text" wire:model="login_password"
-                                                        id="reg_password">
+                                                    <input type="password" class="input-text"
+                                                        wire:model="login_password" id="reg_password">
                                                     @error('login_password')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -80,8 +81,8 @@
                                                 </p>
 
                                                 <p class="lost_password">
-                                                    <a
-                                                        href="{{ route('user.forget-password') }}">Lost your password?</a>
+                                                    <a href="{{ route('user.forget-password') }}">Lost your
+                                                        password?</a>
                                                 </p>
                                             </form>
 
@@ -90,10 +91,7 @@
 
                                         <div class="col-lg-6 col-md-6 col-sm-12">
                                             <h2>Register</h2>
-
-                                            <form method="post" wire:submit.prevent='create'
-                                                class="woocommerce-form woocommerce-form-register register">
-                                                @csrf
+                                            <form method="post" wire:submit.prevent='nextStep'>
                                                 <p class="form-row form-row-wide">
                                                     <label for="reg_email">Email address &nbsp;<span
                                                             class="required">*</span></label>
@@ -103,26 +101,47 @@
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </p>
+                                                @if ($showOtp == false)
+                                                    <div class="clear"></div>
+                                                    <div class="woocommerce-privacy-policy-text"></div>
+                                                    <p class="form-row">
+                                                        <button type="submit" class="woocommerce-Button button"
+                                                            
+                                                            value="Continue">Continue</button>
+                                                    </p>
+                                                @endif
+                                            </form>
+                                            <form method="post" wire:submit.prevent='create'
+                                                class="woocommerce-form woocommerce-form-register register">
+                                                @csrf
+                                                @if ($showOtp == true)
+                                                    <p class="form-row form-row-wide">
+                                                        <label for="reg_password">Password &nbsp;<span
+                                                                class="required">*</span></label>
+                                                        <input type="number" class="input-text" wire:model="otp"
+                                                            id="reg_password">
 
+                                                    </p>
 
-                                                <p class="form-row form-row-wide">
-                                                    <label for="reg_password">Password &nbsp;<span
-                                                            class="required">*</span></label>
-                                                    <input type="password" class="input-text" wire:model="password"
-                                                        id="reg_password">
-                                                    @error('password')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </p>
+                                                    <p class="form-row form-row-wide">
+                                                        <label for="reg_password">Password &nbsp;<span
+                                                                class="required">*</span></label>
+                                                        <input type="password" class="input-text" wire:model="password"
+                                                            id="reg_password">
+                                                        @error('password')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </p>
+                                                @endif
 
-                                                <div class="clear"></div>
-                                                <div class="woocommerce-privacy-policy-text"></div>
-                                                <p class="form-row">
-                                                    <button type="submit" class="woocommerce-Button button"
-                                                        name="register" value="Register">Register</button>
-                                                </p>
-
-
+                                                @if ($showOtp == true)
+                                                    <div class="clear"></div>
+                                                    <div class="woocommerce-privacy-policy-text"></div>
+                                                    <p class="form-row">
+                                                        <button type="submit" class="woocommerce-Button button"
+                                                            name="register" value="Register">Register</button>
+                                                    </p>
+                                                @endif
                                             </form>
                                         </div>
                                     </div>

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('pro_id')->constrained('products')->onDelete('cascade');
             $table->integer('qty');
+            $table->foreignId('owner_id')->constrained('vendors')->onDelete('cascade');
+            $table->integer('total_price');
             $table->timestamps();
         });
     }

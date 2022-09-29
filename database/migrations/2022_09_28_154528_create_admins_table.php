@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('billing_addresses', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        Schema::create('admins', function (Blueprint $table) {
+            $table->id();
+            $table->string('username');
+            $table->string('email')->unique();
+            $table->string('full_name');
+            $table->string('password');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('billing_addresses', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-        });
+        Schema::dropIfExists('admins');
     }
 };

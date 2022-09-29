@@ -35,8 +35,7 @@ class ForgetPassword extends Component
                 session()->flash('error', 'Mail sending failed');
             }
         }else{
-            session()->flash('
-            ', "<strong>{$this->email}</strong> is incorrect");
+            session()->flash('error', "<strong>{$this->email}</strong> is incorrect");
         }
     }
 }

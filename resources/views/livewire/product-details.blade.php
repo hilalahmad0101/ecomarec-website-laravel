@@ -123,8 +123,8 @@
                                                             <input type="button" value="+" wire:click='plus' class="plus">
                                                         </div>
 
-                                                        <button type="submit" name="add-to-cart" value="963"
-                                                            class="single_add_to_cart_button button alt" wire:click.prevent='addToCart({{$product->id}})'>Add to
+                                                        <button type="submit" name="add-to-cart" 
+                                                            class="single_add_to_cart_button button alt" wire:click.prevent='addToCart({{$product->owner_id}})'>Add to
                                                             cart</button>
 
                                                         <a class="button-buynow"
@@ -318,12 +318,10 @@
                                                                             title="Original price:{{$products->price}}">{{$products->price}}</span></span>
                                                                     <div class="item-description">{{$products->short_content}}
                                                                     </div>
-                                                                    <div class="item-bottom clearfix"><a wire:click.prevent='addToCart({{$products->id}})'
-                                                                            href="#" data-quantity="1"
+                                                                    <div class="item-bottom clearfix"><a wire:click.prevent='addToCart({{$products->owner_id}})'
+                                                                            href="#" 
                                                                             class="button product_type_simple add_to_cart_button ajax_add_to_cart"
-                                                                            data-product_id="1387" data-product_sku=""
-                                                                            aria-label="Add “tatis et quasi” to your cart"
-                                                                            rel="nofollow" title="Add To Cart">Add to
+                                                                            title="Add To Cart">Add to
                                                                             cart</a>
                                                                         <div class="yith-wcwl-add-to-wishlist add-to-wishlist-1387  wishlist-fragment on-first-load"
                                                                             data-fragment-ref="1387"
