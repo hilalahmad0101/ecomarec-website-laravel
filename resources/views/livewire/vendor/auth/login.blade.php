@@ -18,7 +18,7 @@
                             @enderror
                         </div>
                         <div class="my-2">
-                            <input type="text" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
+                            <input type="password" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
                                 wire:model.lazy='login_password' placeholder="Enter password">
                             @error('login_password')
                                 <span class="text-red-600 text-sm">{{ $message }}</span>

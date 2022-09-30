@@ -109,6 +109,11 @@
                                                             {{session('success')}}
                                                         </div>
                                                     @endif
+                                                    @if (session()->has('error'))
+                                                    <div class="alert alert-danger">
+                                                        {{session('error')}}
+                                                    </div>
+                                                @endif
                                                     <div class="addcart-wrapper single-buynow clearfix">
                                                         <div class="quantity buttons_added"><input type="button"
                                                                 value="-" class="minus" wire:click='minus'>

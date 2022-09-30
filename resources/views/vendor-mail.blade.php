@@ -36,6 +36,8 @@
             <p>We're happy you're here. Let's get your email address verified:</p>
             <div class="mt-4">
                 <p class="mt-4 text-sm">{{ $details['title'] }} </p>
+                <p class="mt-4 text-sm">Vendor login url > <a href="{{ $details['url'] }}">{{ $details['url'] }}</a> </p>
+                <p class="mt-4 text-sm">this is your email use this and login > {{ $details['email'] }} </p>
                 <p class="mt-4 text-sm">this is your password use this and login > {{ $details['password'] }} </p>
                 <p class="px-2 py-2 text-blue-200 bg-blue-600 rounded">{{ $details['body'] }}</p>
             </div>

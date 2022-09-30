@@ -40,7 +40,7 @@
                                             class="modal-trigger bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
                                             <i class="fa fa-envelope"></i>
                                         </a>
-                                        <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-green-600">
+                                        <a wire:click.prevent='sendSms' class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-green-600">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a  wire:click.prevent='delete({{$vendor->id}})' class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-red-500">

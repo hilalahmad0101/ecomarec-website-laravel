@@ -165,7 +165,6 @@
                                                         <span
                                                                 class="woocommerce-Price-amount amount"
                                                                 title="Original price:{{$total}}">
-                                                               
                                                                 {{$total}}
                                                             </span></td>
                                                     </tr>
@@ -176,9 +175,11 @@
 
                                             <div class="wc-proceed-to-checkout">
 
+                                                @if (count($carts))
                                                 <a href="{{ route('user.order') }}"
-                                                    class="checkout-button button alt wc-forward">
-                                                    Proceed to checkout</a>
+                                                class="checkout-button button alt wc-forward">
+                                                Proceed to checkout</a>
+                                                @endif
                                             </div>
 
 

@@ -30,13 +30,15 @@ class ProductDetails extends Component
         $product = Product::findOrFail($this->product_slug);
         $is_cart = Cart::where(['user_id'=> Auth::user()->id,'pro_id'=> $this->product_slug])->first();
         if ($is_cart) {
-            $is_cart->qty = $this->qty;
-            $addToCart->total_price=$this->qty * $product->price;
-            $results = $is_cart->save();
-            if ($results) {
-                session()->flash('success', 'Quantity Update Successfully');
-                $this->dispatchBrowserEvent('showCartCount');
-            }
+            // $is_cart->qty = $this->qty;
+            // $addToCart->total_price=$this->qty * $product->price;
+            // $results = $is_cart->save();
+            // if ($results) {
+            //     session()->flash('success', 'Quantity Update Successfully');
+            //     $this->dispatchBrowserEvent('showCartCount');
+            //     $this->qty=1;
+            // }
+            session()->flash('error', 'Already in card Please update cart');
         } else {
             $addToCart->pro_id = $this->product_slug;
             $addToCart->user_id = Auth::user()->id;
@@ -47,6 +49,7 @@ class ProductDetails extends Component
             if ($result) {
                 session()->flash('success', 'Product  Successfully Add to Card');
                 $this->dispatchBrowserEvent('showCartCount');
+                $this->qty=1;
             }
         }
     }

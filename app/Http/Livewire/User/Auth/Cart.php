@@ -38,6 +38,7 @@ class Cart extends Component
        $carts->total_price=$carts->products->price*$total_qty;
        $carts->save();
        session()->flash('success','Cart Update Successfully');
+       $this->dispatchBrowserEvent('showCartCount');
        $this->qty=0;
     }
 
@@ -46,6 +47,7 @@ class Cart extends Component
         $carts=ModelsCart::findOrFail($id)->delete();
         if($carts){
             session()->flash('success','Cart Delete Successfully');
+            $this->dispatchBrowserEvent('showCartCount');
         }
     }
 }

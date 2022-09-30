@@ -47,6 +47,7 @@ class Login extends Component
                 if ($vendor->status == 1) {
                     $vendors = Auth::guard('vendor')->attempt(['email' => $this->login_email, 'password' => $this->login_password]);
                     if ($vendors) {
+                        session()->flash('success', 'Login Successfully Please update your password');
                         return redirect(route('vendor.dashboard'));
                     }
                 } else {

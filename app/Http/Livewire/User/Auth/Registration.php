@@ -55,6 +55,7 @@ class Registration extends Component
             $user = User::where('email', $this->email)->first();
             if ($this->otp == $user->otp) {
                 $user->password = Hash::make($this->password);
+                $user->verified=1;
                 $user->save();
                 Auth::login($user);
                 return redirect(route('user.dashboard'));
@@ -104,7 +105,6 @@ class Registration extends Component
         );
 
         // active and deactive is remaining
-
         $users = User::where('email', $this->login_email)->first();
         if ($users) {
             $password = Hash::check($this->login_password, $users->password);

@@ -25,6 +25,7 @@ class VerifyEmail
         }else{
             return redirect(route('home'));
         }
+
         
     }
 }
