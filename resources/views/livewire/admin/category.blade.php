@@ -30,7 +30,9 @@
                             @forelse ($categories as $category)
                                 <tr>
                                     <td class="border px-4 py-2">{{ $category->category_name }}</td>
-                                    <td class="border px-4 py-2">{{ $category->image }}</td>
+                                    <td class="border px-4 py-2">
+                                        <img src="{{ $category->image }}" class="w-12 h-12" alt="">
+                                    </td>
                                     <td class="border px-4 py-2">
                                         @if ($category->status == 1)
                                             <i class="fas fa-check text-green-500 mx-2"></i>

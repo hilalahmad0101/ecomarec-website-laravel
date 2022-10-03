@@ -41,6 +41,7 @@
                 <span><i class="fas fa-angle-right float-right"></i></span>
             </a>
         </li>
+        <livewire:admin.auth.logout />
        
     </ul>
 

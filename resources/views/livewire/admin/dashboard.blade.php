@@ -6,7 +6,7 @@
             <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
                 <div class="p-4 flex flex-col">
                     <a href="#" class="no-underline text-white text-2xl">
-                        $244
+                        ${{$total_sales}}
                     </a>
                     <a href="#" class="no-underline text-white text-lg">
                         Total Sales
@@ -14,13 +14,13 @@
                 </div>
             </div>
 
-            <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+            <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
                 <div class="p-4 flex flex-col">
                     <a href="#" class="no-underline text-white text-2xl">
-                        $199.4
+                        {{$total_products}}
                     </a>
                     <a href="#" class="no-underline text-white text-lg">
-                        Total Cost
+                        Total Products
                     </a>
                 </div>
             </div>
@@ -28,13 +28,15 @@
             <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
                 <div class="p-4 flex flex-col">
                     <a href="#" class="no-underline text-white text-2xl">
-                        900
+                        {{$total_users}}
                     </a>
                     <a href="#" class="no-underline text-white text-lg">
                         Total Users
                     </a>
                 </div>
             </div>
+       
+            
 
             <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
                 <div class="p-4 flex flex-col">

@@ -25,9 +25,21 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class,'cat_id');
     }
+    public function owners()
+    {
+        return $this->belongsTo(Vendor::class,'owner_id');
+    }
+
 
     public function cart()
     {
         return $this->hasMany(Cart::class);
     }
+
+    public function getImageAttribute($value)
+    {
+        return url('/')."/storage/".$value;
+    }
+
+    
 }

@@ -118,14 +118,14 @@
                         </div>
                         <div class="my-2">
                             <label for="">Enter product Small Content</label>
-                            <textarea rows="3" cols="5" wire:model.lazy="small_content" class="block w-full bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"></textarea>
+                            <textarea rows="3" cols="5"  wire:model.lazy="small_content" class="block w-full bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"></textarea>
                             @error('small_content')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="my-2">
                             <label for="">Enter product Large Content</label>
-                            <textarea rows="3" cols="5" wire:model.lazy="long_content" class="block w-full bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"></textarea>
+                            <textarea rows="3" cols="5" id="long_content" name='long_content' wire:model.lazy="long_content" class="block w-full bg-gray-200 text-gray-700 border border-black-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white-500"></textarea>
                             @error('long_content')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror

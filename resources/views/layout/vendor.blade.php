@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"  />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
     <title>Vendor - {{$title}}</title>
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+
     @livewireStyles
 </head>
 
@@ -63,8 +65,17 @@
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+<script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
+
+<script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
+<script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
 <script src="{{ asset('dist/main.js') }}"></script>
 @livewireScripts    
+
+<script>
+    Laraberg.init('long_content')
+</script>
 </body>
 
 </html>
