@@ -59,11 +59,34 @@ class ProductController extends Controller
     public function productDetail($id)
     {
         try {
-            $products = Product::with(['category:id,category_name','owners:id,name,email'])->findOrFail($id);
+            $products = Product::with(['category:id,category_name', 'owners:id,name,email'])->findOrFail($id);
+            return response()->json([
+                'success' => true,
+                'products' => $products
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'success' => false,
+                'message' => $th->getMessage(),
+            ]);
+        }
+    }
+
+    public function getCategoryProduct($id)
+    {
+        try {
+            $products = Product::with(['category:id,category_name', 'owners:id,name,email'])->where('cat_id', $id)->get();
+            if (count($products) > 0) {
                 return response()->json([
                     'success' => true,
                     'products' => $products
                 ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'products not found'
+                ]);
+            }
         } catch (\Throwable $th) {
             return response()->json([
                 'success' => false,

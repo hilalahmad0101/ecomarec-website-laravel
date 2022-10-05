@@ -1,37 +1,47 @@
 <div>
     <x-slot name='title'>Login</x-slot>
-    <div class="h-screen w-full bg-green-600 flex justify-center items-center">
-        <div class="container mx-auto max-w-md ">
-            <div class="  w-full ">
-                <div class="leading-loose">
+    <div class="container d-flex align-items-center justify-content-center form-height-login pt-24px pb-24px">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="card">
+                    <div class="card-header bg-primary">
+                        <div class="ec-brand">
+                            <a href="index.html" title="Ekka">
+                                <img class="ec-brand-icon" src="assets/img/logo/logo-login.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body p-5">
+                        <h4 class="text-dark mb-5">Admin Login</h4>
 
-                    <form action="" class=" m-4 p-10 bg-white rounded shadow-xl" wire:submit.prevent='login'>
-                      
-                        <h1 class="text-xl md:text-3xl text-center">Admin Login</h1>
-                        @if (session()->has('error'))
-                        <span class="text-red-500">{{ session('error') }}</span>
-                    @endif
-                        <div class="my-2">
-                            <input type="text" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-                                wire:model.lazy='username' placeholder="Enter Username">
-                            @error('username')
-                                <span class="text-red-600 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="my-2">
-                            <input type="password" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"
-                                wire:model.lazy='password' placeholder="Enter password">
-                            @error('password')
-                                <span class="text-red-600 text-sm">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <button type="submit"
-                            class="block bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded">Login</button>
-                    </form>
+                        <form wire:submit.prevent='login'>
+                            @csrf
+                            <div class="row">
+                                <div class="form-group col-md-12 mb-4">
+                                    <input type="text" wire:model.lazy='username' class="form-control" id="email" placeholder="Username">
+                                    @error('username')
+                                        <span style="color: rgb(197, 50, 50)">{{$message}}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-12 ">
+                                    <input type="password" wire:model.lazy='password' class="form-control" id="password" placeholder="Password">
+                                    @error('password')
+                                    <span style="color: red">{{$message}}</span>
+                                @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
+                                    <p class="sign-upp"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
+
 
 </div>

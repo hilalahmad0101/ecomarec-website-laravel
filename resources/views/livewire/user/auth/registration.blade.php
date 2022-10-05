@@ -1,160 +1,204 @@
-<div>
-    <x-slot name='title'>My Account</x-slot>
+  <div>
+      <div wire:ignore.self
+          class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+          id="exampleModalScrollable2" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+          <div
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
+              <div
+                  class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                  <div
+                      class="modal-header  flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                      <button type="button"
+                          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                          data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body relative">
+                      <div class="grid md:grid-cols-2 grid-cols-1">
+                          <div
+                              class="sm:flex hidden  itmes-stretch modal-bg justify-between flex-col items-center p-5 py12">
+                              <div class="">
+                                  <h5 class="max-w-xs mb-2 text-blue-800 md:text-2xl text-xl font-bold">
+                                      Login
+                                  </h5>
+                                  <p class="text-blue-600 md:text-sm text-xs">
+                                      Get access to your Orders, Wishlist and Recommendations
+                                  </p>
+                              </div>
+                              <br />
+                              <br />
+                              <br />
 
-    <div class="container">
-        <div class="container">
-            <div class="listing-title">
-                <h1><span></span></h1>
-            </div>
-            <div class="breadcrumbs custom-font theme-clearfix">
-                <ul class="breadcrumb">
-                    <li><a href="https://demo.wpthemego.com/themes/sw_revo/wc_vendor">Home</a><span
-                            class="go-page"></span></li>
-                    <li class="active"><span>My Account</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div id="contents" role="main" class="main-page  col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="post-7 page type-page status-publish hentry">
-                    <div class="entry-content">
-                        <div class="entry-summary">
-                            <div class="woocommerce">
-                                @if (session()->has('error'))
-                                    <ul class="woocommerce-error" role="alert">
-                                        <li>
-                                            <strong>Error</strong>: {!! session('error') !!}
-                                        </li>
-                                    </ul>
-                                @endif
-                                @if (session()->has('success'))
-                                    <div class="alert alert-danger">{!! session('success') !!}</div>
-                                @endif
-                                @if (session()->has('verified'))
-                                    <ul class="woocommerce-error" role="alert">
-                                        <li>
-                                            <strong>Error</strong>: {!! session('verified') !!} <a
-                                                href='{{ route('user.verify-account') }}'>Verified Account</a>
-                                        </li>
-                                    </ul>
-                                @endif
+                              <img src="./images/Computer login-amico.svg" width="300px" alt="" />
+                          </div>
 
+                          <div class="p-5 ">
+                              <form class="space-y-4 md:space-y-6" action="#">
+                                  <h5 class="max-w-xs text-blue-900 md:text-2xl text-xl font-bold">
+                                      Login
+                                  </h5>
 
-                                <div class="woocommerce-notices-wrapper"></div>
-                                <div class="col2-set" id="customer_login">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                  <div class="relative">
+                                      <input type="text" id="floating_outlined"
+                                          class="block border px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                          placeholder=" " />
+                                      <label for="floating_outlined"
+                                          class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                                          Number</label>
+                                  </div>
 
+                                  <div class="relative">
+                                      <input type="password" id="floating_outlined2"
+                                          class="block border px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300  dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                          placeholder=" " />
+                                      <label for="floating_outlined2"
+                                          class="absolute text-sm text-gray-500  dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                                          Password</label>
+                                  </div>
+                                  <button type="button"
+                                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                      Continue
+                                  </button>
+                                  <p
+                                      class="md:text-sm text-xs font-blue-600 text-center font-medium text-blue-800 dark:text-gray-400">
+                                      Don't have an account yet?
+                                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"
+                                          class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                          Up</a>
+                                  </p>
+                                  <br />
+                                  <br />
+                                  <br />
+                                  <div class="flex justify-center mt-12">
+                                      <p
+                                          class="md:text-sm text-xs px-5 max-w-xs text-center font-extralight text-gray-400 dark:text-gray-400">
+                                          By continuing, you agree to abc Terms of Use and Privacy
+                                          Policy.
+                                      </p>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-                                            <h2>Login</h2>
+      <!-- ///// Sgin up Modal doiluge -->
 
-                                            <form method="post" wire:submit.prevent='login'
-                                                class="woocommerce-form woocommerce-form-login login">
+      <div wire:ignore.self
+          class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+          id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableLabel" aria-hidden="true">
+          <div
+              class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
+              <div
+                  class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                  <div
+                      class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                      <button type="button"
+                          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                          data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body relative">
+                      <div class="grid sm:grid-cols-2 grid-cols-1">
+                          <div
+                              class="sm:flex hidden itmes-stretch modal-bg justify-between flex-col items-center p-5 py12">
+                              <div>
+                                  <h5 class="max-w-xs mb-2 text-blue-800 md:text-2xl text-xl font-bold">
+                                      Looks like you're new here!
+                                  </h5>
+                                  <p class="md:text-sm text-xs text-blue-600">
+                                      Sign up with your mobile number to get started
+                                  </p>
+                              </div>
+                              <br />
+                              <br />
+                              <br />
 
-                                                @csrf
-                                                <p class="form-row form-row-wide">
-                                                    <label for="reg_email">Email address &nbsp;<span
-                                                            class="required">*</span></label>
-                                                    <input type="email" class="input-text" wire:model="login_email"
-                                                        id="reg_email" value="">
-                                                    @error('login_email')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </p>
+                              <img src="./images/Computer login-amico.svg" width="300px" alt="" />
+                          </div>
 
+                          <div class="p-5">
+                              {{-- <form class="space-y-4 md:space-y-6"> --}}
+                              <div class='space-y-4 md:space-y-6'>
+                                  <h5 class="max-w-xs text-blue-900 md:text-2xl text-xl font-bold">
+                                      Register Your Account
+                                  </h5>
+                                  <div class="relative">
+                                      <input type="text" id="floating_outlined" wire:model.lazy='email'
+                                          class="block border px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                          placeholder=" " />
+                                      @error('email')
+                                          <span class="text-red-500">{{ $message }}</span>
+                                      @enderror
+                                      <label for="floating_outlined"
+                                          class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                                          Email Address</label>
+                                  </div>
+                                  @if (!$showOtp)
+                                      <button type="submit" wire:click='nextStep' wire:loading.attr="disabled"
+                                          wire:loading.class="bg-gray-500 hover:bg-gray-800"
+                                          wire:loading.class.remove='bg-blue-700 hover:bg-blue-800'
+                                          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                          Continue
+                                      </button>
+                                  @endif
+                                  <div wire:loading wire:target="checkout">
+                                      Otp is sending
+                                  </div>    
+                                  @if ($showOtp)
+                                      <form class="space-y-4 md:space-y-6" wire:submit.prevent='create'>
+                                          <div class="relative">
+                                              <input type="text" id="floating_outlined" wire:model.lazy='otp'
+                                                  class="block border px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                  placeholder=" " />
+                                              <label for="floating_outlined"
+                                                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                                                  Valid Otp</label>
+                                              @error('otp')
+                                                  <span class="text-red-500">{{ $message }}</span>
+                                              @enderror
+                                          </div>
+                                          <div class="relative">
+                                              <input type="password" id="floating_outlined" wire:model.lazy='password'
+                                                  class="block border px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                                  placeholder=" " />
+                                              <label for="floating_outlined"
+                                                  class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Enter
+                                                  Password</label>
+                                              @error('password')
+                                                  <span class="text-red-500">{{ $message }}</span>
+                                              @enderror
+                                          </div>
+                                          <button type="submit"
+                                              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                              Register
+                                          </button>
+                                      </form>
+                                  @endif
+                                  <p
+                                      class="md:text-sm text-xs font-blue-600 text-center font-medium text-blue-800 dark:text-gray-400">
+                                      have an account yet?
+                                      <a href="#" data-bs-toggle="modal"
+                                          data-bs-target="#exampleModalScrollable2"
+                                          class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
+                                          In</a>
+                                  </p>
+                                  <br />
+                                  <br />
+                                  <br />
+                                  <div class="flex justify-center mt-12">
+                                      <p
+                                          class="md:text-sm text-xs px-5 max-w-xs text-center font-extralight text-gray-400 dark:text-gray-400">
+                                          By continuing, you agree to abc Terms of Use and Privacy
+                                          Policy.
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-                                                <p class="form-row form-row-wide">
-                                                    <label for="reg_password">Password &nbsp;<span
-                                                            class="required">*</span></label>
-                                                    <input type="password" class="input-text"
-                                                        wire:model="login_password" id="reg_password">
-                                                    @error('login_password')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </p>
-
-                                                <div class="clear"></div>
-                                                <div class="woocommerce-privacy-policy-text"></div>
-                                                <p class="form-row">
-                                                    <button type="submit" class="woocommerce-Button button"
-                                                        name="login" value="Login">Login</button>
-                                                </p>
-
-                                                <p class="lost_password">
-                                                    <a href="{{ route('user.forget-password') }}">Lost your
-                                                        password?</a>
-                                                </p>
-                                            </form>
-
-
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <h2>Register</h2>
-                                            <form method="post" wire:submit.prevent='nextStep'>
-                                                <p class="form-row form-row-wide">
-                                                    <label for="reg_email">Email address &nbsp;<span
-                                                            class="required">*</span></label>
-                                                    <input type="email" class="input-text" wire:model="email"
-                                                        id="reg_email" value="">
-                                                    @error('email')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </p>
-                                                @if ($showOtp == false)
-                                                    <div class="clear"></div>
-                                                    <div class="woocommerce-privacy-policy-text"></div>
-                                                    <p class="form-row">
-                                                        <button type="submit" class="woocommerce-Button button"
-                                                            
-                                                            value="Continue">Continue</button>
-                                                    </p>
-                                                @endif
-                                            </form>
-                                            <form method="post" wire:submit.prevent='create'
-                                                class="woocommerce-form woocommerce-form-register register">
-                                                @csrf
-                                                @if ($showOtp == true)
-                                                    <p class="form-row form-row-wide">
-                                                        <label for="reg_password">Password &nbsp;<span
-                                                                class="required">*</span></label>
-                                                        <input type="number" class="input-text" wire:model="otp"
-                                                            id="reg_password">
-
-                                                    </p>
-
-                                                    <p class="form-row form-row-wide">
-                                                        <label for="reg_password">Password &nbsp;<span
-                                                                class="required">*</span></label>
-                                                        <input type="password" class="input-text" wire:model="password"
-                                                            id="reg_password">
-                                                        @error('password')
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                    </p>
-                                                @endif
-
-                                                @if ($showOtp == true)
-                                                    <div class="clear"></div>
-                                                    <div class="woocommerce-privacy-policy-text"></div>
-                                                    <p class="form-row">
-                                                        <button type="submit" class="woocommerce-Button button"
-                                                            name="register" value="Register">Register</button>
-                                                    </p>
-                                                @endif
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  </div>

@@ -29,6 +29,8 @@ Route::middleware(['not_verify'])->group(function () {
 });
 Route::middleware(['guest'])->group(function () {
     Route::get('/my-account', Registration::class)->name('user.my-account');
+    Route::get('/signup/google',[Registration::class,'googleSignup'])->name('user.google-signup');
+    Route::get('/callback',[Registration::class,'googleSignupCallback']);
 });
 
 Route::middleware(['auth'])->group(function () {

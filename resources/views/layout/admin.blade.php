@@ -1,71 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
-    <!-- Css -->
-    {{-- <link rel="stylesheet" href="./dist/styles.css"> --}}
-    <link rel="stylesheet" href="{{ asset('dist/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/all.css') }}">
-    @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"  />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
-    <title>Admin - {{$title}}</title>
-    @livewireStyles
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Ekka - Admin Dashboard eCommerce HTML Template.">
+
+	<title>Ekka - Admin Dashboard eCommerce HTML Template.</title>
+
+	<!-- GOOGLE FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+	<link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
+
+	<!-- PLUGINS CSS STYLE -->
+	<link href="{{asset('assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+	<link href="{{asset('assets/plugins/simplebar/simplebar.css')}}" rel="stylesheet" />
+
+	<!-- Ekka CSS -->
+	<link id="ekka-css" href="{{asset('assets/css/ekka.css')}}" rel="stylesheet" />
+
+	<!-- FAVICON -->
+	<link href="{{asset('assets/img/favicon.png')}}" rel="shortcut icon" />
+
 </head>
 
-<body>
-<!--Container -->
-<div class="mx-auto bg-grey-400">
-    <!--Screen-->
-    <div class="min-h-screen flex flex-col">
-        <!--Header Section Starts Here-->
-        <header class="bg-nav">
-            <div class="flex justify-between">
-                <div class="p-1 mx-3 inline-flex items-center">
-                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
-                    <h1 class="text-white p-2">Logo</h1>
-                </div>
-                <div class="p-1 flex flex-row items-center">
-                    <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
+<body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light" id="body">
 
+	<!--  WRAPPER  -->
+	<div class="wrapper">
+		
+		<!-- LEFT MAIN SIDEBAR -->
+		<x-admin-sidebar />
 
-                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
-                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
-                    <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
-                        <ul class="list-reset">
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
-                          <li><hr class="border-t mx-2 border-grey-ligght"></li>
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!--/Header-->
+		<!--  PAGE WRAPPER -->
+		<div class="ec-page-wrapper">
 
-        <div class="flex flex-1">
-            <!--Sidebar-->
-           <x-admin-sidebar />
-            <!--/Sidebar-->
-            <!--Main-->
-            <main class="bg-white-300 flex-1 p-3 overflow-hidden">
+			<!-- Header -->
+            <x-admin-header />
 
-                {{$slot}}
-            </main>
-            <!--/Main-->
-        </div>
-     
+			{{$slot}}
 
-    </div>
+			<!-- Footer -->
+			<footer class="footer mt-auto">
+				<div class="copyright bg-white">
+					<p>
+						Copyright &copy; <span id="ec-year"></span><a class="text-primary"
+						href="https://themeforest.net/user/ashishmaraviya" target="_blank"> Ekka Admin Dashboard</a>. All Rights Reserved.
+					  </p>
+				</div>
+			</footer>
 
-</div>
-<script src="{{ asset('dist/main.js') }}"></script>
-@livewireScripts    
+		</div> <!-- End Page Wrapper -->
+	</div> <!-- End Wrapper -->
+
+	<!-- Common Javascript -->
+	<script src="{{asset('assets/plugins/jquery/jquery-3.5.1.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/jquery/jquery.notify.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/jquery/jquery.bundle.notify.min.js')}}"></script>
+	<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/simplebar/simplebar.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/jquery-zoom/jquery.zoom.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/slick/slick.min.js')}}"></script>
+
+	<!-- Chart -->
+	<script src="{{asset('assets/plugins/charts/Chart.min.js')}}"></script>
+	<script src="{{asset('assets/js/chart.js')}}"></script>
+
+	<!-- Google map chart -->
+	<script src="{{asset('assets/plugins/charts/google-map-loader.js')}}"></script>
+	<script src="{{asset('assets/plugins/charts/google-map.js')}}"></script>
+
+	<!-- Date Range Picker -->
+	<script src="{{asset('assets/plugins/daterangepicker/moment.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+	<script src="{{asset('assets/js/date-range.js')}}"></script>
+
+	<!-- Option Switcher -->
+	<script src="{{asset('assets/plugins/options-sidebar/optionswitcher.js')}}"></script>
+
+	<!-- Ekka Custom -->
+	<script src="{{asset('assets/js/ekka.js')}}"></script>
 </body>
 
 </html>

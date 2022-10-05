@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+use Socialite;
 
 class Registration extends Component
 {
@@ -15,9 +16,12 @@ class Registration extends Component
     public $showOtp = false;
     public function render()
     {
-        return view('livewire.user.auth.registration')->layout('layout.user');
+        return view('livewire.user.auth.registration');
     }
-
+    public function get()
+    {
+        dd("hello");
+    }
     public function nextStep()
     {
         $users = new User();
@@ -43,25 +47,29 @@ class Registration extends Component
         $users->email = $this->email;
         $users->password = " ";
         $users->otp = $rand;
+        $users->mobile_number=0;
+        $users->image=" ";
+        $users->gender=0;
         $result = $users->save();
         $this->showOtp = true;
     }
     public function create()
     {
-       
+
         $this->validate([
+            'otp'=>'required',
             'password' => 'required|string|min:6|max:10',
         ]);
-            $user = User::where('email', $this->email)->first();
-            if ($this->otp == $user->otp) {
-                $user->password = Hash::make($this->password);
-                $user->verified=1;
-                $user->save();
-                Auth::login($user);
-                return redirect(route('user.dashboard'));
-            }else{
-                session()->flash('error', 'Invalid opt');
-            }
+        $user = User::where('email', $this->email)->first();
+        if ($this->otp == $user->otp) {
+            $user->password = Hash::make($this->password);
+            $user->verified = 1;
+            $user->save();
+            Auth::login($user);
+            return redirect(route('user.dashboard'));
+        } else {
+            session()->flash('error', 'Invalid opt');
+        }
         // $email  = $this->email;
         // $username = strstr($email, '@', true);
         // $users->first_name = " ";
@@ -131,6 +139,38 @@ class Registration extends Component
             session()->flash('error', "  <strong>{ $this->login_email}</strong> is incorrect. <a
             href='https://demo.wpthemego.com/themes/sw_revo/wc_vendor/my-account/lost-password/'>Lost
             your password?</a>");
+        }
+    }
+
+    public function googleSignup()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function googleSignupCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            if ($user) {
+                $checkEmail = User::where('email', $user->email)->first();
+               Auth::login($checkEmail);
+            } else {
+                $users = new User();
+                $email  = $user->email;
+                $username = strstr($email, '@', true);
+                $users->first_name = " ";
+                $users->last_name = " ";
+                $users->username = $username;
+                $users->email = $user->email;
+                $users->mobile_number=" ";
+                $users->password = " ";
+                $result=$users->save();
+                if($result){
+                    return redirect(route('home'));
+                }
+            }
+        } catch (\Exception $e) {
+            dd($e);
         }
     }
 }

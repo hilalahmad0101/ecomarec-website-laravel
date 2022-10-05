@@ -1,871 +1,1124 @@
 <div>
     <x-slot name="title">Home</x-slot>
-    <div class="row">
+    <div class="shadow bg-gray-50 hidden ">
+        <nav class="navbar navbar-expand-lg py-2 container mx-auto relative flex items-center w-full justify-between">
+            <div class="px-6">
+                <button
+                    class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentY"
+                    aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-5" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+                <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
+                    <ul class="navbar-nav mr-auto flex space-x-12 flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">TVs & Appliances
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Baby & Kids
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
+                                Furniture</a>
+                        </li>
+                        <li class="nav-item dropdown static">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"
+                                href="#" data-mdb-ripple="true" data-mdb-ripple-color="light" type="button"
+                                id="dropdownMenuButtonY" data-bs-toggle="dropdown" aria-expanded="false">Sports,
+                                Books & More
 
-        <style>
-            #alert {
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                background-color: green;
-                padding: 10px 20px;
-                border-radius: 3px;
-                color: white;
-                font-size: 19px;
-            }
-            #alert-error{
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                background-color: red;
-                padding: 10px 20px;
-                border-radius: 3px;
-                color: white;
-                font-size: 19px;
-            }
-        </style>
-        @if (session()->has('success'))
-            <div id="alert">{{session('success')}}</div>
-        @endif
-        @if (session()->has('error'))
-        <div id="alert-error">{{session('error')}}</div>
-    @endif
-        <div id="contents" role="main" class="main-page  col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="post-9 page type-page status-publish hentry">
-                <div class="entry-content">
-                    <div class="entry-summary">
-                        <div data-elementor-type="wp-page" data-elementor-id="9" class="elementor elementor-9"
-                            data-elementor-settings="[]">
-                            <div class="elementor-inner">
-                                <div class="elementor-section-wrap">
-                                    <x-slider />
-
-                                    <section
-                                        class="elementor-section elementor-top-section elementor-element elementor-element-f098688 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                        data-id="f098688" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-row">
-                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-caacce7"
-                                                    data-id="caacce7" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-00ef874 elementor-widget elementor-widget-wp-widget-sw_woo_cat_slider_widget"
-                                                                data-id="00ef874" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_woo_cat_slider_widget.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div id="slider_wp-widget-sw_woo_cat_slider_widget"
-                                                                        class="responsive-slider sw-category-slider loading"
-                                                                        data-append=".resp-slider-container"
-                                                                        data-lg="5" data-md="4" data-sm="3"
-                                                                        data-xs="3" data-mobile="2" data-speed="1000"
-                                                                        data-scroll="1" data-interval="5000"
-                                                                        data-autoplay="true">
-                                                                        <div class="block-title">
-                                                                            <h3 class="font-custome"><span>featured
-                                                                                    categories</span></h3>
-                                                                        </div>
-                                                                        <div class="resp-slider-container">
-                                                                            <div class="slider responsive">
-                                                                                @foreach ($categories as $category)
-                                                                                    <x-category id="{{ $category->id }}"
-                                                                                        cname="{{ $category->category_name }}"
-                                                                                        image="{{ $category->image }}"
-                                                                                        slug="{{ $category->slug }}" />
-                                                                                @endforeach
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
+                                    class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu w-full mt-0 hidden shadow-lg bg-white absolute left-0 top-full"
+                                aria-labelledby="dropdownMenuButtonY">
+                                <div class="px-6 lg:px-8 py-5">
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Lorem ipsum
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Dolor
+                                                sit</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Amet
+                                                consectetur</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Adipisicing
+                                                elit</a>
                                         </div>
-                                    </section>
-                                    {{-- <section
-                                        class="elementor-section elementor-top-section elementor-element elementor-element-94cb0dc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                        data-id="94cb0dc" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-row">
-                                                <div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-5ceae40"
-                                                    data-id="5ceae40" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-b4a7797 elementor-widget elementor-widget-wp-widget-sw_woo_slider_countdown_widget"
-                                                                data-id="b4a7797" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_woo_slider_countdown_widget.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div id="fashion_sw_countdown_sw_woo_slider_countdown_widget_1"
-                                                                        class="sw-woo-container-slider responsive-slider countdown-slider loading"
-                                                                        data-lg="1" data-md="1" data-sm="1"
-                                                                        data-xs="1" data-mobile="1"
-                                                                        data-speed="1000" data-scroll="1"
-                                                                        data-interval="5000" data-autoplay="false"
-                                                                        data-circle="false">
-
-                                                                        <div class="resp-slider-container">
-                                                                            <div class="box-title">
-                                                                                <h3>Today deals</h3>
-                                                                            </div>
-                                                                            <div class="slider responsive">
-
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_1933">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -25%</div> <a
-                                                                                                    href="product/magni-dolores/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="Magni dolores"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/15-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/15.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/15-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="Magni dolores"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/15-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/15.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/15-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="933"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -25%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/magni-dolores/"
-                                                                                                        title="Magni dolores">Magni
-                                                                                                        dolores</a>
-                                                                                                </h4>
-                                                                                                <!-- rating  -->
-                                                                                                <div
-                                                                                                    class="reviews-content">
-                                                                                                    <div
-                                                                                                        class="star">
-                                                                                                        <span
-                                                                                                            style="width:65px"></span>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="item-number-rating">
-                                                                                                        1 Review(s)
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <!-- end rating  -->
-                                                                                                <div
-                                                                                                    class="description">
-                                                                                                    Style Code Live
-                                                                                                    is a daily, live
-                                                                                                    show where style
-                                                                                                    enthusiasts can
-                                                                                                    connect, chat,
-                                                                                                    shop, and get
-                                                                                                    the inside scoop
-                                                                                                    on the latest
-                                                                                                    fashion and
-                                                                                                    beauty trends.
-                                                                                                </div>
-                                                                                                <!-- Price -->
-                                                                                                <div
-                                                                                                    class="item-price">
-                                                                                                    <span>
-                                                                                                        <del><span
-                                                                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>80.00</bdi></span></del>
-                                                                                                        <ins><span
-                                                                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>60.00</bdi></span></ins>
-                                                                                                    </span>
-                                                                                                </div>
-                                                                                                <div class="product-countdown"
-                                                                                                    data-date="1670889599"
-                                                                                                    data-starttime="1592524800">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-01a36a2 elementor-widget elementor-widget-wp-widget-sw_woo_slider_countdown_widget"
-                                                                data-id="01a36a2" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_woo_slider_countdown_widget.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div id="fashion_sw_countdown_sw_woo_slider_countdown_widget_2"
-                                                                        class="sw-woo-container-slider responsive-slider countdown-slider2 loading"
-                                                                        data-lg="6" data-md="4" data-sm="3"
-                                                                        data-xs="2" data-mobile="2"
-                                                                        data-speed="1000" data-scroll="1"
-                                                                        data-interval="5000" data-autoplay="false"
-                                                                        data-circle="false">
-                                                                        <div class="resp-slider-container">
-                                                                            <div class="slider responsive">
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_2933">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/magni-dolores/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="Magni dolores"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/15-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/15.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/15-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="Magni dolores"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/15-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/15-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/15.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/15-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="933"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -25%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -25%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/magni-dolores/"
-                                                                                                        title="Magni dolores">Magni
-                                                                                                        dolores</a>
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_2942">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/sed-ut-pers/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="Sed ut pers"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/f28-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f28-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f28.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f28-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/f28-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/f28-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="Sed ut pers"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/f28-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f28-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f28.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f28-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="942"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -11%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -11%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/sed-ut-pers/"
-                                                                                                        title="Sed ut pers">Sed
-                                                                                                        ut pers</a>
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_2944">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/natus-error-sit/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="natus error sit"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/12-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/12-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/12-150x150.jpg')}} 150w, {{asset('wp-content/uploads/2016/10/12.jpg')}} 600w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/12-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/12-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="natus error sit"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/12-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/12-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/12-150x150.jpg')}} 150w, {{asset('wp-content/uploads/2016/10/12.jpg')}} 600w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="944"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -33%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -33%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/natus-error-sit/"
-                                                                                                        title="natus error sit">natus
-                                                                                                        error
-                                                                                                        sit</a></h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_2945">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/eius-modi-tempo/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="eius modi tempo"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/14-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/14-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/14.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/14-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/14-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/14-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="eius modi tempo"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/14-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/14-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/14.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/14-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="945"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -27%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -27%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/eius-modi-tempo/"
-                                                                                                        title="eius modi tempo">eius
-                                                                                                        modi
-                                                                                                        tempo</a>
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_2967">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/odit-aut-fugit/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="Odit aut fugit"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/5-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/5-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/5.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/5-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/5-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/5-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="Odit aut fugit"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/5-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/5-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/5.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/5-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="967"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -38%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -38%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/odit-aut-fugit/"
-                                                                                                        title="Odit aut fugit">Odit
-                                                                                                        aut
-                                                                                                        fugit</a>
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="item-countdown product "
-                                                                                    id="product_sw_countdown_sw_woo_slider_countdown_widget_21086">
-                                                                                    <div class="item-wrap">
-                                                                                        <div class="item-detail">
-                                                                                            <div
-                                                                                                class="item-image-countdown">
-                                                                                                <a
-                                                                                                    href="product/beatae-vitae-dicta/"><img
-                                                                                                        width="300"
-                                                                                                        height="300"
-                                                                                                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E"
-                                                                                                        class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                        alt="beatae vitae dicta"
-                                                                                                        data-lazy-srcset="{{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f43.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f43-150x150.jpg')}} 150w"
-                                                                                                        data-lazy-sizes="(max-width: 300px) 100vw, 300px"
-                                                                                                        data-lazy-src="{{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}}"><noscript><img
-                                                                                                            width="300"
-                                                                                                            height="300"
-                                                                                                            src="{{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}}"
-                                                                                                            class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                                                                            alt="beatae vitae dicta"
-                                                                                                            srcset="{{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f43.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f43-150x150.jpg')}} 150w"
-                                                                                                            sizes="(max-width: 300px) 100vw, 300px"></noscript></a><a
-                                                                                                    href="javascript:void(0)"
-                                                                                                    data-product_id="1086"
-                                                                                                    class="sw-quickview"
-                                                                                                    data-type="quickview"
-                                                                                                    data-ajax_url="/themes/sw_revo/?wc-ajax=%%endpoint%%">Quick
-                                                                                                    View </a>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -17%</div>
-                                                                                                <div
-                                                                                                    class="sale-off ">
-                                                                                                    -17%</div>
-                                                                                            </div>
-                                                                                            <div
-                                                                                                class="item-content">
-                                                                                                <h4><a href="product/beatae-vitae-dicta/"
-                                                                                                        title="beatae vitae dicta">beatae
-                                                                                                        vitae
-                                                                                                        dicta</a>
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-dcd3ee9"
-                                                    data-id="dcd3ee9" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-1e5a5f1 elementor-widget elementor-widget-wp-widget-sw_woo_slider_widget"
-                                                                data-id="1e5a5f1" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_woo_slider_widget.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div id="sw_bestsales_sw_woo_slider_widget_1"
-                                                                        class="sw-best-seller-product vc_element">
-                                                                        <div class="box-title clearfix">
-                                                                            <h3>Best Sellers</h3>
-                                                                        </div>
-                                                                        <div class="wrap-content">
-
-                                                                            <div class="item product ">
-                                                                                <div class="item-inner">
-                                                                                    <div class="item-img">
-                                                                                        <a href="product/totam-rem-aperiam/"
-                                                                                            title="totam rem aperiam">
-                                                                                            <img width="100"
-                                                                                                height="100"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E"
-                                                                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                alt=""
-                                                                                                data-lazy-srcset="{{asset('wp-content/uploads/2016/10/36-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/36-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/36.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/36-150x150.jpg')}} 150w"
-                                                                                                data-lazy-sizes="(max-width: 100px) 100vw, 100px"
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/10/36-100x100.jpg')}}"><noscript><img
-                                                                                                    width="100"
-                                                                                                    height="100"
-                                                                                                    src="{{asset('wp-content/uploads/2016/10/36-100x100.jpg')}}"
-                                                                                                    class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                    alt=""
-                                                                                                    srcset="{{asset('wp-content/uploads/2016/10/36-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/36-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/36.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/36-150x150.jpg')}} 150w"
-                                                                                                    sizes="(max-width: 100px) 100vw, 100px"></noscript>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="item-content">
-                                                                                        <h4><a href="product/totam-rem-aperiam/"
-                                                                                                title="totam rem aperiam">totam
-                                                                                                rem aperiam</a></h4>
-                                                                                        <div class="item-price">
-                                                                                            <del><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>79.00</bdi></span></del>
-                                                                                            <ins><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>60.00</bdi></span></ins>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="item product ">
-                                                                                <div class="item-inner">
-                                                                                    <div class="item-img">
-                                                                                        <a href="product/ut-enim-ad-mini-2/"
-                                                                                            title="Ut enim ad mini">
-                                                                                            <img width="100"
-                                                                                                height="100"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E"
-                                                                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                alt=""
-                                                                                                data-lazy-srcset="{{asset('wp-content/uploads/2016/10/f8-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f8-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f8.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f8-150x150.jpg')}} 150w"
-                                                                                                data-lazy-sizes="(max-width: 100px) 100vw, 100px"
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/10/f8-100x100.jpg')}}"><noscript><img
-                                                                                                    width="100"
-                                                                                                    height="100"
-                                                                                                    src="{{asset('wp-content/uploads/2016/10/f8-100x100.jpg')}}"
-                                                                                                    class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                    alt=""
-                                                                                                    srcset="{{asset('wp-content/uploads/2016/10/f8-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f8-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f8.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f8-150x150.jpg')}} 150w"
-                                                                                                    sizes="(max-width: 100px) 100vw, 100px"></noscript>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="item-content">
-                                                                                        <h4><a href="product/ut-enim-ad-mini-2/"
-                                                                                                title="Ut enim ad mini">Ut
-                                                                                                enim ad mini</a>
-                                                                                        </h4>
-                                                                                        <div class="item-price">
-                                                                                            <span
-                                                                                                class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>70.00</bdi></span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="item product ">
-                                                                                <div class="item-inner">
-                                                                                    <div class="item-img">
-                                                                                        <a href="product/beatae-vitae-dicta/"
-                                                                                            title="beatae vitae dicta">
-                                                                                            <img width="100"
-                                                                                                height="100"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E"
-                                                                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                alt=""
-                                                                                                data-lazy-srcset="{{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f43.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f43-150x150.jpg')}} 150w"
-                                                                                                data-lazy-sizes="(max-width: 100px) 100vw, 100px"
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}}"><noscript><img
-                                                                                                    width="100"
-                                                                                                    height="100"
-                                                                                                    src="{{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}}"
-                                                                                                    class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                    alt=""
-                                                                                                    srcset="{{asset('wp-content/uploads/2016/10/f43-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/f43-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/f43.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/f43-150x150.jpg')}} 150w"
-                                                                                                    sizes="(max-width: 100px) 100vw, 100px"></noscript>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="item-content">
-                                                                                        <h4><a href="product/beatae-vitae-dicta/"
-                                                                                                title="beatae vitae dicta">beatae
-                                                                                                vitae dicta</a></h4>
-                                                                                        <div class="item-price">
-                                                                                            <del><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>72.00</bdi></span></del>
-                                                                                            <ins><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>60.00</bdi></span></ins>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="item product ">
-                                                                                <div class="item-inner">
-                                                                                    <div class="item-img">
-                                                                                        <a href="product/odit-aut-fugit/"
-                                                                                            title="Odit aut fugit">
-                                                                                            <img width="100"
-                                                                                                height="100"
-                                                                                                src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3C/svg%3E"
-                                                                                                class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                alt=""
-                                                                                                data-lazy-srcset="{{asset('wp-content/uploads/2016/10/5-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/5-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/5.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/5-150x150.jpg')}} 150w"
-                                                                                                data-lazy-sizes="(max-width: 100px) 100vw, 100px"
-                                                                                                data-lazy-src="{{asset('wp-content/uploads/2016/10/5-100x100.jpg')}}"><noscript><img
-                                                                                                    width="100"
-                                                                                                    height="100"
-                                                                                                    src="{{asset('wp-content/uploads/2016/10/5-100x100.jpg')}}"
-                                                                                                    class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
-                                                                                                    alt=""
-                                                                                                    srcset="{{asset('wp-content/uploads/2016/10/5-100x100.jpg')}} 100w, {{asset('wp-content/uploads/2016/10/5-300x300.jpg')}} 300w, {{asset('wp-content/uploads/2016/10/5.jpg')}} 600w, {{asset('wp-content/uploads/2016/10/5-150x150.jpg')}} 150w"
-                                                                                                    sizes="(max-width: 100px) 100vw, 100px"></noscript>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="item-content">
-                                                                                        <h4><a href="product/odit-aut-fugit/"
-                                                                                                title="Odit aut fugit">Odit
-                                                                                                aut fugit</a></h4>
-                                                                                        <div class="item-price">
-                                                                                            <del><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>80.00</bdi></span></del>
-                                                                                            <ins><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                            class="woocommerce-Price-currencySymbol">&#36;</span>50.00</bdi></span></ins>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Explit voluptas
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Perspiciatis
+                                                quo</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laudant
+                                                maiores</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Provident
+                                                dolor</a>
                                         </div>
-                                    </section> --}}
-                                    <x-banner />
-                                    <section
-                                        class="elementor-section elementor-top-section elementor-element elementor-element-dc06634 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                        data-id="dc06634" data-element_type="section">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-row">
-                                                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcf345b"
-                                                    data-id="bcf345b" data-element_type="column">
-                                                    <div class="elementor-column-wrap elementor-element-populated">
-                                                        <div class="elementor-widget-wrap">
-                                                            <div class="elementor-element elementor-element-41c6b82 elementor-widget elementor-widget-wp-widget-sw_woo_tab_slider"
-                                                                data-id="41c6b82" data-element_type="widget"
-                                                                data-widget_type="wp-widget-sw_woo_tab_slider.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="sw-wootab-slider sw-ajax sw-woo-tab-default"
-                                                                        id="woo_tab_wp-widget-sw_woo_tab_slider5039975331663678713">
-                                                                        <div class="resp-tab"
-                                                                            style="position:relative;">
-                                                                            <div
-                                                                                class="category-slider-content  clearfix">
-                                                                                <!-- Get child category -->
-                                                                                <div class="box-title">
-                                                                                    <h3>Fashion</h3>
-                                                                                </div>
-
-
-                                                                                <button
-                                                                                    class="button-collapse collapsed pull-right"
-                                                                                    type="button"
-                                                                                    data-toggle="collapse"
-                                                                                    data-target="#nav_wp-widget-sw_woo_tab_slider2821402051663678713"
-                                                                                    aria-expanded="false">
-                                                                                </button>
-                                                                                {{-- <div class="nav-tabs-select">
-                                                <ul class="nav nav-tabs"
-                                                    id="nav_wp-widget-sw_woo_tab_slider2821402051663678713">
-                                                    <li class="active loaded">
-                                                        <a href="#latest_wp-widget-sw_woo_tab_slider6768785541663678713"
-                                                            data-type="so_ajax" data-layout="default" data-row="2"
-                                                            data-length="0"
-                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
-                                                            data-category="fashion" data-toggle="tab"
-                                                            data-sorder="latest" data-catload="ajax" data-number="12"
-                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
-                                                            data-mobile="2" data-speed="1000" data-scroll="1"
-                                                            data-interval="5000" data-autoplay="false">
-                                                            Latest Products </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#bestsales_wp-widget-sw_woo_tab_slider6768785541663678713"
-                                                            data-type="so_ajax" data-layout="default" data-row="2"
-                                                            data-length="0"
-                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
-                                                            data-category="fashion" data-toggle="tab"
-                                                            data-sorder="bestsales" data-catload="ajax" data-number="12"
-                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
-                                                            data-mobile="2" data-speed="1000" data-scroll="1"
-                                                            data-interval="5000" data-autoplay="false">
-                                                            Best Selling
-                                                            Products </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#rating_wp-widget-sw_woo_tab_slider6768785541663678713"
-                                                            data-type="so_ajax" data-layout="default" data-row="2"
-                                                            data-length="0"
-                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
-                                                            data-category="fashion" data-toggle="tab"
-                                                            data-sorder="rating" data-catload="ajax" data-number="12"
-                                                            data-lg="5" data-md="4" data-sm="3" data-xs="2"
-                                                            data-mobile="2" data-speed="1000" data-scroll="1"
-                                                            data-interval="5000" data-autoplay="false">
-                                                            Top Rating Products
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#featured_wp-widget-sw_woo_tab_slider6768785541663678713"
-                                                            data-type="so_ajax" data-layout="default" data-row="2"
-                                                            data-length="0"
-                                                            data-ajaxurl="/themes/sw_revo/?wc-ajax=%%endpoint%%"
-                                                            data-category="fashion" data-toggle="tab"
-                                                            data-sorder="featured" data-catload="ajax" data-number="12"
-                                                            data-lg="5" data-md="4" data-sm="3"
-                                                            data-xs="2" data-mobile="2" data-speed="1000"
-                                                            data-scroll="1" data-interval="5000"
-                                                            data-autoplay="false">
-                                                            Featured Products
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div> --}}
-                                                                                <!-- End get child category -->
-                                                                                <div class="tab-content clearfix">
-                                                                                    <div
-                                                                                        class="categories-image clearfix">
-                                                                                        <div class="item-image">
-                                                                                            <!-- Banner -->
-                                                                                            <div
-                                                                                                class="banner-category clearfix">
-                                                                                                <div id="banner_sw_woo_tab_slider_1"
-                                                                                                    class="banner-slider"
-                                                                                                    data-lg="1"
-                                                                                                    data-md="1"
-                                                                                                    data-sm="1"
-                                                                                                    data-xs="1"
-                                                                                                    data-mobile="1"
-                                                                                                    data-dots="true"
-                                                                                                    data-arrow="false"
-                                                                                                    data-fade="false">
-                                                                                                    <div
-                                                                                                        class="banner-responsive">
-                                                                                                        <div
-                                                                                                            class="pull-left">
-                                                                                                            <a
-                                                                                                                href="#"><img
-                                                                                                                    width="196"
-                                                                                                                    height="544"
-                                                                                                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20196%20544'%3E%3C/svg%3E"
-                                                                                                                    class="attachment-full size-full"
-                                                                                                                    alt=""
-                                                                                                                    data-lazy-srcset="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }} 196w, {{ asset('wp-content/uploads/2016/10/fashion2-108x300.jpg') }} 108w"
-                                                                                                                    data-lazy-sizes="(max-width: 196px) 100vw, 196px"
-                                                                                                                    data-lazy-src="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }}" /><noscript><img
-                                                                                                                        width="196"
-                                                                                                                        height="544"
-                                                                                                                        src="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }}"
-                                                                                                                        class="attachment-full size-full"
-                                                                                                                        alt=""
-                                                                                                                        srcset="{{ asset('wp-content/uploads/2016/10/fashion2.jpg') }} 196w, {{ asset('wp-content/uploads/2016/10/fashion2-108x300.jpg') }} 108w"
-                                                                                                                        sizes="(max-width: 196px) 100vw, 196px" /></noscript></a>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-
-                                                                                        </div>
-                                                                                    </div>
-
-
-                                                                                    <!-- Product tab slider -->
-                                                                                    <div class="tab-pane active"
-                                                                                        id="latest_wp-widget-sw_woo_tab_slider6768785541663678713">
-                                                                                        <div id="tab_latest_wp-widget-sw_woo_tab_slider6768785541663678713"
-                                                                                            class="woo-tab-container-slider responsive-slider loading clearfix"
-                                                                                            data-lg="5"
-                                                                                            data-md="4"
-                                                                                            data-sm="3"
-                                                                                            data-xs="2"
-                                                                                            data-mobile="2"
-                                                                                            data-speed="1000"
-                                                                                            data-scroll="1"
-                                                                                            data-interval="5000"
-                                                                                            data-autoplay="false"
-                                                                                            data-img_w="300"
-                                                                                            data-img_h="300"
-                                                                                            data-crop="false">
-                                                                                            <div
-                                                                                                class="resp-slider-container">
-                                                                                                <div
-                                                                                                    class="slider responsive">
-                                                                                                    @foreach ($products as $product)
-                                                                                                        <x-category-products
-                                                                                                            id="{{ $product->id }}"
-                                                                                                            title="{{ $product->product_title }}"
-                                                                                                            image="{{ $product->image }}"
-                                                                                                            sale_price="{{ $product->sale_price }}"
-                                                                                                            price="{{ $product->price }}" />
-                                                                                                    @endforeach
-
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Iste quaerato
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Est
+                                                iure</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Praesentium</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laboriosam</a>
                                         </div>
-                                    </section>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Cras justo odio
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Saepe</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Vel
+                                                alias</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Sunt
+                                                doloribus</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cum
+                                                dolores</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Flights</a>
+                        </li>
+                        <li class="nav-item dropdown static">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"
+                                href="#" data-mdb-ripple="true" data-mdb-ripple-color="light" type="button"
+                                id="dropdownMenuButtonY" data-bs-toggle="dropdown" aria-expanded="false">Mega menu
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
+                                    class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 320 512">
+                                    <path fill="currentColor"
+                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu w-full mt-0 hidden shadow-lg bg-white absolute left-0 top-full"
+                                aria-labelledby="dropdownMenuButtonY">
+                                <div class="px-6 lg:px-8 py-5">
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Lorem ipsum
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Dolor
+                                                sit</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Amet
+                                                consectetur</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Adipisicing
+                                                elit</a>
+                                        </div>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Explit voluptas
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Perspiciatis
+                                                quo</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laudant
+                                                maiores</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Provident
+                                                dolor</a>
+                                        </div>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Iste quaerato
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
+                                                justo odio</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Est
+                                                iure</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Praesentium</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laboriosam</a>
+                                        </div>
+                                        <div class="bg-white text-gray-600">
+                                            <p
+                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
+                                                Cras justo odio
+                                            </p>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Saepe</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Vel
+                                                alias</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Sunt
+                                                doloribus</a>
+                                            <a href="#!" aria-current="true"
+                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cum
+                                                dolores</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
+                                Furniture</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
+                                Furniture</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- /// main caurosal -->
+
+    <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
+        <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                class="active hidden" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" class="hidden" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button class="hidden" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner relative w-full overflow-hidden">
+            <div class="carousel-item active relative float-left w-full">
+                <img src="https://s.alicdn.com/@img/imgextra/i3/O1CN01M9x0R41VzdeRW8FYF_!!6000000002724-0-tps-990-400.jpg"
+                    class="block w-full" alt="..." />
+
+            </div>
+            <div class="carousel-item relative float-left w-full">
+                <img src="https://s.alicdn.com/@img/imgextra/i2/O1CN01rYC4hI1lJzSxuJUm1_!!6000000004799-2-tps-990-400.png"
+                    class="block w-full" alt="..." />
+
+            </div>
+            <div class="carousel-item relative float-left w-full">
+                <img src="https://s.alicdn.com/@img/imgextra/i1/O1CN01AAmzwV1GWaIkhRPMg_!!6000000000630-2-tps-990-400.png"
+                    class="block w-full" alt="..." />
+
+            </div>
+        </div>
+        <button
+            class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+            type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+            class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+            type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- ////New Arrivals -->
+    <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
+        <h1 class="font md:text-2xl text-md font-medium capitalize tracking-tight text-blue-900">
+            New Arrivals
+        </h1>
+    </div>
+    <div class="shadow rounded-lg bg-white container mx-auto">
+        <div class="swiper proSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex justify-center items-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- ///Gold Bag Mobile Caurosal -->
+    <div id="carouselExampleControls" class="carousel slide relative md:hidden block" data-bs-ride="carousel">
+        <div class="carousel-inner relative w-full overflow-hidden">
+            <div class="carousel-item active relative float-left w-full">
+                <div class="text-center p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0 my-3">
+                    <img src="./images/menCollection.jpg"
+                        class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                    <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                        Men Collection
+                    </h3>
+
+                    <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl leading-30 font-semibold">
+                        Special Offer
+                    </h1>
+                    <p class="font-sm text-white">SAVE 20%</p>
+                    <button></button>
+                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                    <button type="button"
+                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item relative float-left w-full">
+                <div class="text-center p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0 my-3">
+                    <img src="./images/p9.jpg"
+                        class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                    <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                        Gold Bag
+                    </h3>
+
+                    <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                        Special Offer
+                    </h1>
+                    <p class="font-sm text-white font-light">SAVE 90%</p>
+
+                    <button type="button"
+                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button
+            class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+            class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- ///Gold Bag  two Boxes -->
+    <div class="container mx-auto my-7 mt-12 md:block hidden rounded-lg">
+        <div
+            class="w-full h-full grid grid-cols-1 lg:grid-cols-2 lg:space-x-3 space-x-0 pb-3 my-5 md:border-b-0 border-b-2">
+            <div class="text-center p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0 my-3">
+                <img src="./images/p9.jpg" class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay"
+                    alt="" />
+                <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                    Gold Bag
+                </h3>
+
+                <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                    Special Offer
+                </h1>
+                <p class="font-sm text-white font-light">SAVE 90%</p>
+
+                <button type="button"
+                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="text-center p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0 my-3">
+                <img src="./images/menCollection.jpg"
+                    class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                    Men Collection
+                </h3>
+
+                <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl leading-30 font-semibold">
+                    Special Offer
+                </h1>
+                <p class="font-sm text-white">SAVE 20%</p>
+                <button></button>
+                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                <button type="button"
+                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ///mobile menu -->
+    <div
+        class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
+        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Fashion
+        </h1>
+
+        <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+            class="text-blue-800 bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+            type="button">
+            Priduct Fliter
+            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+        <!-- Dropdown menu -->
+        <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+            style="
+          position: absolute;
+          inset: 0px auto auto 0px;
+          margin: 0px;
+          transform: translate(0px, 510px);
+        ">
+            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Latest
+                        Product
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Best
+                        Selling Product</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Top
+                        Rating Product</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                        out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Desktop menu -->
+    <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
+        <h1 class="text-gray-300 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Fashion
+        </h1>
+        <div class="flex justify-center">
+            <div>
+                <div class="dropdown relative">
+                    <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                href="#">
+                                <h1
+                                    class="font sm:text-1xl text-xs font-medium capitalize text-end tracking-tight text-blue-900">
+                                    Best Selling Product
+                                </h1>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                href="#">
+                                <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+                                    Latest Product
+                                </h1>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                href="#">
+                                <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+                                    Top Rating Product
+                                </h1>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Latest Product
+        </h1>
+        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Best Selling Product
+        </h1>
+        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Top Rating Product
+        </h1>
+    </div>
+    <div class="container mx-auto flex h-full mb-12">
+        <div class="lg:block hidden">
+            <img class="h-full w-full object-cover"
+                src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/fashion2.jpg"
+                alt="" />
+        </div>
+        <div class="swiper mySwiper w-full h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bg-white flex justify-center">
+                    <div>
+                        <div class="bg-white shadow my-4 md:w-56 w-44 rounded relative  shadow">
+
+                            <div
+                                class="h-7 flex justify-center items-center    w-7 absolute cursor-pointer top-0 right-0 bg-custome-100 rounded-full">
+
+                                <i
+                                    class="fa-regular fa-heart text-blue-800 active:text-red-600 focus:text-red-600 focus:text-red-900"></i>
+
+                            </div>
+                            <a href="product.html">
+                                <img src="https://contents.mediadecathlon.com/p2267976/22db36afff84d60afec1b186eb33cff6/p2267976.jpg?format=auto&quality=70&f=300x0"
+                                    class="w-full" alt="" />
+                            </a>
+                            <div class="p-2">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-blue-900 font-bold sm:text-lg text-md mt-1">
+                                        $555 <span class="text-red-500 text-xs">50%</span>
+                                    </h3>
+                                    <p class="text-blue-900 font-bold text-md">
+                                        4.6 <i class="fa-solid fa-star text-yellow-300"></i>
+                                    </p>
+                                </div>
+                                <h3 class="sm:text-xs text-xs text-gray-600 mb-1">Men Tennis T-Shirt</h3>
+                                <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">Brand</h3>
+                                <div class="flex justify-between space-x-1">
+                                    <button type="button"
+                                        class="text-blue-800  transition bg-transparent hover:text-white hover:bg-blue-700 border border-blue-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded text-xsm px-3 py-2 w-full  flex justify-center items-center  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                        Buy Now
+                                    </button>
+                                    <button type="button"
+                                        class="text-white w-full pt-2.5 hover:text-blue-600 hover:border-blue-600 border transition  bg-blue-600 hover:bg-white focus:ring-4 focus:ring-blue-300 font-semibold rounded text-xsm px-2 py-2   flex justify-center items-center  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                        Add to card
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
+                {{-- <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div> --}}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
+    <!-- //second Mobile menu -->
+    <div
+        class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
+        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
+            Fashion
+        </h1>
+
+        <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+            class="text-blue-800 bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+            type="button">
+            Priduct Fliter
+            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </button>
+        <!-- Dropdown menu -->
+        <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+            style="
+          position: absolute;
+          inset: 0px auto auto 0px;
+          margin: 0px;
+          transform: translate(0px, 510px);
+        ">
+            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Latest
+                        Product
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Best
+                        Selling Product</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Top
+                        Rating Product</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                        out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Second desktop menu -->
+    <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
+        <div class="flex justify-start">
+            <h1 class="font text-left pl-1 text-blue-900 text-3xl font-medium capitalize text-end tracking-tight">
+                Fashion
+            </h1>
+        </div>
+        <div class="flex justify-end space-x-12 pr-8">
+            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+                Latest Product
+            </h1>
+            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+                Best Selling Product
+            </h1>
+            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
+                Top Rating Product
+            </h1>
+        </div>
+    </div>
+    <div class="container mx-auto flex h-full mb-12">
+        <div class="swiper mySwiper w-full h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bg-white flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide flex justify-center">
+                    <div>
+                        <div class="card"></div>
+                        <div class="card"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="lg:block hidden">
+            <img class="h-full w-full object-cover"
+                src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/electrolict.jpg"
+                alt="" />
+        </div>
+    </div>
+
+    <!-- ///Sringp Box -->
+
+    <div
+        class="container my-9 mx-auto w-full bg-[url('./images/banner7.jpg')] p-12 flex justify-start align-center flex-row">
+        <div class="px-12 text-center w-full">
+            <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 mb-2 font-light">
+                Spring
+            </h3>
+
+            <h1 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 leading-30 font-semibold">
+                2022 Ready
+            </h1>
+            <p class="font-sm md:text-sm text-xs mb-1 leading-5 text-white">
+                It is a long established fact that a reader will be distracted <br />
+                by the readable content of a page
+            </p>
+            <a href="" class="text-blue-400 md:text-sm text-xs">Explore Now <i
+                    class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
+        <h1 class="font text-2xl font-medium capitalize tracking-tight text-blue-900">
+            New Arrrivals
+        </h1>
+    </div>
+    <div class="shadow rounded-lg bg-white container mx-auto">
+        <div class="swiper proSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- //Kids Fashion Mobile caurrosal Container -->
+
+    <div id="carouselExampleIndicators" class="carousel slide relative md:hidden block" data-bs-ride="carousel">
+        <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active hidden" aria-current="true" aria-label="Slide 1"></button>
+            <button class="hidden" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button class="hidden" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner relative w-full overflow-hidden">
+            <div class="carousel-item active float-left w-full">
+                <div
+                    class="text-center max-w-3xl p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0">
+                    <img src="./images/kids-fashion.jpg"
+                        class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                    <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                        Kids Fashion
+                    </h3>
+
+                    <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                        Special Offer
+                    </h1>
+                    <p class="font-sm text-white font-light">SAVE 20%</p>
+                    <button></button>
+                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                    <button type="button"
+                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-item float-left w-full">
+                <div
+                    class="text-center max-w-3xl p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0">
+                    <img src="./images/watch1.jpg"
+                        class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                    <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                        IWATCH
+                    </h3>
+
+                    <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                        Special Offer
+                    </h1>
+                    <p class="font-sm text-white">SAVE 20%</p>
+                    <button></button>
+                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                    <button type="button"
+                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        Shop Now <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button
+            class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+            type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+            class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+            type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- //Kids Fashion Desktop Container -->
+
+    <div class="container mx-auto my-7 mt-12 rounded-lg hidden md:block">
+        <div class="w-full h-full grid grid-cols-1 lg:grid-cols-2 lg:space-x-3 space-x-0 lg:space-y-0 space-y-3">
+            <div class="text-center max-w-3xl p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0">
+                <img src="./images/kids-fashion.jpg"
+                    class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                    Kids Fashion
+                </h3>
+
+                <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                    Special Offer
+                </h1>
+                <p class="font-sm text-white font-light">SAVE 20%</p>
+                <button></button>
+                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                <button type="button"
+                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="text-center max-w-3xl p-105 bg-gradient-to-r from-gray-600 to-gray-600 relative top-0 left-0">
+                <img src="./images/watch1.jpg"
+                    class="w-full h-full top-0 left-0 absolute object-cover mix-blend-overlay" alt="" />
+                <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 font-light relative top-0">
+                    IWATCH
+                </h3>
+
+                <h1 class="text-white mb-2 md:mb-3 md:text-4xl text-2xl md-leading-30 font-semibold">
+                    Special Offer
+                </h1>
+                <p class="font-sm text-white">SAVE 20%</p>
+                <button></button>
+                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+
+                <button type="button"
+                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
         </div>
     </div>
+
+    <!-- Best of Electronics -->
+
+    <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
+        <h1 class="font text-2xl font-medium capitalize tracking-tight text-blue-900">
+            Best of Electronics
+        </h1>
+    </div>
+    <div class="shadow rounded-lg bg-white container mx-auto">
+        <div class="swiper proSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <div class="card2"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- ///Brand logo Caurosal -->
+    <div class="container mx-auto my-12 border-2 border-gray-200 rounded-lg p-3">
+        <div class="swiper BrandSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2017/02/brand-3.jpg"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-5.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-5.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-3.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-2.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-1.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/09/brand-6.png"
+                        class="w-96" alt="" />
+                </div>
+                <div class="swiper-slide flex justify-center align-center">
+                    <img src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2017/02/brand-3.jpg"
+                        class="w-96" alt="" />
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="bg-blue-600">
+        <div class="py-5 grid grid-cols-5 lg:grid-cols-5 container mx-auto mx-auto flex items-center">
+            <div
+                class="flex lg:flex-row md:space-x-5 md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2 my-5">
+                <div class="flex justify-center">
+                    <i class="fas fa-truck mx-auto text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white md:text-md text-xsm font-semibold my-1">
+                        FREE DELIVERY
+                    </h4>
+                    <p class="text-white md:text-base text-xxs font-light">
+                        From 275 AED
+                    </p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2">
+                <div class="my-auto">
+                    <i class="far fa-money-bill-alt text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="my-auto">
+                    <h4 class="text-white md:text-md text-xsm font-semibold mb-2">
+                        CASH ON DELIVERY
+                    </h4>
+                    <p class="text-white text-xxs font-light">From 275 AED</p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 align-centerg-9 lg:flex-row md:space-x-5 justify-center flex-col items-center text-center border-gray-100 lg:border-r-2 border-r-2">
+                <div class="">
+                    <i class="fas fa-gift text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                        FREE GIFT BOX
+                    </h4>
+                    <p class="text-white text-xxs font-light">& Gift Note</p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center align-centerg-9 border-gray-100 lg:border-r-2 border-r-2">
+                <div class="">
+                    <i class="fas fa-phone-square-alt text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                        CONTACT US
+                    </h4>
+                    <p class="text-white text-xxs font-light">123 456 789</p>
+                </div>
+            </div>
+
+            <div
+                class="flex lg:flex-row md:space-x-5 justify-center flex-col items-center text-center px-2 align-center mx-auto g-9">
+                <div class="">
+                    <i class="fa-regular fa-gem text-white md:md:text-4xl text-2xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                        LOYALTY
+                    </h4>
+                    <p class="text-white text-xxs font-light">Rewarded</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
