@@ -8,6 +8,7 @@ use App\Http\Livewire\User\Auth\AccountDetails;
 use App\Http\Livewire\User\Auth\Addresses;
 use App\Http\Livewire\User\Auth\BillingAddress;
 use App\Http\Livewire\User\Auth\Cart;
+use App\Http\Livewire\User\Auth\ChangePassword;
 use App\Http\Livewire\User\Auth\Dashboard;
 use App\Http\Livewire\User\Auth\ForgetPassword;
 use App\Http\Livewire\User\Auth\Order;
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/shipping-address', ShippingAddress::class)->name('user.shipping-address');
         Route::get('/carts', Cart::class)->name('user.carts');
         Route::get('/order', Order::class)->name('user.order');
+        Route::get('/change/password', ChangePassword::class)->name('user.change-password');
     });
 });
 

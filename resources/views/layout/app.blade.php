@@ -91,6 +91,16 @@
 
     <livewire:user.auth.registration />
 
+    @if (session()->has('error'))
+    <div class="bg-red-400 text-xl py-2 px-3 fixed top-3 rounded-md z-[999] right-3">
+      {{session('error')}}
+    </div>
+    @endif
+    @if (session()->has('success'))
+    <div class="bg-green-400 text-xl py-2 px-3 fixed top-3 rounded-md z-[999] right-3">
+        {{session('success')}}
+    </div>
+    @endif
     <!-- ///Mobile Header  -->
 
     <div id="MobileHeader" class="sticky lg:shadow-none shadow -top-2 z-40 bg-white  ">
@@ -132,7 +142,7 @@
 
 
         <div class="bg-white  pb-2">
-            <div class="sm:mx-0 mx-3 lg:hidden block flex justify-center">
+            <div class="sm:mx-0 mx-3 lg:hidden  flex justify-center">
                 <form class="items-center sm:w-3/5 w-full">
                     <label for="simple-search" class="sr-only">Search</label>
                     <div class="relative w-full">

@@ -1,11 +1,11 @@
 <div>
-    <x-slot name='title'>Category</x-slot>
+    <x-slot name='title'>Slider</x-slot>
     <div class="ec-content-wrapper">
         <div class="content">
             <div class="breadcrumb-wrapper breadcrumb-wrapper-2 breadcrumb-contacts">
-                <h1>Main Category</h1>
+                <h1>Slider</h1>
                 <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
-                    <span><i class="mdi mdi-chevron-right"></i></span>Main Category
+                    <span><i class="mdi mdi-chevron-right"></i></span>Slider
                 </p>
             </div>
             <div class="row">
@@ -14,18 +14,8 @@
                         <div class="card-body">
                             @if ($update)
                                 <div class="ec-cat-form">
-                                    <h4>Update Category</h4>
-                                    <form wire:submit.prevent='updateData'>
-                                        <div class="form-group row">
-                                            <label for="text" class="col-12 col-form-label">Category Name</label>
-                                            <div class="col-12">
-                                                <input id="text" name="text" wire:model.lazy='edit_category_name'
-                                                    class="form-control here slug-title" type="text">
-                                                @error('edit_category_name')
-                                                    <span style='color:red'>{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
+                                    <h4>Update Slider</h4>
+                                    <form wire:submit.prevent='update'>
                                         <div class="form-group row">
                                             <label for="slug" class="col-12 col-form-label">Upload Image</label>
                                             <div class="col-12">
@@ -50,29 +40,8 @@
                                 </div>
                             @else
                                 <div class="ec-cat-form">
-                                    <h4>Add New Category</h4>
+                                    <h4>Add New Slider</h4>
                                     <form wire:submit.prevent='save'>
-                                        <div class="form-group row">
-                                            <label for="text" class="col-12 col-form-label">Category Name</label>
-                                            <div class="col-12">
-                                                <input id="text" name="text" wire:model.lazy='category_name'
-                                                    class="form-control here slug-title" type="text">
-                                                @error('category_name')
-                                                    <span style='color:red'>{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        {{-- <div class="form-group row">
-                                            <label for="text" class="col-12 col-form-label">Slug</label>
-                                            <div class="col-12">
-                                                <input wire:model.lazy='slug' class="form-control here set-slug"
-                                                    type="text">
-                                                @error('slug')
-                                                    <span style='color:red'>{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div> --}}
                                         <div class="form-group row">
                                             <label class="col-12 col-form-label">Upload Image</label>
                                             <div class="col-12">
@@ -111,24 +80,19 @@
                                                 <table id="responsive-data-table" class="table" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Category Image</th>
-                                                            <th>Category Name</th>
-                                                            <th>Status</th>
+                                                            <th>Slider Image</th>
                                                             <th>Date</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @foreach ($categories as $category)
+                                                        @foreach ($sliders as $slider)
                                                             <tr>
                                                                 <td><img class="tbl-thumb"
-                                                                        src="{{ asset('storage') }}/{{ $category->image }}"
+                                                                        src="{{ asset('storage') }}/{{ $slider->image }}"
                                                                         alt="Product Image" width="48"
-                                                                        height="48"  /></td>
-                                                                <td>{{ $category->category_name }}</td>
-                                                                <td> {{ $category->status ? 'Active' : 'Deactive' }}
-                                                                </td>
-                                                                <td>{{ $category->created_at->format('Y-m-d') }}</td>
+                                                                        height="48" /></td>
+                                                                <td>{{ $slider->created_at->format('Y-m-d') }}</td>
                                                                 <td>
                                                                     <div class="btn-group mb-1">
                                                                         <button type="button"
@@ -143,17 +107,16 @@
 
                                                                         <div class="dropdown-menu">
                                                                             <a class="dropdown-item"
-                                                                                wire:click.prevent='edit({{ $category->id }})'
+                                                                                wire:click.prevent='edit({{ $slider->id }})'
                                                                                 href="#">Edit</a>
                                                                             <a class="dropdown-item"
-                                                                                wire:click.prevent='delete({{ $category->id }})'
+                                                                                wire:click.prevent='delete({{ $slider->id }})'
                                                                                 href="#">Delete</a>
                                                                         </div>
                                                                     </div>
                                                                 </td>
                                                             </tr>
                                                         @endforeach
-
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -29,37 +29,36 @@ class AuthenticationController extends Controller
                 $rand = rand(999999, 100000);
 
                 $account_sid = getenv("TWILIO_SID");
-                    $auth_token = getenv("TWILIO_AUTH_TOKEN");
-                    $twilio_number = getenv("TWILIO_NUMBER");
-                    $client = new Client($account_sid, $auth_token);
-                    $message=$client->messages->create($request->mobile_number,['from' => $twilio_number, 'body' => 'Otp send Send ' . $rand] );
-                    if($message->sid){
-                        $users->mobile_number = $request->mobile_number;
-                        $users->first_name = " ";
-                        $users->last_name = " ";
-                        $users->email = " ";
-                        $users->password = " ";
-                        $users->username = " ";
-                        $users->otp = $rand;
-                        $result = $users->save();
-                        if ($result) {
-                            return response()->json([
-                                'success' => true,
-                                'message' => 'Otp Send on mobile device',
-                            ]);
-                        } else {
-                            return response()->json([
-                                'success' => false,
-                                'message' => 'Server Problem',
-                            ]);
-                        }
-                    }else{
+                $auth_token = getenv("TWILIO_AUTH_TOKEN");
+                $twilio_number = getenv("TWILIO_NUMBER");
+                $client = new Client($account_sid, $auth_token);
+                $message = $client->messages->create($request->mobile_number, ['from' => $twilio_number, 'body' => 'Otp send Send ' . $rand]);
+                if ($message->sid) {
+                    $users->mobile_number = $request->mobile_number;
+                    $users->first_name = " ";
+                    $users->last_name = " ";
+                    $users->email = " ";
+                    $users->password = " ";
+                    $users->username = " ";
+                    $users->otp = $rand;
+                    $result = $users->save();
+                    if ($result) {
+                        return response()->json([
+                            'success' => true,
+                            'message' => 'Otp Send on mobile device',
+                        ]);
+                    } else {
                         return response()->json([
                             'success' => false,
-                            'message' => 'Otp Not send',
+                            'message' => 'Server Problem',
                         ]);
                     }
-               
+                } else {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Otp Not send',
+                    ]);
+                }
             }
         } catch (\Throwable $th) {
             return response()->json([

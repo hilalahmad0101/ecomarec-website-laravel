@@ -1,239 +1,6 @@
 <div>
     <x-slot name="title">Home</x-slot>
-    <div class="shadow bg-gray-50 hidden ">
-        <nav class="navbar navbar-expand-lg py-2 container mx-auto relative flex items-center w-full justify-between">
-            <div class="px-6">
-                <button
-                    class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentY"
-                    aria-controls="navbarSupportedContentY" aria-expanded="false" aria-label="Toggle navigation">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-5" role="img"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path fill="currentColor"
-                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
-                        </path>
-                    </svg>
-                </button>
-                <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-                    <ul class="navbar-nav mr-auto flex space-x-12 flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">TVs & Appliances
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Baby & Kids
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
-                                Furniture</a>
-                        </li>
-                        <li class="nav-item dropdown static">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"
-                                href="#" data-mdb-ripple="true" data-mdb-ripple-color="light" type="button"
-                                id="dropdownMenuButtonY" data-bs-toggle="dropdown" aria-expanded="false">Sports,
-                                Books & More
-
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
-                                    class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 320 512">
-                                    <path fill="currentColor"
-                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu w-full mt-0 hidden shadow-lg bg-white absolute left-0 top-full"
-                                aria-labelledby="dropdownMenuButtonY">
-                                <div class="px-6 lg:px-8 py-5">
-                                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Lorem ipsum
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Dolor
-                                                sit</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Amet
-                                                consectetur</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Adipisicing
-                                                elit</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Explit voluptas
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Perspiciatis
-                                                quo</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laudant
-                                                maiores</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Provident
-                                                dolor</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Iste quaerato
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Est
-                                                iure</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Praesentium</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laboriosam</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Cras justo odio
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Saepe</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Vel
-                                                alias</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Sunt
-                                                doloribus</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cum
-                                                dolores</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Flights</a>
-                        </li>
-                        <li class="nav-item dropdown static">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out dropdown-toggle flex items-center whitespace-nowrap"
-                                href="#" data-mdb-ripple="true" data-mdb-ripple-color="light" type="button"
-                                id="dropdownMenuButtonY" data-bs-toggle="dropdown" aria-expanded="false">Mega menu
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="caret-down"
-                                    class="w-2 ml-2" role="img" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 320 512">
-                                    <path fill="currentColor"
-                                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z">
-                                    </path>
-                                </svg>
-                            </a>
-                            <div class="dropdown-menu w-full mt-0 hidden shadow-lg bg-white absolute left-0 top-full"
-                                aria-labelledby="dropdownMenuButtonY">
-                                <div class="px-6 lg:px-8 py-5">
-                                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Lorem ipsum
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Dolor
-                                                sit</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Amet
-                                                consectetur</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Adipisicing
-                                                elit</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Explit voluptas
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Perspiciatis
-                                                quo</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laudant
-                                                maiores</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Provident
-                                                dolor</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Iste quaerato
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cras
-                                                justo odio</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Est
-                                                iure</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Praesentium</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Laboriosam</a>
-                                        </div>
-                                        <div class="bg-white text-gray-600">
-                                            <p
-                                                class="block px-6 py-2 border-b border-gray-200 w-full uppercase font-semibold text-gray-700">
-                                                Cras justo odio
-                                            </p>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Saepe</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Vel
-                                                alias</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 border-b border-gray-200 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Sunt
-                                                doloribus</a>
-                                            <a href="#!" aria-current="true"
-                                                class="block px-6 py-2 w-full hover:bg-gray-50 hover:text-gray-700 transition duration-150 ease-in-out">Cum
-                                                dolores</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
-                                Furniture</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-700 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                                href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Home &
-                                Furniture</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-
-    <!-- /// main caurosal -->
-
+   
     <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
         <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -415,12 +182,11 @@
     </div>
 
     <!-- ///mobile menu -->
-    <div
+    {{-- <div
         class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
-        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
+        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight ">
             Fashion
         </h1>
-
         <button id="dropdownDefault" data-dropdown-toggle="dropdown"
             class="text-blue-800 bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
             type="button">
@@ -430,7 +196,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
         </button>
-        <!-- Dropdown menu -->
         <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
             data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
             style="
@@ -463,11 +228,11 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Desktop menu -->
     <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
-        <h1 class="text-gray-300 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
+        <h1 class="text-gray-300 md:text-3xl text-xl font-medium capitalize text-end tracking-tight ">
             Fashion
         </h1>
         <div class="flex justify-center">
@@ -514,6 +279,7 @@
             Top Rating Product
         </h1>
     </div>
+
     <div class="container mx-auto flex h-full mb-12">
         <div class="lg:block hidden">
             <img class="h-full w-full object-cover"
@@ -524,13 +290,11 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide bg-white flex justify-center">
                     <div>
-                        <div class="bg-white shadow my-4 md:w-56 w-44 rounded relative  shadow">
-
+                        <div class="bg-white shadow my-4 md:w-56 w-44 rounded relative ">
                             <div
-                                class="h-7 flex justify-center items-center    w-7 absolute cursor-pointer top-0 right-0 bg-custome-100 rounded-full">
+                                class="h-7 flex justify-center items-center w-7 absolute cursor-pointer top-0 right-0 bg-custome-100 rounded-full">
 
-                                <i
-                                    class="fa-regular fa-heart text-blue-800 active:text-red-600 focus:text-red-600 focus:text-red-900"></i>
+                                <i class="fa-regular fa-heart text-blue-800 active:text-red-600 focus:text-red-600 "></i>
 
                             </div>
                             <a href="product.html">
@@ -562,72 +326,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div> --}}
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -636,7 +334,7 @@
     </div>
 
     <!-- //second Mobile menu -->
-    <div
+    {{-- <div
         class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
         <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
             Fashion
@@ -684,12 +382,12 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Second desktop menu -->
     <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
         <div class="flex justify-start">
-            <h1 class="font text-left pl-1 text-blue-900 text-3xl font-medium capitalize text-end tracking-tight">
+            <h1 class="font pl-1 text-blue-900 text-3xl font-medium capitalize text-end tracking-tight">
                 Fashion
             </h1>
         </div>

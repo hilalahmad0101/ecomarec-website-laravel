@@ -19,12 +19,15 @@
 	<!-- PLUGINS CSS STYLE -->
 	<link href="{{asset('assets/plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 	<link href="{{asset('assets/plugins/simplebar/simplebar.css')}}" rel="stylesheet" />
-
+	<link href='{{asset('assets/plugins/data-tables/datatables.bootstrap5.min.css')}}' rel='stylesheet'>
+	<link href='{{asset('assets/plugins/data-tables/responsive.datatables.min.css')}}' rel='stylesheet'>
 	<!-- Ekka CSS -->
 	<link id="ekka-css" href="{{asset('assets/css/ekka.css')}}" rel="stylesheet" />
 
 	<!-- FAVICON -->
 	<link href="{{asset('assets/img/favicon.png')}}" rel="shortcut icon" />
+
+	@livewireStyles
 
 </head>
 
@@ -79,11 +82,20 @@
     <script src="{{asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
 	<script src="{{asset('assets/js/date-range.js')}}"></script>
 
+	<!-- Datatables -->
+	<script src='{{asset('assets/plugins/data-tables/jquery.datatables.min.js')}}'></script>
+	<script src='{{asset('assets/plugins/data-tables/datatables.bootstrap5.min.js')}}'></script>
+	<script src='{{asset('assets/plugins/data-tables/datatables.responsive.min.js')}}'></script>
+
+	<!-- Option Switcher -->
+	<script src="assets/plugins/options-sidebar/optionswitcher.js"></script>
+
 	<!-- Option Switcher -->
 	<script src="{{asset('assets/plugins/options-sidebar/optionswitcher.js')}}"></script>
 
 	<!-- Ekka Custom -->
 	<script src="{{asset('assets/js/ekka.js')}}"></script>
+	@livewireScripts
 </body>
 
 </html>

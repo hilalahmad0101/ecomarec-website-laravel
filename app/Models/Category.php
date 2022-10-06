@@ -10,6 +10,7 @@ class Category extends Model
 {
     use HasFactory;
 
+
     protected $table='categories';
     protected $fillable=[
         'category_name',
@@ -24,8 +25,12 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function getImageAttribute($value) 
+    public function sub_category() 
     {
-        return url('/')."/storage/".$value;
+        return $this->hasMany(SubCategory::class);
     }
+    // public function getImageAttribute($value) 
+    // {
+    //     return url('/')."/storage/".$value;
+    // }
 }

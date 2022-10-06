@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Livewire\Admin\Auth\Authentication;
+use App\Http\Livewire\Admin\Auth\UpdateProfile;
 use App\Http\Livewire\Admin\Category;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\Product;
+use App\Http\Livewire\Admin\Slider;
 use App\Http\Livewire\Admin\SubCategory;
 use App\Http\Livewire\Admin\Vendor;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +23,7 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/sub/category', SubCategory::class)->name('admin.sub-category');
         Route::get('/vendors', Vendor::class)->name('admin.vendor');
         Route::get('/products', Product::class)->name('admin.product');
+        Route::get('/slider', Slider::class)->name('admin.slider');
+        Route::get('/update/profile', UpdateProfile::class)->name('admin.update-profile');
     });
 });

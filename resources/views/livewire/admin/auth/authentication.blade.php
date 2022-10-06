@@ -11,24 +11,29 @@
                             </a>
                         </div>
                     </div>
+                    @if (session()->has('error'))
+                        <span style="color: rgb(197, 50, 50)">{{ session('error') }}</span>
+                    @endif
                     <div class="card-body p-5">
                         <h4 class="text-dark mb-5">Admin Login</h4>
-
+                        if
                         <form wire:submit.prevent='login'>
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
-                                    <input type="text" wire:model.lazy='username' class="form-control" id="email" placeholder="Username">
+                                    <input type="text" wire:model.lazy='username' class="form-control" id="email"
+                                        placeholder="Username">
                                     @error('username')
-                                        <span style="color: rgb(197, 50, 50)">{{$message}}</span>
+                                        <span style="color: rgb(197, 50, 50)">{{ $message }}</span>
                                     @enderror
                                 </div>
 
                                 <div class="form-group col-md-12 ">
-                                    <input type="password" wire:model.lazy='password' class="form-control" id="password" placeholder="Password">
+                                    <input type="password" wire:model.lazy='password' class="form-control"
+                                        id="password" placeholder="Password">
                                     @error('password')
-                                    <span style="color: red">{{$message}}</span>
-                                @enderror
+                                        <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-12">
