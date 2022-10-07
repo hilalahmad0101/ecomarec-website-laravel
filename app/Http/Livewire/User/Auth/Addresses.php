@@ -17,6 +17,6 @@ class Addresses extends Component
     {
         $this->billing_addresses=BillingAddress::where('user_id',Auth::user()->id)->first();
         $this->shipping_addresses=ShippingAddress::where('user_id',Auth::user()->id)->first();
-        return view('livewire.user.auth.addresses')->layout('layout.user');
+        return view('livewire.user.auth.addresses')->layout('layout.app');
     }
 }

@@ -1,10 +1,21 @@
 <div>
     <x-slot name="title">Home</x-slot>
-   
+
+   @if (session()->has('success'))
+   <div class="fixed bg-green-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+    {{session('success')}}
+   </div>
+   @endif
+
+   @if (session()->has('error'))
+   <div class="fixed bg-red-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+    {{session('error')}}
+   </div>
+   @endif
     <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
         <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                class="active hidden" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active hidden"
+                aria-current="true" aria-label="Slide 1"></button>
             <button type="button" class="hidden" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                 aria-label="Slide 2"></button>
             <button class="hidden" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
@@ -14,17 +25,14 @@
             <div class="carousel-item active relative float-left w-full">
                 <img src="https://s.alicdn.com/@img/imgextra/i3/O1CN01M9x0R41VzdeRW8FYF_!!6000000002724-0-tps-990-400.jpg"
                     class="block w-full" alt="..." />
-
             </div>
             <div class="carousel-item relative float-left w-full">
                 <img src="https://s.alicdn.com/@img/imgextra/i2/O1CN01rYC4hI1lJzSxuJUm1_!!6000000004799-2-tps-990-400.png"
                     class="block w-full" alt="..." />
-
             </div>
             <div class="carousel-item relative float-left w-full">
                 <img src="https://s.alicdn.com/@img/imgextra/i1/O1CN01AAmzwV1GWaIkhRPMg_!!6000000000630-2-tps-990-400.png"
                     class="block w-full" alt="..." />
-
             </div>
         </div>
         <button
@@ -43,42 +51,62 @@
 
     <!-- ////New Arrivals -->
     <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
-        <h1 class="font md:text-2xl text-md font-medium capitalize tracking-tight text-blue-900">
+        <h1
+            class="font md:text-2xl text-md font-medium capitalize tracking-tight text hover:customeorange-600 transition-all-black">
             New Arrivals
         </h1>
     </div>
     <div class="shadow rounded-lg bg-white container mx-auto">
         <div class="swiper proSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide flex justify-center items-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
-                <div class="swiper-slide flex justify-center align-center">
-                    <div class="card2"></div>
-                </div>
+                @foreach ($products as $product)
+                    <div class="swiper-slide flex justify-center items-center">
+                        <div class="bg-white  shadow my-4 w-full mx-1 rounded-lg relative">
+                            <div
+                                class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
+                                <div>
+                                    <i
+                                        class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
+                                </div>
+                            </div>
+                            <a href="product.html">
+                                <img src="{{ asset('storage') }}/{{ $product->image }}"
+                                    class="rounded-r rounded-l w-full h-72 object-cover" alt="" />
+                            </a>
+                            <div class="p-2">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-textColor-100 font-bold sm:text-lg text-md mt-1">
+                                        ${{ $product->price }} <span class="text-red-500 text-xs">50%</span>
+                                    </h3>
+                                    <p class="text-black font-bold text-md">
+                                        4.6 <i class="fa-solid fa-star text-yellow-300"></i>
+                                    </p>
+                                </div>
+                                <h3 class="sm:text-xs text-xs text-gray-600 mb-1">
+                                    {{ $product->product_title }}
+                                </h3>
+                                <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">
+                                    {{ $product->category->category_name }}</h3>
+                                <div class="flex justify-between space-x-1">
+                                    <button type="button"
+                                        class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                        <a href="payment-details.html"> Buy Now </a>
+                                    </button>
+                                    <button type="button"
+                                        class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                        Add to card
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
         </div>
+
     </div>
     <!-- ///Gold Bag Mobile Caurosal -->
     <div id="carouselExampleControls" class="carousel slide relative md:hidden block" data-bs-ride="carousel">
@@ -96,10 +124,10 @@
                     </h1>
                     <p class="font-sm text-white">SAVE 20%</p>
                     <button></button>
-                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                    <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                     <button type="button"
-                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                         Shop Now <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -118,7 +146,7 @@
                     <p class="font-sm text-white font-light">SAVE 90%</p>
 
                     <button type="button"
-                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                         Shop Now <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -137,7 +165,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
     <!-- ///Gold Bag  two Boxes -->
     <div class="container mx-auto my-7 mt-12 md:block hidden rounded-lg">
         <div
@@ -155,7 +182,7 @@
                 <p class="font-sm text-white font-light">SAVE 90%</p>
 
                 <button type="button"
-                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                     Shop Now <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -171,332 +198,333 @@
                 </h1>
                 <p class="font-sm text-white">SAVE 20%</p>
                 <button></button>
-                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                 <button type="button"
-                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                     Shop Now <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- ///mobile menu -->
-    {{-- <div
-        class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
-        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight ">
-            Fashion
-        </h1>
-        <button id="dropdownDefault" data-dropdown-toggle="dropdown"
-            class="text-blue-800 bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-            type="button">
-            Priduct Fliter
-            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </button>
-        <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
-            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
-            style="
-          position: absolute;
-          inset: 0px auto auto 0px;
-          margin: 0px;
-          transform: translate(0px, 510px);
-        ">
-            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Latest
-                        Product
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Best
-                        Selling Product</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Top
-                        Rating Product</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                        out</a>
-                </li>
-            </ul>
-        </div>
-    </div> --}}
+    @foreach ($categories as $category)
+        <!-- ///mobile menu -->
+        @if ($category->id % 2)
+            <!-- //second Mobile menu -->
+            <div
+                class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
+                <h1
+                    class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    {{$category->category_name}}
+                </h1>
 
-    <!-- Desktop menu -->
-    <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
-        <h1 class="text-gray-300 md:text-3xl text-xl font-medium capitalize text-end tracking-tight ">
-            Fashion
-        </h1>
-        <div class="flex justify-center">
-            <div>
-                <div class="dropdown relative">
-                    <ul class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none"
-                        aria-labelledby="dropdownMenuButton1">
+                <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+                    class="text-black bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                    type="button">
+                    Priduct Fliter
+                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown"
+                    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+                    style="  position: absolute;  inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 510px); ">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
                         <li>
-                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                                href="#">
-                                <h1
-                                    class="font sm:text-1xl text-xs font-medium capitalize text-end tracking-tight text-blue-900">
-                                    Best Selling Product
-                                </h1>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Latest
+                                Product
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                                href="#">
-                                <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-                                    Latest Product
-                                </h1>
-                            </a>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Best
+                                Selling Product</a>
                         </li>
                         <li>
-                            <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                                href="#">
-                                <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-                                    Top Rating Product
-                                </h1>
-                            </a>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Top
+                                Rating Product</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                out</a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-            Latest Product
-        </h1>
-        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-            Best Selling Product
-        </h1>
-        <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-            Top Rating Product
-        </h1>
-    </div>
-
-    <div class="container mx-auto flex h-full mb-12">
-        <div class="lg:block hidden">
-            <img class="h-full w-full object-cover"
-                src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/fashion2.jpg"
-                alt="" />
-        </div>
-        <div class="swiper mySwiper w-full h-full">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide bg-white flex justify-center">
-                    <div>
-                        <div class="bg-white shadow my-4 md:w-56 w-44 rounded relative ">
-                            <div
-                                class="h-7 flex justify-center items-center w-7 absolute cursor-pointer top-0 right-0 bg-custome-100 rounded-full">
-
-                                <i class="fa-regular fa-heart text-blue-800 active:text-red-600 focus:text-red-600 "></i>
-
+            <!-- Second desktop menu -->
+            <div
+                class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
+                <div class="flex justify-start">
+                    <h1
+                        class="font text-left pl-1 text-customeorange-500 text-3xl font-medium capitalize  tracking-tight">
+                        {{$category->category_name}}
+                    </h1>
+                </div>
+                <div class="flex justify-end space-x-12 pr-8">
+                    <h1
+                        class="font text-1xl cursor-pointer hover:text-customeorange-600 transition-all font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                        Latest Product
+                    </h1>
+                    <h1
+                        class="font text-1xl font-medium cursor-pointer hover:text-customeorange-600 transition-all capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                        Best Selling Product
+                    </h1>
+                    <h1
+                        class="font text-1xl cursor-pointer hover:text-customeorange-600 transition- font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                        Top Rating Product
+                    </h1>
+                </div>
+            </div>
+            <div class="container mx-auto flex h-full mb-12 ">
+                <div class="swiper mySwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                        @php
+                            $products1=\App\Models\Product::where('cat_id',$category->id)->get();
+                        @endphp
+                        @foreach ($products1 as $product)
+                            <div class="swiper-slide bg-white flex justify-center">
+                                <div>
+                                    <div class="bg-white shadow my-4 w-full rounded-lg relative">
+                                        <div
+                                            class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
+                                            <div>
+                                                <i wire:click='addToWishlist({{$product->id}})'
+                                                    class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
+                                            </div>
+                                        </div>
+                                        <a href="product.html">
+                                            <img src="{{ asset('storage') }}/{{ $product->image }}"
+                                                class="rounded-r rounded-l  w-[250px] h-[300px] object-cover"
+                                                alt="" />
+                                        </a>
+                                        <div class="p-2">
+                                            <div class="flex justify-between items-center">
+                                                <h3 class="text-textColor-100 font-bold sm:text-lg text-md mt-1">
+                                                    ${{ $product->price }} <span
+                                                        class="text-red-500 text-xs">50%</span>
+                                                </h3>
+                                                <p class="text-black font-bold text-md">
+                                                    4.6 <i class="fa-solid fa-star text-yellow-300"></i>
+                                                </p>
+                                            </div>
+                                            <h3 class="sm:text-xs text-xs text-gray-600 mb-1">
+                                                {{ $product->product_title }}
+                                            </h3>
+                                            <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">
+                                                {{ $product->category->category_name }}</h3>
+                                            <div class="flex justify-between space-x-1">
+                                                <button type="button"
+                                                    class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    <a href="payment-details.html"> Buy Now </a>
+                                                </button>
+                                                <button type="button"
+                                                    class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    Add to card
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="card"></div> --}}
+                                </div>
                             </div>
-                            <a href="product.html">
-                                <img src="https://contents.mediadecathlon.com/p2267976/22db36afff84d60afec1b186eb33cff6/p2267976.jpg?format=auto&quality=70&f=300x0"
-                                    class="w-full" alt="" />
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="lg:block hidden">
+                    <img class="h-full w-full object-cover"
+                        src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/electrolict.jpg"
+                        alt="" />
+                </div>
+            </div>
+        @else
+            <div
+                class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
+                <h1
+                    class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    {{$category->category_name}}
+                </h1>
+
+                <button id="dropdownDefault" data-dropdown-toggle="dropdown"
+                    class="text-black bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                    type="button">
+                    Priduct Fliter
+                    <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdown"
+                    class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+                    data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
+                    style=" position: absolute; inset: 0px auto auto 0px;  margin: 0px;  transform: translate(0px, 510px); ">
+                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Latest
+                                Product
                             </a>
-                            <div class="p-2">
-                                <div class="flex justify-between items-center">
-                                    <h3 class="text-blue-900 font-bold sm:text-lg text-md mt-1">
-                                        $555 <span class="text-red-500 text-xs">50%</span>
-                                    </h3>
-                                    <p class="text-blue-900 font-bold text-md">
-                                        4.6 <i class="fa-solid fa-star text-yellow-300"></i>
-                                    </p>
-                                </div>
-                                <h3 class="sm:text-xs text-xs text-gray-600 mb-1">Men Tennis T-Shirt</h3>
-                                <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">Brand</h3>
-                                <div class="flex justify-between space-x-1">
-                                    <button type="button"
-                                        class="text-blue-800  transition bg-transparent hover:text-white hover:bg-blue-700 border border-blue-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded text-xsm px-3 py-2 w-full  flex justify-center items-center  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                        Buy Now
-                                    </button>
-                                    <button type="button"
-                                        class="text-white w-full pt-2.5 hover:text-blue-600 hover:border-blue-600 border transition  bg-blue-600 hover:bg-white focus:ring-4 focus:ring-blue-300 font-semibold rounded text-xsm px-2 py-2   flex justify-center items-center  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                        Add to card
-                                    </button>
-                                </div>
-                            </div>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Best
+                                Selling Product</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Top
+                                Rating Product</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-4 hover:bg-gray-100 cursor-pointer hover:text-customeorange-600 transition-all dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                                out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Desktop menu -->
+            <div
+                class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
+                <h1
+                    class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    {{$category->category_name}}
+                </h1>
+                <div class="flex justify-center">
+                    <div>
+                        <div class="dropdown relative">
+                            <ul class="dropdown-menu min-w-max absolute  bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none"
+                                aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                        href="#">
+                                        <h1
+                                            class="font sm:text-1xl cursor-pointer hover:text-customeorange-600 transition-all text-xs font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                                            Best Selling Product
+                                        </h1>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                        href="#">
+                                        <h1
+                                            class="font cursor-pointer hover:text-customeorange-600 transition-all text-1xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                                            Latest Product
+                                        </h1>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                                        href="#">
+                                        <h1
+                                            class="font text-1xl cursor-pointer hover:text-customeorange-600 transition-all font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                                            Top Rating Product
+                                        </h1>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <h1
+                    class="font text-1xl font-medium cursor-pointer hover:text-customeorange-600 transition-all capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    Latest Product
+                </h1>
+                <h1
+                    class="font text-1xl font-medium capitalize cursor-pointer hover:text-customeorange-600 transition-all text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    Best Selling Product
+                </h1>
+                <h1
+                    class="font text-1xl cursor-pointer hover:text-customeorange-600 transition-all font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
+                    Top Rating Product
+                </h1>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-    <!-- //second Mobile menu -->
-    {{-- <div
-        class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
-        <h1 class="text-blue-900 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text-blue-900">
-            Fashion
-        </h1>
-
-        <button id="dropdownDefault" data-dropdown-toggle="dropdown"
-            class="text-blue-800 bg-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-            type="button">
-            Priduct Fliter
-            <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </button>
-        <!-- Dropdown menu -->
-        <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
-            data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"
-            style="
-          position: absolute;
-          inset: 0px auto auto 0px;
-          margin: 0px;
-          transform: translate(0px, 510px);
-        ">
-            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Latest
-                        Product
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Best
-                        Selling Product</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Top
-                        Rating Product</a>
-                </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
-                        out</a>
-                </li>
-            </ul>
-        </div>
-    </div> --}}
-
-    <!-- Second desktop menu -->
-    <div class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
-        <div class="flex justify-start">
-            <h1 class="font pl-1 text-blue-900 text-3xl font-medium capitalize text-end tracking-tight">
-                Fashion
-            </h1>
-        </div>
-        <div class="flex justify-end space-x-12 pr-8">
-            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-                Latest Product
-            </h1>
-            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-                Best Selling Product
-            </h1>
-            <h1 class="font text-1xl font-medium capitalize text-end tracking-tight text-blue-900">
-                Top Rating Product
-            </h1>
-        </div>
-    </div>
-    <div class="container mx-auto flex h-full mb-12">
-        <div class="swiper mySwiper w-full h-full">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide bg-white flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
+            <div class="container mx-auto flex h-full mb-12 ">
+                <div class="lg:block hidden">
+                    <img class="h-full w-full object-cover"
+                        src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/fashion2.jpg"
+                        alt="" />
                 </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
+                <div class="swiper mySwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                        @php
+                        $products2=\App\Models\Product::where('cat_id',$category->id)->get();
+                    @endphp
+               
+                        @foreach ($products2 as $product)
+                            <div class="swiper-slide bg-white flex justify-center">
+                                <div>
+                                    <div class="bg-white  shadow my-4 w-full rounded-lg relative">
+                                        <div
+                                            class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
+                                            <div>
+                                                <i wire:click='addToWishlist({{$product->id}})'
+                                                    class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
+                                            </div>
+                                        </div>
+                                        <a href="product.html">
+                                            <img src="{{ asset('storage') }}/{{ $product->image }}"
+                                                class="rounded-r rounded-l w-[250px] h-[300px] object-cover"
+                                                alt="" />
+                                        </a>
+                                        <div class="p-2">
+                                            <div class="flex justify-between items-center">
+                                                <h3 class="text-textColor-100 font-bold sm:text-lg text-md mt-1">
+                                                    ${{ $product->price }} <span
+                                                        class="text-red-500 text-xs">50%</span>
+                                                </h3>
+                                                <p class="text-black font-bold text-md">
+                                                    4.6 <i class="fa-solid fa-star text-yellow-300"></i>
+                                                </p>
+                                            </div>
+                                            <h3 class="sm:text-xs text-xs text-gray-600 mb-1">
+                                                {{ $product->product_title }}
+                                            </h3>
+                                            <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">
+                                                {{ $product->category->category_name }}</h3>
+                                            <div class="flex justify-between space-x-1">
+                                                <button type="button"
+                                                    class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    <a href="payment-details.html"> Buy Now </a>
+                                                </button>
+                                                <button type="button"
+                                                    class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    Add to card
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="card"></div> --}}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide flex justify-center">
-                    <div>
-                        <div class="card"></div>
-                        <div class="card"></div>
-                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-
-        <div class="lg:block hidden">
-            <img class="h-full w-full object-cover"
-                src="https://demo.wpthemego.com/themes/sw_revo/wp-content/uploads/2016/10/electrolict.jpg"
-                alt="" />
-        </div>
-    </div>
+        @endif
+    @endforeach
 
     <!-- ///Sringp Box -->
 
-    <div
-        class="container my-9 mx-auto w-full bg-[url('./images/banner7.jpg')] p-12 flex justify-start align-center flex-row">
+    <div class="container my-9 mx-auto w-full custome-bg p-12 flex justify-start align-center flex-row">
         <div class="px-12 text-center w-full">
-            <h3 class="text-white md:text-4xl text-2xl md:mb-2 mb-1 mb-2 font-light">
+            <h3 class="text-white md:text-4xl text-2xl md:mb-2  mb-2 font-light">
                 Spring
             </h3>
 
@@ -507,13 +535,14 @@
                 It is a long established fact that a reader will be distracted <br />
                 by the readable content of a page
             </p>
-            <a href="" class="text-blue-400 md:text-sm text-xs">Explore Now <i
+            <a href="" class="text-customeorange-400 md:text-sm text-xs">Explore Now <i
                     class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 
     <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
-        <h1 class="font text-2xl font-medium capitalize tracking-tight text-blue-900">
+        <h1
+            class="font text-2xl font-medium capitalize tracking-tight text hover:customeorange-600 transition-all-black">
             New Arrrivals
         </h1>
     </div>
@@ -577,10 +606,10 @@
                     </h1>
                     <p class="font-sm text-white font-light">SAVE 20%</p>
                     <button></button>
-                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                    <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                     <button type="button"
-                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                         Shop Now <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -599,10 +628,10 @@
                     </h1>
                     <p class="font-sm text-white">SAVE 20%</p>
                     <button></button>
-                    <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                    <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                     <button type="button"
-                        class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                         Shop Now <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -638,10 +667,10 @@
                 </h1>
                 <p class="font-sm text-white font-light">SAVE 20%</p>
                 <button></button>
-                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                 <button type="button"
-                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                     Shop Now <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -657,10 +686,10 @@
                 </h1>
                 <p class="font-sm text-white">SAVE 20%</p>
                 <button></button>
-                <!-- <a href="" class="   bg-blue-700 text-white">Shop Now </a> -->
+                <!-- <a href="" class="   bg-customeorange-500 text-white">Shop Now </a> -->
 
                 <button type="button"
-                    class="text-white relative top-3 left-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    class="text-white relative top-3 left-0 bg-customeorange-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-sm text-xs md:px-5 px-3 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-customeorange-500 focus:outline-none dark:focus:ring-blue-800">
                     Shop Now <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
@@ -670,7 +699,8 @@
     <!-- Best of Electronics -->
 
     <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
-        <h1 class="font text-2xl font-medium capitalize tracking-tight text-blue-900">
+        <h1
+            class="font text-2xl font-medium capitalize tracking-tight text hover:customeorange-600 transition-all-black">
             Best of Electronics
         </h1>
     </div>
@@ -750,8 +780,8 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-
-    <div class="bg-blue-600">
+    <!-- ////Freedelivery row -->
+    <div class="bg-customeorange-500">
         <div class="py-5 grid grid-cols-5 lg:grid-cols-5 container mx-auto mx-auto flex items-center">
             <div
                 class="flex lg:flex-row md:space-x-5 md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2 my-5">
@@ -759,10 +789,10 @@
                     <i class="fas fa-truck mx-auto text-white md:text-4xl text-2xl"></i>
                 </div>
                 <div class="">
-                    <h4 class="text-white md:text-md text-xsm font-semibold my-1">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold my-1">
                         FREE DELIVERY
                     </h4>
-                    <p class="text-white md:text-base text-xxs font-light">
+                    <p class="text-white sm:text-xs text-xsm font-light">
                         From 275 AED
                     </p>
                 </div>
@@ -773,10 +803,12 @@
                     <i class="far fa-money-bill-alt text-white md:text-4xl text-2xl"></i>
                 </div>
                 <div class="my-auto">
-                    <h4 class="text-white md:text-md text-xsm font-semibold mb-2">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-2">
                         CASH ON DELIVERY
                     </h4>
-                    <p class="text-white text-xxs font-light">From 275 AED</p>
+                    <p class="text-white sm:text-xs text-xsm font-light">
+                        From 275 AED
+                    </p>
                 </div>
             </div>
             <div
@@ -785,10 +817,10 @@
                     <i class="fas fa-gift text-white md:text-4xl text-2xl"></i>
                 </div>
                 <div class="">
-                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
                         FREE GIFT BOX
                     </h4>
-                    <p class="text-white text-xxs font-light">& Gift Note</p>
+                    <p class="text-white sm:text-xs text-xsm font-light">& Gift Note</p>
                 </div>
             </div>
             <div
@@ -797,10 +829,10 @@
                     <i class="fas fa-phone-square-alt text-white md:text-4xl text-2xl"></i>
                 </div>
                 <div class="">
-                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
                         CONTACT US
                     </h4>
-                    <p class="text-white text-xxs font-light">123 456 789</p>
+                    <p class="text-white sm:text-xs text-xsm font-light">123 456 789</p>
                 </div>
             </div>
 
@@ -810,10 +842,10 @@
                     <i class="fa-regular fa-gem text-white md:md:text-4xl text-2xl text-2xl"></i>
                 </div>
                 <div class="">
-                    <h4 class="text-white md:text-md text-xsm font-semibold mb-1">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
                         LOYALTY
                     </h4>
-                    <p class="text-white text-xxs font-light">Rewarded</p>
+                    <p class="text-white sm:text-xs text-xsm font-light">Rewarded</p>
                 </div>
             </div>
         </div>

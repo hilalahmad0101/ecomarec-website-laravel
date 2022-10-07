@@ -1,41 +1,81 @@
-<aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+<div class="ec-left-sidebar ec-bg-sidebar">
+    <div id="sidebar" class="sidebar ec-sidebar-footer">
 
-    <ul class="list-reset flex flex-col">
-        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-            <a href="{{ route('vendor.dashboard') }}"
-               class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                Dashboard
-                <span><i class="fas fa-angle-right float-right"></i></span>
+        <div class="ec-brand">
+            <a href="index.html" title="Ekka">
+                <img class="ec-brand-icon" src="assets/img/logo/ec-site-logo.png" alt="" />
+                <span class="ec-brand-name text-truncate">Ekka</span>
             </a>
-        </li>
-        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-            <a href="{{ route('vendor.products') }}"
-               class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                Products
-                <span><i class="fas fa-angle-right float-right"></i></span>
-            </a>
-        </li>
-        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-            <a href="{{ route('vendor.order') }}"
-               class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                Order
-                <span><i class="fas fa-angle-right float-right"></i></span>
-            </a>
-        </li>
-        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-            <a href="{{ route('vendor.change-password') }}"
-               class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                Change Password
-                <span><i class="fas fa-angle-right float-right"></i></span>
-            </a>
-        </li>
-        {{-- @include('../livewire/vendor/auth/logout') --}}
-        {{-- @livewire('../livewire.vendor.auth.logout') --}}
-        <livewire:vendor.auth.logout />
-    </ul>
-
-</aside>
+        </div>
+        
+        <!-- begin sidebar scrollbar -->
+        <div class="ec-navigation" data-simplebar>
+            <!-- sidebar menu -->
+            <ul class="nav sidebar-inner" id="sidebar-menu">
+                <!-- Dashboard -->
+                <li class="">
+                    <a class="sidenav-item-link" href="{{route('vendor.dashboard') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <hr>
+                </li>
+                <!-- Category -->
+                <li class="has-sub ">
+                    <a class="sidenav-item-link" href="javascript:void(0)">
+                        <i class="mdi mdi-dns-outline"></i>
+                        <span class="nav-text">Products</span> <b class="caret"></b>
+                    </a>
+                    <div class="collapse">
+                        <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
+                            <li class="{{Request::routeIs('vendor.products') ? 'active':''}}">
+                                <a class="sidenav-item-link" href="{{route('vendor.products') }}">
+                                    <span class="nav-text">List Products</span>
+                                </a>
+                            </li>
+                            <li class="{{Request::routeIs('vendor.add-products') ? 'active':''}}">
+                                <a class="sidenav-item-link" href="{{route('vendor.add-products') }}">
+                                    <span class="nav-text">Add Products</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {{-- <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)">
+                        <i class="mdi mdi-dns-outline"></i>
+                        <span class="nav-text">Sub Categories</span> <b class="caret"></b>
+                    </a>
+                    <div class="collapse">
+                        <ul class="sub-menu" id="categorys" data-parent="#sidebar-menu">
+                            <li class="">
+                                <a class="sidenav-item-link" href="{{ route('vendor.order') }}">
+                                    <span class="nav-text">Sub Category</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> --}}
+                <li class="{{Request::routeIs('vendor.order') ?'active':''}} ">
+                    <a class="sidenav-item-link" href="{{ route('vendor.order') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Order</span>
+                    </a>
+                </li>
+{{-- 
+                <li class=" {{Request::routeIs('vendor.product') ?'active':''}}">
+                    <a class="sidenav-item-link" href="{{ route('vendor.products') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">Product</span>
+                    </a>
+                </li> --}}
+                <li class=" {{Request::routeIs('vendor.change-password') ?'active':''}}">
+                    <a class="sidenav-item-link" href="{{ route('vendor.change-password') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">change Password</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

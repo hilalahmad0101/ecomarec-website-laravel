@@ -7,18 +7,18 @@
         </div>
         <div class="leading-6">
             <p class="font-medium text-gray-500">Welcome Back</p>
-            <h3 class="text-blue-800 font-bold">{{ Auth::user()->username }}</h3>
+            <h3 class="text-customeorange-600 font-bold">{{ Auth::user()->username }}</h3>
         </div>
     </div>
     <div class="bg-white">
         <div class="p-5 flex justify-between items-center">
             <div class="flex space-x-4 items-center">
-                <i class="fa-brands fa-cc-paypal text-blue-500"></i>
-                <p class="font-semibold text-blue-800">My Crad</p>
+                <i class="fa-brands fa-cc-paypal text-customeorange-600"></i>
+                <p class="font-semibold text-black">My Crad</p>
             </div>
 
             <div>
-                <i class="fa-solid fa-chevron-right text-blue-500"></i>
+                <i class="fa-solid fa-chevron-right text-customeorange-600"></i>
             </div>
         </div>
         <hr />
@@ -31,20 +31,20 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-user text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Edit Profile</p>
+                        <i class="fa-solid fa-user text-customeorange-600"></i>
+                        <p class="font-medium text-black">Edit Profile</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
                     </div>
                 </div>
             </a>
-            <a href="addres.html">
+            <a href="{{ route('user.addresses') }}">
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-location-dot text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Address Management</p>
+                        <i class="fa-solid fa-location-dot text-customeorange-600"></i>
+                        <p class="font-medium  {{Request::routeIs('user.addresses') ? 'text-customeorange-600' : 'text-black'}}">Address Management</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -55,8 +55,8 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-globe text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Change Password</p>
+                        <i class="fa-solid fa-globe text-customeorange-600"></i>
+                        <p class="font-medium text-black">Change Password</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -67,8 +67,8 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-bell text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Notification Setting</p>
+                        <i class="fa-solid fa-bell text-customeorange-600"></i>
+                        <p class="font-medium text-black">Notification Setting</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -79,8 +79,8 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-brands fa-cc-paypal text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Save Card & wallet</p>
+                        <i class="fa-brands fa-cc-paypal text-customeorange-600"></i>
+                        <p class="font-medium text-black">Save Card & wallet</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -98,8 +98,8 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-basket-shopping text-blue-500"></i>
-                        <p class="font-medium text-blue-800">Sell on Website</p>
+                        <i class="fa-solid fa-basket-shopping text-customeorange-600"></i>
+                        <p class="font-medium text-black">Sell on Website</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -117,8 +117,8 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-file text-blue-500"></i>
-                        <p class="font-medium text-blue-800">
+                        <i class="fa-solid fa-file text-customeorange-600"></i>
+                        <p class="font-medium text-black">
                             Team Ploices and Licenses
                         </p>
                     </div>
@@ -131,9 +131,9 @@
                 <div
                     class="flex justify-between pr-3 w-full items-center cursor-pointer hover:bg-blue-100 transition-all">
                     <div class="flex p-3 pl-7 space-x-4 items-center">
-                        <i class="fa-solid fa-circle-question text-blue-500"></i>
+                        <i class="fa-solid fa-circle-question text-customeorange-600"></i>
 
-                        <p class="font-medium text-blue-800">Browse FAQS</p>
+                        <p class="font-medium text-black">Browse FAQS</p>
                     </div>
                     <div>
                         <i class="fa-solid fa-angle-right"></i>
@@ -143,7 +143,7 @@
             <!-- <div class="flex justify-center mt-5">
         <button
           type="button"
-          class="m-4 w-9/12 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          class="m-4 w-9/12 text-white bg-blue-700 hover:bg-customeorange-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-customeorange-600"
         >
           <i class="fa-solid fa-power-off text-white mr-3"></i> Logout
         </button>

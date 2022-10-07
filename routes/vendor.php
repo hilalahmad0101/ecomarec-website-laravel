@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Vendor\InvoiceController;
+use App\Http\Livewire\Vendor\AddProduct;
 use App\Http\Livewire\Vendor\Auth\Authentication;
 use App\Http\Livewire\Vendor\Auth\ChangePassword;
 use App\Http\Livewire\Vendor\Auth\Dashboard;
@@ -21,6 +22,7 @@ Route::middleware(['auth:vendor'])->group(function () {
     Route::prefix('vendors')->group(function () {
         Route::get('/dashboard', Dashboard::class)->name('vendor.dashboard');
         Route::get('/products', Product::class)->name('vendor.products');
+        Route::get('/add/products', AddProduct::class)->name('vendor.add-products');
         Route::get('/order', Order::class)->name('vendor.order');
         Route::get('/generate/invoice/{id}', [InvoiceController::class,'generateInvoice'])->name('vendor.index');
         Route::get('/change/password', ChangePassword::class)->name('vendor.change-password');

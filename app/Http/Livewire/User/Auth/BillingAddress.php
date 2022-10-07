@@ -32,7 +32,7 @@ class BillingAddress extends Component
     }
     public function render()
     {
-        return view('livewire.user.auth.billing-address')->layout('layout.user');
+        return view('livewire.user.auth.billing-address')->layout('layout.app');
     }
 
     public function upBillingAddress()
@@ -71,7 +71,7 @@ class BillingAddress extends Component
         $billing->company_name = $this->company_name;
         $billing->country = $this->country;
         $billing->street_address1 = $this->address_1;
-        $billing->street_address2 = $this->address_2;
+        $billing->street_address2 = $this->address_1;
         $billing->city = $this->city;
         $billing->state = $this->state;
         $billing->postcode = $this->postcode;

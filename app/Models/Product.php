@@ -36,10 +36,10 @@ class Product extends Model
         return $this->hasMany(Cart::class);
     }
 
-    public function getImageAttribute($value)
-    {
-        return url('/')."/storage/".$value;
-    }
+    // public function getImageAttribute($value)
+    // {
+    //     return url('/')."/storage/".$value;
+    // }
 
     
 }
