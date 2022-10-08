@@ -8,6 +8,7 @@ use App\Models\Order as ModelsOrder;
 use App\Models\Product;
 use App\Models\ShippingAddress;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 
 class Order extends Component
@@ -69,7 +70,7 @@ class Order extends Component
     {
         $this->total = $this->subtotal = Cart::where('user_id', Auth::user()->id)->sum('total_price');
         $this->carts = Cart::where(['user_id' => Auth::user()->id])->get();
-        return view('livewire.user.auth.order')->layout('layout.user');
+        return view('livewire.user.auth.order')->layout('layout.app');
     }
 
     public function showBillingAddress()
@@ -140,7 +141,7 @@ class Order extends Component
         $order->pro_id = json_encode($ids);
         $order->billing_id = $this->billing_id;
         $order->payment_method = 'instagmoji';
-        $order->sub_total = $this->subtotal;
+        $order->sub_total = $this->subtotal + 10;
         $order->total = $this->total;
         $order->owner_id=$owner_id;
         $result = $order->save();
@@ -150,6 +151,7 @@ class Order extends Component
                $cart->delete();
             }
             $this->dispatchBrowserEvent('showCartCount');
+            return redirect(route('user.thankyou'));
         }
     }
 }

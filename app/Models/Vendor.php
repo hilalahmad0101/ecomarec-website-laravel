@@ -20,4 +20,9 @@ class Vendor extends  Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
 }

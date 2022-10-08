@@ -56,6 +56,10 @@ class AddProduct extends Component
         $products->long_content = $this->long_content;
         $products->image = $filename;
         $result = $products->save();
+
+        $category = Category::findOrFail($this->category);
+        $category->products = $category->products + 1;
+        $category->save();
         if ($result) {
             session()->flash('success', 'Product Add Successfully, Admin will approve your Order and you will received a mail ');
             return redirect(route('vendor.products'));

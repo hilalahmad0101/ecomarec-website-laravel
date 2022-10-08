@@ -32,7 +32,7 @@
                                                 <td>{{ $product->product_title }}</td>
                                                 <td>{{ $product->price }}</td>
                                                 <td><img src="{{ asset('storage') }}/{{ $product->image }}"
-                                                        class="w-10 h-10" alt=""></td>
+                                                        width="48" height="" alt=""></td>
                                                 <td>
                                                     @if ($product->status == 1)
                                                         <i class="fas fa-check text-green-500 mx-2"></i>

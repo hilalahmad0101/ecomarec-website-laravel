@@ -92,7 +92,7 @@
                                         class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                         <a href="payment-details.html"> Buy Now </a>
                                     </button>
-                                    <button type="button"
+                                    <button type="button" wire:click='addToCart({{$product->owner_id}},{{$product->id}})'
                                         class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                         Add to card
                                     </button>
@@ -780,75 +780,6 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    <!-- ////Freedelivery row -->
-    <div class="bg-customeorange-500">
-        <div class="py-5 grid grid-cols-5 lg:grid-cols-5 container mx-auto mx-auto flex items-center">
-            <div
-                class="flex lg:flex-row md:space-x-5 md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2 my-5">
-                <div class="flex justify-center">
-                    <i class="fas fa-truck mx-auto text-white md:text-4xl text-2xl"></i>
-                </div>
-                <div class="">
-                    <h4 class="text-white text-xsm sm:text-sm font-semibold my-1">
-                        FREE DELIVERY
-                    </h4>
-                    <p class="text-white sm:text-xs text-xsm font-light">
-                        From 275 AED
-                    </p>
-                </div>
-            </div>
-            <div
-                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2">
-                <div class="my-auto">
-                    <i class="far fa-money-bill-alt text-white md:text-4xl text-2xl"></i>
-                </div>
-                <div class="my-auto">
-                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-2">
-                        CASH ON DELIVERY
-                    </h4>
-                    <p class="text-white sm:text-xs text-xsm font-light">
-                        From 275 AED
-                    </p>
-                </div>
-            </div>
-            <div
-                class="flex px-2 align-centerg-9 lg:flex-row md:space-x-5 justify-center flex-col items-center text-center border-gray-100 lg:border-r-2 border-r-2">
-                <div class="">
-                    <i class="fas fa-gift text-white md:text-4xl text-2xl"></i>
-                </div>
-                <div class="">
-                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
-                        FREE GIFT BOX
-                    </h4>
-                    <p class="text-white sm:text-xs text-xsm font-light">& Gift Note</p>
-                </div>
-            </div>
-            <div
-                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center align-centerg-9 border-gray-100 lg:border-r-2 border-r-2">
-                <div class="">
-                    <i class="fas fa-phone-square-alt text-white md:text-4xl text-2xl"></i>
-                </div>
-                <div class="">
-                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
-                        CONTACT US
-                    </h4>
-                    <p class="text-white sm:text-xs text-xsm font-light">123 456 789</p>
-                </div>
-            </div>
-
-            <div
-                class="flex lg:flex-row md:space-x-5 justify-center flex-col items-center text-center px-2 align-center mx-auto g-9">
-                <div class="">
-                    <i class="fa-regular fa-gem text-white md:md:text-4xl text-2xl text-2xl"></i>
-                </div>
-                <div class="">
-                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
-                        LOYALTY
-                    </h4>
-                    <p class="text-white sm:text-xs text-xsm font-light">Rewarded</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 </div>

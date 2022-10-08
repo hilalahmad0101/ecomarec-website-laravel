@@ -1,0 +1,121 @@
+@media (max-width: 575.98px) {
+  #user-acquisition .mb-6 {
+    margin-bottom: 80px !important;
+  }
+}
+
+.world-data-chart {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media (min-width: 1200px) {
+  .world-data-chart.border-bottom {
+    border-bottom: 0 !important;
+    border-right: 1px solid #f3f3f3;
+  }
+}
+
+#regions_purchase > div > div {
+  margin: 0 auto 30px auto;
+}
+
+@media (min-width: 1200px) {
+  #linechart {
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #doChart {
+    
+  }
+}
+
+#polar,
+#radar {
+  min-height: 200px;
+}
+@media (min-width: 768px) {
+  #polar,
+  #radar {
+    min-height: 230px;
+  }
+}
+@media (min-width: 1200px) {
+  #polar,
+  #radar {
+    min-height: 270px;
+    min-width: 100%;
+  }
+}
+
+[polar-data-height] {
+  height: 455px;
+}
+
+[radar-data-height] {
+  height: 408px;
+}
+
+@media (min-width: 1200px) {
+  #currentUser {
+    min-height: 283px;
+    height: 283px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  #activity {
+    min-height: 280px;
+  }
+}
+
+#deviceChart {
+  min-height: 200px;
+}
+@media (min-width: 768px) {
+  #deviceChart {
+    min-height: 230px;
+  }
+}
+
+.customLegend ul {
+  display: flex;
+  margin-top: 20px;
+}
+.customLegend ul li {
+  color: gray;
+  margin-right: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(211, 211, 211, 0.1);
+}
+/* #movilng {
+  padding-left: 220px !important;
+}
+#movilng2 {
+  padding-right: 20px;
+  padding-left: 300px !important;
+}
+#side-bar{
+    display: block;
+}
+@media only screen and (max-width: 1280px) {
+  
+  #side-bar{
+    display: none;
+}
+
+  #movilng {
+    padding-left: 0px !important;
+  }
+  #movilng2 {
+    padding-right: 20px;
+    padding-left: 0px !important;
+  }
+} */
+
+#side-bar{
+    left: -100%;
+}

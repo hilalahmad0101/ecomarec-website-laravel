@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Wishlist;
@@ -15,6 +16,7 @@ class Home extends Component
     public $products;
     public function render()
     {
+      
         // $product=new Product();
         // $data=Http::get('https://fakestoreapi.com/products');
         // foreach($data->json() as $pro){
@@ -28,8 +30,16 @@ class Home extends Component
         //      $product->image=$pro['image'];
         //      $product->save();
         // }
-        $this->categories = Category::orderBy('id', 'desc')->where('status', 1)->get();
-        $this->products = Product::orderBy('id', 'desc')->where('status', 1)->get();
+        $this->categories = Category::latest()->where(
+            function ($query) {
+                $query->where('status', 1);
+            },
+        )->where(
+            function ($query) {
+                $query->where('products', '>', 0);
+            }
+        )->get();
+        $this->products = Product::latest()->where('status', 1)->get();
         return view('livewire.home')->layout('layout.app');
     }
 
@@ -37,7 +47,7 @@ class Home extends Component
     public function addToWishlist($id)
     {
         $wishlist = new Wishlist();
-        if(Auth::guard('web')->user()){
+        if (Auth::guard('web')->user()) {
             $is_wishlist = Wishlist::where(['pro_id' => $id, 'user_id' => Auth::user()->id])->first();
             if ($is_wishlist) {
                 session()->flash('error', 'Already in wishlist');
@@ -49,11 +59,41 @@ class Home extends Component
                 if ($result) {
                     session()->flash('success', 'Product Add Successfully to wishlist');
                     return redirect(route('home'));
+                    $this->dispatchBrowserEvent('getWishlistCount');
                 }
             }
-        }else{
-            return redirect(route('user.my-account'));
+        } else {
+            session()->flash('error', 'Please Login or Create account');
+            return redirect(route('home'));
         }
-     
+    }
+
+    public function addToCart($owner_id, $id)
+    {
+        $addToCart = new Cart();
+        $product = Product::findOrFail($id);
+        $is_cart = Cart::where(['user_id' => Auth::user()->id, 'pro_id' => $id])->first();
+        if ($is_cart) {
+            session()->flash('error', 'Already in card Please update cart');
+            return redirect(route('home'));
+        } else {
+            $addToCart->pro_id = $id;
+            $addToCart->user_id = Auth::user()->id;
+            $addToCart->owner_id = $owner_id;
+            $addToCart->qty = 1;
+            $addToCart->total_price = 1 * $product->price;
+            $result = $addToCart->save();
+            if ($result) {
+                session()->flash('success', 'Product  Successfully Add to Card');
+                $this->dispatchBrowserEvent('showCartCount');
+                return redirect(route('home'));
+            }
+        }
+    }
+
+    public function getTotalWishlistCount()
+    {
+        $wishlists=Wishlist::where('user_id',Auth::user()->id)->count();
+        echo $wishlists;
     }
 }

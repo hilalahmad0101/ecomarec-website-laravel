@@ -558,30 +558,37 @@
                         </div>
                     </li>
 
-                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable2"
-                        class="text-black hover:text-customeorange-600 transition-all py-2 rounded-md text-lg font-mediun"
-                        aria-current="page">Login
-                    </a>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"
-                        class="text-white bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-mediun rounded-full text-sm px-8 py-2.5 text-center mr-2 ">
-                        Sign Up
-                    </button>
+                   @if (Auth::user())
+                   <a href="{{ route('user.dashboard') }}"
+                   class="text-gray-500 dark:text-gray-400 hover:text-customeorange-600 dark:hover:text-blue-500">
+                   Account
+               </a>
+                   @else
+                   <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable2"
+                   class="text-black hover:text-customeorange-600 transition-all py-2 rounded-md text-lg font-mediun"
+                   aria-current="page">Login
+               </a>
+               <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"
+                   class="text-white bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-mediun rounded-full text-sm px-8 py-2.5 text-center mr-2 ">
+                   Sign Up
+               </button>
+                   @endif
                 </div>
 
                 <div>
-                    <a href="addtocart.html">
+                    <a href="{{ route('user.carts') }}">
                         <button type="button"
                             class="inline-flex mr-2 relative items-center text-sm font-mediun text-center text-orange-500 bg-white rounded-lg">
                                 <i class="fa-solid fa-cart-shopping text-customeorange-500 text-2xl"></i>
                                 <span class="sr-only">cart</span>
                                 <div
                                     class="inline-flex absolute -top-3 -right-4 justify-center items-center w-5 h-5 text-xxs font-mediun text-white bg-red-500 rounded-full dark:border-gray-900">
-                                    20
+                                    <span id="cart_total_count"></span>
                                 </div>
                             
                         </button>
                     </a>
-                    <a href="whishlist.html">
+                    <a href="{{ route('user.wishlist') }}">
                         <button type="button"
                             class="inline-flex relative items-center mx-4 text-sm font-mediun text-center  bg-white text-orange-500 rounded-lg focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <i class="fa-regular fa-heart focus:text-white text-customeorange-500 text-2xl"></i>
@@ -589,7 +596,7 @@
                             <span class="sr-only">Whishlist</span>
                             <div
                                 class="inline-flex absolute -top-3 -right-4 justify-center items-center w-5 h-5 text-xxs font-mediun text-white bg-red-500 rounded-full dark:border-gray-900">
-                                20
+                                <span id="wishlist_total_count"></span>
                             </div>
                         </button>
                     </a>
@@ -738,6 +745,77 @@
     </div>
     <!-- /// main caurosal -->
         {{$slot}}
+
+        <!-- ////Freedelivery row -->
+    <div class="bg-customeorange-500">
+        <div class="py-5 grid grid-cols-5 lg:grid-cols-5 container mx-auto  items-center">
+            <div
+                class="flex lg:flex-row md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2 my-5">
+                <div class="flex justify-center">
+                    <i class="fas fa-truck mx-auto text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold my-1">
+                        FREE DELIVERY
+                    </h4>
+                    <p class="text-white sm:text-xs text-xsm font-light">
+                        From 275 AED
+                    </p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center border-gray-100 lg:border-r-2 border-r-2">
+                <div class="my-auto">
+                    <i class="far fa-money-bill-alt text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="my-auto">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-2">
+                        CASH ON DELIVERY
+                    </h4>
+                    <p class="text-white sm:text-xs text-xsm font-light">
+                        From 275 AED
+                    </p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 align-centerg-9 lg:flex-row md:space-x-5 justify-center flex-col items-center text-center border-gray-100 lg:border-r-2 border-r-2">
+                <div class="">
+                    <i class="fas fa-gift text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
+                        FREE GIFT BOX
+                    </h4>
+                    <p class="text-white sm:text-xs text-xsm font-light">& Gift Note</p>
+                </div>
+            </div>
+            <div
+                class="flex px-2 lg:flex-row md:space-x-5 flex-col items-center text-center justify-center align-centerg-9 border-gray-100 lg:border-r-2 border-r-2">
+                <div class="">
+                    <i class="fas fa-phone-square-alt text-white md:text-4xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
+                        CONTACT US
+                    </h4>
+                    <p class="text-white sm:text-xs text-xsm font-light">123 456 789</p>
+                </div>
+            </div>
+
+            <div
+                class="flex lg:flex-row md:space-x-5 justify-center flex-col items-center text-center px-2 align-center mx-auto g-9">
+                <div class="">
+                    <i class="fa-regular fa-gem text-white md:md:text-4xl text-2xl text-2xl"></i>
+                </div>
+                <div class="">
+                    <h4 class="text-white text-xsm sm:text-sm font-semibold mb-1">
+                        LOYALTY
+                    </h4>
+                    <p class="text-white sm:text-xs text-xsm font-light">Rewarded</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <div class="bg-custome-100 md:block hidden">
         <footer class="container mx-auto lg:px-12 px-0">

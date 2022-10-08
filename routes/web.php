@@ -14,7 +14,9 @@ use App\Http\Livewire\User\Auth\ForgetPassword;
 use App\Http\Livewire\User\Auth\Order;
 use App\Http\Livewire\User\Auth\Registration;
 use App\Http\Livewire\User\Auth\ShippingAddress;
+use App\Http\Livewire\User\Auth\ThankYou;
 use App\Http\Livewire\User\Auth\VerifyOtp;
+use App\Http\Livewire\User\Auth\WishList;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +25,7 @@ Route::get('/product',Product::class)->name('product');
 Route::get('/category/product/{slug}',CategoryProduct::class)->name('category-product');
 Route::get('/product/details/{id}',ProductDetails::class)->name('product-detail');
 Route::get('/user/cart/count',[ProductDetails::class,'showTotalCount']);
+Route::get('/user/wishlist/count',[Home::class,'getTotalWishlistCount']);
 Route::get('/forget/password',ForgetPassword::class)->name('user.forget-password');
 Route::middleware(['not_verify'])->group(function () {
     Route::get('/verify-account', VerifyOtp::class)->name('user.verify-account');
@@ -44,9 +47,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/carts', Cart::class)->name('user.carts');
         Route::get('/order', Order::class)->name('user.order');
         Route::get('/change/password', ChangePassword::class)->name('user.change-password');
+        Route::get('/thankyou',ThankYou::class)->name('user.thankyou');
+        Route::get('/wishlist',WishList::class)->name('user.wishlist');
     });
 });
-
-
 require('vendor.php');
 require('admin.php');

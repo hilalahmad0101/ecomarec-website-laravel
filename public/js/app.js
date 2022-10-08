@@ -1,9 +1,31 @@
+$(function () {
+  // $("#header").load("./header2.html");
+
+  $(".card").load("./card.html");
+
+  $(".card2").load("./card2.html");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
+  slidesPerView: 2,
   spaceBetween: 0,
   slidesPerGroup: 1,
-  loop: false,
-  loopFillGroupWithBlank: false,
+  loop: true,
+  loopFillGroupWithBlank: true,
   pagination: false,
   breakpoints: {
     450: {
@@ -64,7 +86,7 @@ var discountCatgory = new Swiper(".discountCatgory", {
   loopFillGroupWithBlank: true,
   pagination: false,
   breakpoints: {
-
+ 
     1240: {
       slidesPerView: 4,
       spaceBetween: 0,
@@ -85,7 +107,7 @@ var swiper = new Swiper(".catSwiper", {
   slidesPerGroup: 1,
   loop: false,
   breakpoints: {
-
+ 
 
     350: {
       slidesPerView: 4,
@@ -117,7 +139,7 @@ var swiper = new Swiper(".proSwiper", {
   slidesPerView: 2,
   spaceBetween: 0,
   slidesPerGroup: 1,
-  loop: false,
+  loop: true,
   loopFillGroupWithBlank: true,
   breakpoints: {
 
@@ -158,32 +180,3 @@ var swiper = new Swiper(".brandSwiper", {
 });
 
 
-function getTotalCartCount() {
-  $.ajax({
-    type: 'GET',
-    url: "/user/cart/count",
-    success: (data) => {
-      console.log(data);
-      $("#cart_total_count").text(data);
-    }
-  })
-}
-getTotalCartCount();
-window.addEventListener('showCartCount', (e) => {
-  getTotalCartCount();
-})
-
-function getTotalWishListCount() {
-  $.ajax({
-    type: 'GET',
-    url: "/user/wishlist/count",
-    success: (data) => {
-      console.log(data);
-      $("#wishlist_total_count").text(data);
-    }
-  })
-}
-getTotalWishListCount();
-window.addEventListener('getWishlistCount', (e) => {
-  getTotalWishListCount();
-})
