@@ -29,25 +29,20 @@
     <!-- FAVICON -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="shortcut icon" />
 
-    @livewireStyles
-
 </head>
 
 <body class="ec-header-fixed ec-sidebar-fixed ec-sidebar-light ec-header-light" id="body">
 
     <!--  WRAPPER  -->
     <div class="wrapper">
-
         <!-- LEFT MAIN SIDEBAR -->
         <x-admin-sidebar />
-
         <!--  PAGE WRAPPER -->
         <div class="ec-page-wrapper">
-
             <!-- Header -->
             <x-admin-header />
 
-            {{ $slot }}
+            @yield('content')
 
             <!-- Footer -->
             <footer class="footer mt-auto">
@@ -98,8 +93,14 @@
 
     <!-- Ekka Custom -->
     <script src="{{ asset('assets/js/ekka.js') }}"></script>
-
-    @livewireScripts
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('textarea'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>

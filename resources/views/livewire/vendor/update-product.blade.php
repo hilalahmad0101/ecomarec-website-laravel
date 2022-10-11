@@ -1,11 +1,11 @@
 <div>
-    <x-slot name='title'>Add Product</x-slot>
+    <x-slot name='title'>Update Product</x-slot>
 
     <div class="ec-content-wrapper">
         <div class="content">
             <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
                 <div>
-                    <h1>Add Product</h1>
+                    <h1>Update Product</h1>
                     <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
                         <span><i class="mdi mdi-chevron-right"></i></span>Product
                     </p>
@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card card-default">
                         <div class="card-header card-header-border-bottom">
-                            <h2>Add Product</h2>
+                            <h2>Update Product</h2>
                         </div>
 
                         <div class="card-body">
@@ -177,9 +177,12 @@
                                                 @error('image')
                                                     <span style="color:red">{{ $message }}</span>
                                                 @enderror
-                                                @if ($image)
-                                                    <img src="{{ $image->temporaryUrl() }}" class=""
-                                                        alt="edit" />
+                                                @if ($new_image)
+                                                    <img src="{{ $new_image->temporaryUrl() }}" width="48"
+                                                        height="48" class="" alt="edit" />
+                                                @else
+                                                    <img src="{{ asset('storage') }}/{{ $old_image }}"
+                                                        width="48" height="48" class="" alt="edit" />
                                                 @endif
                                             </div>
                                             <div class="col-md-6">

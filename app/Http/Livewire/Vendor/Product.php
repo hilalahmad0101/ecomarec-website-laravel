@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Vendor;
 use App\Models\Category;
 use App\Models\Product as ModelsProduct;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -118,8 +119,15 @@ class Product extends Component
 
     public function delete($id)
     {
-        $products = ModelsProduct::findOrFail($id)->delete();
-        if ($products) {
+        $products = ModelsProduct::findOrFail($id);
+        $destination = public_path('storage\\' . $products->image);
+        if (File::exists($destination)) {
+            File::delete($destination);
+        }
+        $categories = Category::findOrFail($products->id);
+        $categories->products = $categories->products - 1;
+        $categories->save();
+        if ($products->delete()) {
             session()->flash('success', 'Product Delete Successfully');
         }
     }

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -14,9 +15,10 @@ class Home extends Component
 {
     public $categories;
     public $products;
+    public $sliders;
     public function render()
     {
-      
+
         // $product=new Product();
         // $data=Http::get('https://fakestoreapi.com/products');
         // foreach($data->json() as $pro){
@@ -40,6 +42,7 @@ class Home extends Component
             }
         )->get();
         $this->products = Product::latest()->where('status', 1)->get();
+        $this->sliders=Slider::latest()->limit(3)->get();
         return view('livewire.home')->layout('layout.app');
     }
 
@@ -70,30 +73,35 @@ class Home extends Component
 
     public function addToCart($owner_id, $id)
     {
-        $addToCart = new Cart();
-        $product = Product::findOrFail($id);
-        $is_cart = Cart::where(['user_id' => Auth::user()->id, 'pro_id' => $id])->first();
-        if ($is_cart) {
-            session()->flash('error', 'Already in card Please update cart');
-            return redirect(route('home'));
-        } else {
-            $addToCart->pro_id = $id;
-            $addToCart->user_id = Auth::user()->id;
-            $addToCart->owner_id = $owner_id;
-            $addToCart->qty = 1;
-            $addToCart->total_price = 1 * $product->price;
-            $result = $addToCart->save();
-            if ($result) {
-                session()->flash('success', 'Product  Successfully Add to Card');
-                $this->dispatchBrowserEvent('showCartCount');
+        if (Auth::guard('web')->user()) {
+            $addToCart = new Cart();
+            $product = Product::findOrFail($id);
+            $is_cart = Cart::where(['user_id' => Auth::user()->id, 'pro_id' => $id])->first();
+            if ($is_cart) {
+                session()->flash('error', 'Already in card Please update cart');
                 return redirect(route('home'));
+            } else {
+                $addToCart->pro_id = $id;
+                $addToCart->user_id = Auth::user()->id;
+                $addToCart->owner_id = $owner_id;
+                $addToCart->qty = 1;
+                $addToCart->total_price = 1 * $product->price;
+                $result = $addToCart->save();
+                if ($result) {
+                    session()->flash('success', 'Product  Successfully Add to Card');
+                    $this->dispatchBrowserEvent('showCartCount');
+                    return redirect(route('home'));
+                }
             }
+        } else {
+            session()->flash('error', 'Please Login or Create account');
+            return redirect(route('home'));
         }
     }
 
     public function getTotalWishlistCount()
     {
-        $wishlists=Wishlist::where('user_id',Auth::user()->id)->count();
+        $wishlists = Wishlist::where('user_id', Auth::user()->id)->count();
         echo $wishlists;
     }
 }

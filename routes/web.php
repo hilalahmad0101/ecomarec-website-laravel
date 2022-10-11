@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Livewire\About;
 use App\Http\Livewire\CategoryProduct;
+use App\Http\Livewire\Contact;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\ProductDetails;
@@ -27,6 +29,8 @@ Route::get('/product/details/{id}',ProductDetails::class)->name('product-detail'
 Route::get('/user/cart/count',[ProductDetails::class,'showTotalCount']);
 Route::get('/user/wishlist/count',[Home::class,'getTotalWishlistCount']);
 Route::get('/forget/password',ForgetPassword::class)->name('user.forget-password');
+Route::get('/abouts',About::class)->name('abouts');
+Route::get('/contact',Contact::class)->name('contact');
 Route::middleware(['not_verify'])->group(function () {
     Route::get('/verify-account', VerifyOtp::class)->name('user.verify-account');
     // Route::get('/resend-otp', [VerifyOtp::class, 'resendOtp'])->name('resend-otp');

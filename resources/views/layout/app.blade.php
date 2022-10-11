@@ -9,10 +9,7 @@
     <link rel="shortcut icon" href="./images/logo2.png" type="image/x-icon" />
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('custome.css') }}">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     @livewireStyles
 </head>
@@ -249,8 +246,7 @@
             class="md:text-md text-sm font-bold text-customeorange-500 uppercase dark:text-customeorange-500">
             Menu
         </h5>
-        <button type="button" data-drawer-dismiss="drawer-navigation" aria-controls="drawer-navigation"
-            id="close"
+        <button type="button" data-drawer-dismiss="drawer-navigation" aria-controls="drawer-navigation" id="close"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -448,10 +444,10 @@
                 <form class="w-[30%]">
                     {{-- <label for="simple-search" class="sr-only">Search</label> --}}
                     <div class="w-full bg-white flex items-center px-3 py-2 rounded-lg border ">
-                        <input type="text" id="simple-search" class="w-full outline-none" placeholder="Search Itmes"
-                            required="" />
-                        <svg aria-hidden="true" class="w-5 h-5 ml-2 text-gray-500 dark:text-gray-400" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <input type="text" id="simple-search" class="w-full outline-none"
+                            placeholder="Search Itmes" required="" />
+                        <svg aria-hidden="true" class="w-5 h-5 ml-2 text-gray-500 dark:text-gray-400"
+                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                                 clip-rule="evenodd"></path>
@@ -480,7 +476,7 @@
                             <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
                                 <ul class="space-y-4" aria-labelledby="mega-menu-dropdown-button">
                                     <li>
-                                        <a href="about.html"
+                                        <a href="{{ route('abouts') }}"
                                             class="text-gray-500 dark:text-gray-400 hover:text-customeorange-600 dark:hover:text-blue-500">
                                             About Us
                                         </a>
@@ -536,7 +532,7 @@
                             <div class="p-4 text-gray-900 dark:text-white">
                                 <ul class="space-y-4">
                                     <li>
-                                        <a href="contact-us.html"
+                                        <a href="{{ route('contact') }}"
                                             class="text-gray-500 dark:text-gray-400 hover:text-customeorange-600 dark:hover:text-blue-500">
                                             Contact Us
                                         </a>
@@ -558,34 +554,34 @@
                         </div>
                     </li>
 
-                   @if (Auth::user())
-                   <a href="{{ route('user.dashboard') }}"
-                   class="text-gray-500 dark:text-gray-400 hover:text-customeorange-600 dark:hover:text-blue-500">
-                   Account
-               </a>
-                   @else
-                   <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable2"
-                   class="text-black hover:text-customeorange-600 transition-all py-2 rounded-md text-lg font-mediun"
-                   aria-current="page">Login
-               </a>
-               <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"
-                   class="text-white bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-mediun rounded-full text-sm px-8 py-2.5 text-center mr-2 ">
-                   Sign Up
-               </button>
-                   @endif
+                    @if (Auth::user())
+                        <a href="{{ route('user.dashboard') }}"
+                            class="text-gray-500 dark:text-gray-400 hover:text-customeorange-600 dark:hover:text-blue-500">
+                            Account
+                        </a>
+                    @else
+                        <a href="" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable2"
+                            class="text-black hover:text-customeorange-600 transition-all py-2 rounded-md text-lg font-mediun"
+                            aria-current="page">Login
+                        </a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"
+                            class="text-white bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-mediun rounded-full text-sm px-8 py-2.5 text-center mr-2 ">
+                            Sign Up
+                        </button>
+                    @endif
                 </div>
 
                 <div>
                     <a href="{{ route('user.carts') }}">
                         <button type="button"
                             class="inline-flex mr-2 relative items-center text-sm font-mediun text-center text-orange-500 bg-white rounded-lg">
-                                <i class="fa-solid fa-cart-shopping text-customeorange-500 text-2xl"></i>
-                                <span class="sr-only">cart</span>
-                                <div
-                                    class="inline-flex absolute -top-3 -right-4 justify-center items-center w-5 h-5 text-xxs font-mediun text-white bg-red-500 rounded-full dark:border-gray-900">
-                                    <span id="cart_total_count"></span>
-                                </div>
-                            
+                            <i class="fa-solid fa-cart-shopping text-customeorange-500 text-2xl"></i>
+                            <span class="sr-only">cart</span>
+                            <div
+                                class="inline-flex absolute -top-3 -right-4 justify-center items-center w-5 h-5 text-xxs font-mediun text-white bg-red-500 rounded-full dark:border-gray-900">
+                                <span id="cart_total_count"></span>
+                            </div>
+
                         </button>
                     </a>
                     <a href="{{ route('user.wishlist') }}">
@@ -621,120 +617,31 @@
                                 </a>
                             </div>
                         </div>
+                        @php
+                            $categories = App\Models\Category::latest()
+                                ->where(function ($query) {
+                                    $query->where('status', 1);
+                                })
+                                ->where(function ($query) {
+                                    $query->where('products', '>', 0);
+                                })
+                                ->get();
+                        @endphp
+                        @foreach ($categories as $category)
                         <div class="swiper-slide">
                             <div class="">
-                                <a class="flex items-center" href="mobile.html">
-                                    <i class="fa-solid fa-gift text-customeorange-500 mr-2"></i>
+                                <a class="flex items-center" href="{{ route('category-product', ['slug'=>$category->slug]) }}">
+                                    <img src="{{asset('storage')}}/{{$category->image}}" width="12" height="12" alt="">
                                     <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Top offers
+                                        class="text-black cat-text ml-3 hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
+                                        {{$category->category_name}}
                                     </h5>
                                 </a>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <div class="sm:w-6 w-5 mr-2">
-                                        <img src="./images/toys.png" class="w-full" alt="" />
-                                    </div>
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Toys
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <div class="sm:w-5 w-4 mr-2">
-                                        <img class="w-full" src="./images/headphone-symbol.png" class="mr-2"
-                                            alt="" />
-                                    </div>
+                        </div> 
 
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Eloctronics
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <i class="fa-solid fa-house text-customeorange-500 mr-2"></i>
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Home
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <i class="fa-solid fa-mobile-button text-customeorange-500 mr-2"></i>
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Mobile
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <div class="sm:w-5 w-4 mr-2">
-                                        <img src="./images/electric-appliance.png" class="w-full" alt="" />
-                                    </div>
-
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Appliances
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <div class="sm:w-5 w-4 mr-2">
-                                        <img src="./images/plane.png" class="w-full" alt="" />
-                                    </div>
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Travel
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <div class="sm:w-6 w-5 mr-2">
-                                        <img src="./images/grocery.png" class="w-full" alt="" />
-                                    </div>
-
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Grocey
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="w-full">
-                                <a class="flex items-center" href="mobile.html">
-                                    <img src="./images/motorcycle.png" class="mr-2" alt="" />
-
-                                    <h5
-                                        class="text-black cat-text hover:text-customeorange-600 transition-all sm:text-1xl sm:text-lg text-xs font-medium">
-                                        Whreelers
-                                    </h5>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
+                       
                     </div>
                     <div class="swiper-button-next catbtnhide after:text-xxs"></div>
                     <div class="swiper-button-prev catbtnhide"></div>
@@ -744,9 +651,9 @@
         </div>
     </div>
     <!-- /// main caurosal -->
-        {{$slot}}
+    {{ $slot }}
 
-        <!-- ////Freedelivery row -->
+    <!-- ////Freedelivery row -->
     <div class="bg-customeorange-500">
         <div class="py-5 grid grid-cols-5 lg:grid-cols-5 container mx-auto  items-center">
             <div
@@ -975,8 +882,8 @@
                 <h2 class="accordion-header mb-0" id="headingTwo">
                     <button
                         class="accordion-button collapsed relative flex items-center w-full py-4 px-5 text-xs text-black hover:text-customeorange-600 transition-all text-left font-bold capitalize border-0 rounded-none transition focus:outline-none"
-                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                        aria-expanded="false" aria-controls="collapseTwo">
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
                         Legal
                     </button>
                 </h2>

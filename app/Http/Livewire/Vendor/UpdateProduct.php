@@ -4,13 +4,13 @@ namespace App\Http\Livewire\Vendor;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class AddProduct extends Component
+class UpdateProduct extends Component
 {
     public
+        $edit_id,
         $product_title,
         $sale_price,
         $category,
@@ -18,20 +18,33 @@ class AddProduct extends Component
         $items,
         $small_content,
         $long_content,
-        $image; 
+        $old_image,
+        $new_image;
 
     public $categories;
     use WithFileUploads;
+    public function mount($id)
+    {
+        $products = Product::findOrFail($id);
+        $this->edit_id = $products->id;
+        $this->product_title = $products->product_title;
+        $this->sale_price = $products->sale_price;
+        $this->category = $products->cat_id;
+        $this->price = $products->price;
+        $this->items = $products->items;
+        $this->small_content = $products->small_content;
+        $this->long_content = $products->long_content;
+        $this->old_image = $products->image;
+    }
     public function render()
     {
         $this->categories = Category::orderBy('id', 'desc')->where('status', 1)->get();
-        return view('livewire.vendor.add-product')->layout('layout.vendor');
+        return view('livewire.vendor.update-product')->layout('layout.vendor');
     }
-
 
     public function save()
     {
-        $products = new Product();
+        $products = Product::findOrFail($this->edit_id);
         $this->validate([
             'product_title' => 'required',
             'sale_price' => 'required',
@@ -40,14 +53,14 @@ class AddProduct extends Component
             'items' => 'required',
             'small_content' => 'required',
             'long_content' => 'required',
-            'image' => 'required',
         ]);
         $filename = "";
-        if ($this->image) {
-            $filename = $this->image->store('products', 'public');
+        if ($this->new_image) {
+            $filename = $this->new_image->store('products', 'public');
+        } else {
+            $filename = $this->old_image;
         }
         $products->product_title = $this->product_title;
-        $products->owner_id = Auth::guard('vendor')->user()->id;
         $products->sale_price = $this->sale_price;
         $products->cat_id = $this->category;
         $products->price = $this->price;
@@ -56,12 +69,8 @@ class AddProduct extends Component
         $products->long_content = $this->long_content;
         $products->image = $filename;
         $result = $products->save();
-
-        $category = Category::findOrFail($this->category);
-        $category->products = $category->products + 1;
-        $category->save();
         if ($result) {
-            session()->flash('success', 'Product Add Successfully, Admin will approve your Order and you will received a mail ');
+            session()->flash('success', 'Product Update Successfully');
             return redirect(route('vendor.products'));
         }
     }

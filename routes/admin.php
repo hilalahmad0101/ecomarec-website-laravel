@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Livewire\Admin\About;
 use App\Http\Livewire\Admin\Auth\Authentication;
 use App\Http\Livewire\Admin\Auth\UpdateProfile;
 use App\Http\Livewire\Admin\Category;
@@ -25,5 +27,10 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::get('/products', Product::class)->name('admin.product');
         Route::get('/slider', Slider::class)->name('admin.slider');
         Route::get('/update/profile', UpdateProfile::class)->name('admin.update-profile');
+        Route::get('/abouts', About::class)->name('admin.about');
+        Route::get('/abouts/add/about',[ AboutController::class,'show'])->name('admin.add-about');
+        Route::post('/abouts/add/about',[ AboutController::class,'save']);
+        Route::get('/abouts/edit/about/{id}', [AboutController::class,'edit'])->name('admin.edit-about');
+        Route::post('/abouts/update/about/{id}', [AboutController::class,'update'])->name('admin.update-about');
     });
 });

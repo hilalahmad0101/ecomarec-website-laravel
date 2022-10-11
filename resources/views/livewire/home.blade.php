@@ -1,17 +1,18 @@
 <div>
     <x-slot name="title">Home</x-slot>
 
-   @if (session()->has('success'))
-   <div class="fixed bg-green-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
-    {{session('success')}}
-   </div>
-   @endif
 
-   @if (session()->has('error'))
-   <div class="fixed bg-red-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
-    {{session('error')}}
-   </div>
-   @endif
+    @if (session()->has('success'))
+        <div class="fixed bg-green-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session()->has('error'))
+        <div class="fixed bg-red-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+            {{ session('error') }}
+        </div>
+    @endif
     <div id="carouselExampleCaptions" class="carousel slide relative" data-bs-ride="carousel">
         <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active hidden"
@@ -22,18 +23,21 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner relative w-full overflow-hidden">
-            <div class="carousel-item active relative float-left w-full">
-                <img src="https://s.alicdn.com/@img/imgextra/i3/O1CN01M9x0R41VzdeRW8FYF_!!6000000002724-0-tps-990-400.jpg"
+            @foreach ($sliders as $slider)
+            <div class="carousel-item {{$slider->id == 1 ? 'active':''}} relative float-left w-full">
+                <img src="{{asset('storage')}}/{{$slider->image}}"
                     class="block w-full" alt="..." />
-            </div>
-            <div class="carousel-item relative float-left w-full">
+            </div> 
+            @endforeach
+         
+            {{-- <div class="carousel-item relative float-left w-full">
                 <img src="https://s.alicdn.com/@img/imgextra/i2/O1CN01rYC4hI1lJzSxuJUm1_!!6000000004799-2-tps-990-400.png"
                     class="block w-full" alt="..." />
             </div>
             <div class="carousel-item relative float-left w-full">
                 <img src="https://s.alicdn.com/@img/imgextra/i1/O1CN01AAmzwV1GWaIkhRPMg_!!6000000000630-2-tps-990-400.png"
                     class="block w-full" alt="..." />
-            </div>
+            </div> --}}
         </div>
         <button
             class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
@@ -92,7 +96,8 @@
                                         class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                         <a href="payment-details.html"> Buy Now </a>
                                     </button>
-                                    <button type="button" wire:click='addToCart({{$product->owner_id}},{{$product->id}})'
+                                    <button type="button"
+                                        wire:click='addToCart({{ $product->owner_id }},{{ $product->id }})'
                                         class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                         Add to card
                                     </button>
@@ -216,7 +221,7 @@
                 class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
                 <h1
                     class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
-                    {{$category->category_name}}
+                    {{ $category->category_name }}
                 </h1>
 
                 <button id="dropdownDefault" data-dropdown-toggle="dropdown"
@@ -265,7 +270,7 @@
                 <div class="flex justify-start">
                     <h1
                         class="font text-left pl-1 text-customeorange-500 text-3xl font-medium capitalize  tracking-tight">
-                        {{$category->category_name}}
+                        {{ $category->category_name }}
                     </h1>
                 </div>
                 <div class="flex justify-end space-x-12 pr-8">
@@ -287,7 +292,7 @@
                 <div class="swiper mySwiper w-full h-full">
                     <div class="swiper-wrapper">
                         @php
-                            $products1=\App\Models\Product::where('cat_id',$category->id)->get();
+                            $products1 = \App\Models\Product::where('cat_id', $category->id)->get();
                         @endphp
                         @foreach ($products1 as $product)
                             <div class="swiper-slide bg-white flex justify-center">
@@ -296,7 +301,7 @@
                                         <div
                                             class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
                                             <div>
-                                                <i wire:click='addToWishlist({{$product->id}})'
+                                                <i wire:click='addToWishlist({{ $product->id }})'
                                                     class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
                                             </div>
                                         </div>
@@ -326,6 +331,7 @@
                                                     <a href="payment-details.html"> Buy Now </a>
                                                 </button>
                                                 <button type="button"
+                                                    wire:click='addToCart({{ $product->owner_id }},{{ $product->id }})'
                                                     class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                                     Add to card
                                                 </button>
@@ -353,7 +359,7 @@
                 class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:hidden flex space-x-12 justify-between pl-10 items-center">
                 <h1
                     class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
-                    {{$category->category_name}}
+                    {{ $category->category_name }}
                 </h1>
 
                 <button id="dropdownDefault" data-dropdown-toggle="dropdown"
@@ -401,7 +407,7 @@
                 class="container mx-auto mt-12 bg-custome-100 p-2 rounded-t-lg lg:flex hidden space-x-12 pl-10 items-center">
                 <h1
                     class="text-customeorange-500 md:text-3xl text-xl font-medium capitalize text-end tracking-tight text hover:customeorange-600 transition-all-black">
-                    {{$category->category_name}}
+                    {{ $category->category_name }}
                 </h1>
                 <div class="flex justify-center">
                     <div>
@@ -461,9 +467,9 @@
                 <div class="swiper mySwiper w-full h-full">
                     <div class="swiper-wrapper">
                         @php
-                        $products2=\App\Models\Product::where('cat_id',$category->id)->get();
-                    @endphp
-               
+                            $products2 = \App\Models\Product::where('cat_id', $category->id)->get();
+                        @endphp
+
                         @foreach ($products2 as $product)
                             <div class="swiper-slide bg-white flex justify-center">
                                 <div>
@@ -471,7 +477,7 @@
                                         <div
                                             class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
                                             <div>
-                                                <i wire:click='addToWishlist({{$product->id}})'
+                                                <i wire:click='addToWishlist({{ $product->id }})'
                                                     class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
                                             </div>
                                         </div>
@@ -501,6 +507,7 @@
                                                     <a href="payment-details.html"> Buy Now </a>
                                                 </button>
                                                 <button type="button"
+                                                    wire:click='addToCart({{ $product->owner_id }},{{ $product->id }})'
                                                     class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                                     Add to card
                                                 </button>
@@ -780,6 +787,6 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
-    
+
 
 </div>

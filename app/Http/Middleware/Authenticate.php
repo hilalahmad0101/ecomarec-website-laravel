@@ -21,7 +21,8 @@ class Authenticate extends Middleware
             if($request->routeIs('admin.*')){
                 return route('admin.login');
             }
-            return route('user.my-account');
+            session()->flash('error', 'Please login or create account');
+            return route('home');
         }
     }
 }

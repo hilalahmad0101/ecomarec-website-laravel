@@ -70,6 +70,12 @@
                         <span class="nav-text">Slider</span>
                     </a>
                 </li>
+                <li class=" {{Request::routeIs('admin.about') ?'active':''}}">
+                    <a class="sidenav-item-link" href="{{ route('admin.about') }}">
+                        <i class="mdi mdi-view-dashboard-outline"></i>
+                        <span class="nav-text">About</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

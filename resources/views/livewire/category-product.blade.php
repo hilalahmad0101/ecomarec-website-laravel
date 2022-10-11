@@ -1,115 +1,75 @@
 <div>
     <x-slot name='title'>{{$category_name}}</x-slot>
-    <div class="revo_breadcrumbs">
-        <div class="container">
-            <div class="breadcrumbs custom-font theme-clearfix">
-                <ul class="breadcrumb">
-                    <li><a href="https://demo.wpthemego.com/themes/sw_revo">Home</a><span class="go-page"></span></li>
-                    <li class="active"><span>You searched for " "</span></li>
-                </ul>
-            </div>
-        </div>
+    @if (session()->has('success'))
+    <div class="fixed bg-green-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+        {{ session('success') }}
     </div>
-    <div class="container">
-        <div class="listing-title">
-            <h1><span>Search Results for <small> {{$category_name}} </small></span></h1>
-        </div>
-        <div id="search-product" class="content-list-category container">
-            <div class="row">
-               <x-category-navigation  products=""/>
-                <div id="contents" class="content col-lg-9 col-md-9 col-sm-12" role="main">
-                    <div class="content_list_product">
-                        <div class="products-wrapper">
-                            <ul id="loop-products" class="products-loop row clearfix grid-view grid" data-postids=""
-                                data-attributes="item  col-lg-3 col-md-4 col-sm-6 col-xs-6" data-maxpage="13">
+@endif
 
-                                @forelse ($products as $product)
-                                <li
-                                class="item col-lg-3 col-md-4 col-sm-6 col-xs-6 post-963 product type-product status-publish has-post-thumbnail product_cat-fashion first instock featured shipping-taxable purchasable product-type-simple"
-                                >
-                                <div class="item-wrap">
-                                    <div class="item-detail">
-                                        <div class="item-img products-thumb">
-                                            <!-- quickview & thumbnail  -->
-                                            <a
-                                                href="{{ route('product-detail', ['id'=>$product->id]) }}"><img
-                                                    width="300" height="300"
-                                                    src="{{ $product->image}}"
-                                                    class="attachment-shop_catalog size-shop_catalog wp-post-image"
-                                                    alt="Iste natus error"
-                                                    sizes="(max-width: 300px) 100vw, 300px"></a>
-                                        </div>
-                                        <div class="item-content">
-                                            <h4><a href="{{ route('product-detail', ['id'=>$product->id]) }}"
-                                                    title="Iste natus error">{{$product->product_title}}</a></h4>
-
-                                            <!-- rating  -->
-                                            <div class="reviews-content">
-                                                <div class="star"></div>
-                                            </div>
-                                            <!-- end rating  -->
-                                            <div class="item-price">
-                                                <span>
-                                                    <span class="woocommerce-Price-amount amount"
-                                                        data-original="<bdi><span class=&quot;woocommerce-Price-currencySymbol&quot;>$</span>80.00</bdi>"
-                                                        data-price="{{$product->price}}" title="Original price:80">{{$product->price}}</span>
-                                                </span>
-                                            </div>
-                                            <div class="item-bottom clearfix"><a href="?add-to-cart=963"
-                                                    data-quantity="1"
-                                                    class="button product_type_simple add_to_cart_button ajax_add_to_cart"
-                                                    data-product_id="963" data-product_sku=""
-                                                    aria-label="Add “Iste natus error” to your cart"
-                                                    rel="nofollow" title="Add To Cart">Add to cart</a>
-                                                <div class="yith-wcwl-add-to-wishlist add-to-wishlist-963  wishlist-fragment on-first-load"
-                                                    data-fragment-ref="963"
-                                                    data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:963,&quot;parent_product_id&quot;:963,&quot;product_type&quot;:&quot;simple&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse Wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in the wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:false,&quot;item&quot;:&quot;add_to_wishlist&quot;}">
-
-                                                    <!-- ADD TO WISHLIST -->
-
-                                                    <div class="yith-wcwl-add-button">
-                                                        <a href="?add_to_wishlist=963" rel="nofollow"
-                                                            data-product-id="963" data-product-type="simple"
-                                                            data-original-product-id="963"
-                                                            class="add_to_wishlist single_add_to_wishlist"
-                                                            data-title="Add to Wishlist" title="Add To WishList">
-                                                            <span>Add to Wishlist</span>
-                                                        </a>
-                                                    </div>
-                                                    <!-- COUNT TEXT -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                                @empty
-                                    <h2>Record not found</h2>
-                                @endforelse
-                               
-                            </ul>
-                            <!--Pagination-->
-                            <div class="pag-search ">
-                                <div class="pagination nav-pag pull-right">
-                                    <ul class="page-numbers">
-                                        <li><a class="prev page-numbers"
-                                                href="https://demo.wpthemego.com/themes/sw_revo/page/12/?category_product=appliances&amp;s&amp;search_posttype=product"><i
-                                                    class="fa fa-angle-left"></i></a></li>
-                                        <li><a class="page-numbers"
-                                                href="https://demo.wpthemego.com/themes/sw_revo/page/1/?category_product=appliances&amp;s&amp;search_posttype=product">1</a>
-                                        </li>
-                                        <li><span class="page-numbers dots">…</span></li>
-                                        <li><a class="page-numbers"
-                                                href="https://demo.wpthemego.com/themes/sw_revo/page/12/?category_product=appliances&amp;s&amp;search_posttype=product">12</a>
-                                        </li>
-                                        <li><span aria-current="page" class="page-numbers current">13</span></li>
-                                    </ul>
-                                </div>
+@if (session()->has('error'))
+    <div class="fixed bg-red-400 z-[999] top-4 rounded-md right-4 py-2 px-3">
+        {{ session('error') }}
+    </div>
+@endif
+    <div class="mx-auto container mt-12 bg-custome-100 p-2 rounded-t-lg">
+        <h1
+            class="font md:text-2xl text-md font-medium capitalize tracking-tight text hover:customeorange-600 transition-all-black">
+            Home / {{$category_name}}
+        </h1>
+    </div>
+    <div class="shadow rounded-lg bg-white container mx-auto">
+        <div class="swiper proSwiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+            <div class="swiper-wrapper" id="swiper-wrapper-25e748cb851d86fc" aria-live="polite"
+                style="transform: translate3d(0px, 0px, 0px);">
+                <div class="swiper-slide flex justify-center items-center swiper-slide-active" role="group"
+                    aria-label="1 / 1" style="width: 220px;">
+                    <div class="bg-white  shadow my-4 w-full mx-1 rounded-lg relative">
+                        <div
+                            class="h-7 on flex justify-center items-center w-7 absolute cursor-pointer top-1 right-1 bg-custome-100 rounded-full">
+                            <div>
+                                <i
+                                    class="red fa-regular fa-heart text-textColor-100 hover:text-red-500 focus:ring-2  active:text-red-600  focus:text-red-900"></i>
                             </div>
-                            <!--End Pagination-->
+                        </div>
+                        <a href="product.html">
+                            <img src="http://127.0.0.1:8000/storage/products/lmc7zPZETbeuzgTHAy5TJph4sgoIro2eQDriFO3x.jpg"
+                                class="rounded-r rounded-l w-full h-72 object-cover" alt="">
+                        </a>
+                        <div class="p-2">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-textColor-100 font-bold sm:text-lg text-md mt-1">
+                                    $223 <span class="text-red-500 text-xs">50%</span>
+                                </h3>
+                                <p class="text-black font-bold text-md">
+                                    4.6 <i class="fa-solid fa-star text-yellow-300"></i>
+                                </p>
+                            </div>
+                            <h3 class="sm:text-xs text-xs text-gray-600 mb-1">
+                                xuhyx@mailinator.com
+                            </h3>
+                            <h3 class="sm:text-xs text-xsm text-gray-600 mb-1">
+                                hilal123</h3>
+                            <div class="flex justify-between space-x-1">
+                                <button type="button"
+                                    class="text-customeorange-500 transition bg-transparent hover:text-white hover:bg-textColor-100 border border-textColor-100 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-3 py-2 w-full flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    <a href="payment-details.html"> Buy Now </a>
+                                </button>
+                                <button type="button" wire:click="addToCart(1,2)"
+                                    class="text-white w-full pt-2.5  hover:border-textColor-100 border transition bg-textColor-100 hover:bg-transparent hover:text-customeorange-600 focus:ring-4 focus:ring-blue-300 font-semibold rounded-lg text-xsm px-2 py-2 flex justify-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                    Add to card
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-button-next swiper-button-disabled swiper-button-lock" tabindex="-1" role="button"
+                aria-label="Next slide" aria-controls="swiper-wrapper-25e748cb851d86fc" aria-disabled="true"></div>
+            <div class="swiper-button-prev swiper-button-disabled swiper-button-lock" tabindex="-1" role="button"
+                aria-label="Previous slide" aria-controls="swiper-wrapper-25e748cb851d86fc" aria-disabled="true"></div>
+            <div class="swiper-pagination"></div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
+
     </div>
 </div>
